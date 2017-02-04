@@ -106,7 +106,6 @@
 		072F37A31E2DDA2B00262192 /* Earthquake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
 		072F37A91E2DDEC000262192 /* Earthquakes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Earthquakes.xcdatamodel; sourceTree = "<group>"; };
 		072F37AF1E2DEC3900262192 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		072F3FE31E33775900C419B0 /* Development copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Development copy-Info.plist"; path = "/Users/stephenmcintosh/Developer/Projects/Template/Project Files/Development copy-Info.plist"; sourceTree = "<absolute>"; };
 		07359CD31E430F450078E854 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		07569BBA1E0AD5C100D36893 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = Build/iOS/GoogleAnalytics.framework; sourceTree = "<group>"; };
 		07569BCA1E0ADCCA00D36893 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -339,7 +338,6 @@
 				07DA499E1E1FB0C500FA9A6E /* TemplateUITests */,
 				07DA49741E1E1F8800FA9A6E /* Products */,
 				E0423D641D8AF8BF0031D0D5 /* Frameworks */,
-				072F3FE31E33775900C419B0 /* Development copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
