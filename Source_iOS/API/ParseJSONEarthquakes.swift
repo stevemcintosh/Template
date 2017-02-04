@@ -86,13 +86,14 @@ class ParseJSONEarthquakes: GroupProcedure {
 			let json = try JSONSerialization.jsonObject(with: stream, options: []) as? [String : AnyObject]
 			if let features = json?["features"] as? [[String: AnyObject]] {
 				parse(features: features)
-			}
-			else {
+			} else {
 				finish()
+				self.completion()
 			}
 		}
 		catch let jsonError as NSError {
 			finish(withError: jsonError)
+			self.completion()
 		}
 	}
 	
@@ -107,6 +108,7 @@ class ParseJSONEarthquakes: GroupProcedure {
 			let error = self.saveContext()
 			self.finish(withError: error)
 			self.completion()
+
 		}
 	}
 	
