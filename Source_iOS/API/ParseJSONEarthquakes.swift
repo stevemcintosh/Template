@@ -66,6 +66,7 @@ class ParseJSONEarthquakes: GroupProcedure {
 	}
 	
 	override func execute() {
+		print(cacheFile)
 		guard let stream = InputStream(url: cacheFile) else {
 			finish()
 			return
@@ -78,8 +79,7 @@ class ParseJSONEarthquakes: GroupProcedure {
 		}
 		
 		do {
-			let json = try JSONSerialization.jsonObject(with: stream, options: []) as? [String: AnyObject]
-			
+			let json = try JSONSerialization.jsonObject(with: stream, options: []) as? [String : AnyObject]
 			if let features = json?["features"] as? [[String: AnyObject]] {
 				parse(features: features)
 			}

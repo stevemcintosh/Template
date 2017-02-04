@@ -32,7 +32,7 @@ class DownloadEarthquakes: GroupProcedure {
 		}.injectPayload(fromNetwork: network)
 		
 		transform.add(dependency: network)
-		procedureQueue.add(operations: network, transform)
+		add(children: [network, transform])
 	}
 
 	fileprivate func finish(procedure: Procedure, withError: NSError) {
