@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Crashlytics Enabled</key>
+	<true/>
+	<key>Crashlytics Key</key>
+	<string>fa101df80a3cb9460aa4a96ce38e3f9057c962ec</string>
+	<key>In App Subscription Product ID</key>
+	<string>com.stephenjmcintoshau.template.subscription.monthly</string>
+	<key>Google Analytics Property ID</key>
+	<string></string>
+</dict>
+</plist>
