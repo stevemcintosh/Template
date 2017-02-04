@@ -47,10 +47,13 @@ private struct ParsedEarthquake {
 }
 
 class ParseJSONEarthquakes: GroupProcedure {
+	typealias CompletionBlock = (Void) -> Void
+	
 	let cacheFile: URL
 	let context: NSManagedObjectContext
-
-	init(cacheFile: URL, context: NSManagedObjectContext) {
+	let completion: CompletionBlock
+	
+	init(cacheFile: URL, context: NSManagedObjectContext, completion: @escaping CompletionBlock) {
 
 		let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
 		importContext.persistentStoreCoordinator = context.persistentStoreCoordinator
@@ -59,6 +62,7 @@ class ParseJSONEarthquakes: GroupProcedure {
 		
 		self.cacheFile = cacheFile
 		self.context = importContext
+		self.completion = completion
 
 		super.init(operations: [])
 		
@@ -102,6 +106,7 @@ class ParseJSONEarthquakes: GroupProcedure {
 			
 			let error = self.saveContext()
 			self.finish(withError: error)
+			self.completion()
 		}
 	}
 	

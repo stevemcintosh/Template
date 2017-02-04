@@ -9,13 +9,13 @@ class GetLatestEarthquakes: GroupProcedure {
 		let cacheFile = cachesFolder.appendingPathComponent("earthquakes.json")
 
 		let downloadProcedure = DownloadEarthquakes(cacheFile: cacheFile)
-		let parseProcedure = ParseJSONEarthquakes(cacheFile: cacheFile, context: context)
-		let finishProcedure = BlockOperation(block: completion)
+		let parseProcedure = ParseJSONEarthquakes(cacheFile: cacheFile, context: context) {
+			completion()
+		}
 		
 		parseProcedure.add(dependency: downloadProcedure)
-		finishProcedure.add(dependency: parseProcedure)
 		
-		super.init(operations: [downloadProcedure, parseProcedure, finishProcedure])
+		super.init(operations: [downloadProcedure, parseProcedure])
 		
 		add(condition: MutuallyExclusive<GetLatestEarthquakes>())
 	}

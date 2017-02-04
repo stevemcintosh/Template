@@ -91,7 +91,7 @@ class EarthquakesTableViewController: UITableViewController {
             let getEarthquakesOperation = GetLatestEarthquakes(context: context) {
 				DispatchQueue.main.async {
                     self.refresh?.endRefreshing()
-                    self.updateUI()
+					self.updateUI()
                 }
             }
 
