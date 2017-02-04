@@ -70,7 +70,7 @@ class ParseJSONEarthquakes: GroupProcedure {
 	}
 	
 	override func execute() {
-		print(cacheFile)
+
 		guard let stream = InputStream(url: cacheFile) else {
 			finish()
 			return

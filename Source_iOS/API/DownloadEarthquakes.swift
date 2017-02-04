@@ -25,8 +25,10 @@ class DownloadEarthquakes: GroupProcedure {
 					try fileManager.removeItem(at: cacheFile)
 				}
 				try data.write(to: cacheFile, options: .atomic)
+				self.finish()
 				return cacheFile
 			} catch {
+				self.finish()
 				return nil
 			}
 		}.injectPayload(fromNetwork: network)
