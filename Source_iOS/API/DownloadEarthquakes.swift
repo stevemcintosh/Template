@@ -12,10 +12,9 @@ class DownloadEarthquakes: GroupProcedure {
 		
 		guard let url = URL(string: "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson") else { return }
 		let request = URLRequest(url: url)
+		
 		let network = NetworkProcedure {
-			NetworkDataProcedure(session: URLSession.shared, request: request) { result in
-//				print(result)
-			}
+			NetworkDataProcedure(session: URLSession.shared, request: request)
 		}
 		
 		// Perform synchronous transform of Data
