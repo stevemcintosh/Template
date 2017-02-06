@@ -113,16 +113,21 @@ class ParseJSONEarthquakes: GroupProcedure {
 	}
 	
 	private func insert(parsed: ParsedEarthquake) {
-		let earthquake = NSEntityDescription.insertNewObject(forEntityName: Earthquake.entityName, into: context) as! Earthquake
+		let request = NSFetchRequest<NSFetchRequestResult>(entityName: Earthquake.entityName)
+		request.predicate = NSPredicate(format: "identifier = %@", parsed.identifier)
 		
-		earthquake.identifier = parsed.identifier
-		earthquake.timestamp = parsed.date
-		earthquake.latitude = parsed.latitude
-		earthquake.longitude = parsed.longitude
-		earthquake.depth = parsed.depth
-		earthquake.webLink = parsed.link
-		earthquake.name = parsed.name
-		earthquake.magnitude = parsed.magnitude
+		if let _ = (try? context.fetch(request))?.first as? Earthquake {
+			return
+		} else if let earthquake = NSEntityDescription.insertNewObject(forEntityName: Earthquake.entityName, into: context) as? Earthquake {
+			earthquake.identifier = parsed.identifier
+			earthquake.timestamp = parsed.date
+			earthquake.latitude = parsed.latitude
+			earthquake.longitude = parsed.longitude
+			earthquake.depth = parsed.depth
+			earthquake.webLink = parsed.link
+			earthquake.name = parsed.name
+			earthquake.magnitude = parsed.magnitude
+		}
 	}
 	
 	private func saveContext() -> NSError? {

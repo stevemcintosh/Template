@@ -5,7 +5,6 @@ import ProcedureKitNetwork
 class DownloadEarthquakes: GroupProcedure {
 	
 	var cacheFile: URL!
-	let procedureQueue = ProcedureQueue()
 	
 	init(cacheFile: URL) {
 		super.init(operations: [])
@@ -14,7 +13,9 @@ class DownloadEarthquakes: GroupProcedure {
 		guard let url = URL(string: "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson") else { return }
 		let request = URLRequest(url: url)
 		let network = NetworkProcedure {
-			NetworkDataProcedure(session: URLSession.shared, request: request)
+			NetworkDataProcedure(session: URLSession.shared, request: request) { result in
+//				print(result)
+			}
 		}
 		
 		// Perform synchronous transform of Data
@@ -28,7 +29,7 @@ class DownloadEarthquakes: GroupProcedure {
 				self.finish()
 				return cacheFile
 			} catch {
-				self.finish()
+				self.finish(withError: ProcedureKitError.requirementNotSatisfied())
 				return nil
 			}
 		}.injectPayload(fromNetwork: network)
