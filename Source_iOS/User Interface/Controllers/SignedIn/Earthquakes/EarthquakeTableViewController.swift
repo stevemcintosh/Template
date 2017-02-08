@@ -10,7 +10,7 @@ import ProcedureKitLocation
 class EarthquakeTableViewController: UITableViewController {
     // MARK: Properties
 
-    var procedureQueue = ProcedureQueue()
+	var procedureQueue: ProcedureQueue?
     var earthquake: Earthquake?
     var locationRequest: ProcedureKitLocation.UserLocationProcedure?
     
@@ -63,7 +63,7 @@ class EarthquakeTableViewController: UITableViewController {
             self.locationRequest = nil
 		}
 
-		procedureQueue.addOperation(locationOperation)
+		procedureQueue?.addOperation(locationOperation)
         locationRequest = locationOperation
     }
     
@@ -107,7 +107,7 @@ class EarthquakeTableViewController: UITableViewController {
         */
 //		shareOperation.add(condition: MutuallyExclusive<UIViewController>())
 
-        procedureQueue.addOperation(shareOperation)
+        procedureQueue?.addOperation(shareOperation)
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
