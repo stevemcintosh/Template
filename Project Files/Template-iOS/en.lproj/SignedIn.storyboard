@@ -13,7 +13,7 @@
         <scene sceneID="hFP-fN-U7g">
             <objects>
                 <navigationController id="tIw-7L-l6E" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k2i-4v-qic">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k2i-4v-qic">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUG-1K-1o6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="300"/>
+            <point key="canvasLocation" x="835" y="295"/>
         </scene>
         <!--Earthquake List-->
         <scene sceneID="lao-8A-nuM">
@@ -109,9 +109,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="refresh" destination="hNe-p2-l8R" id="MwV-ho-IEz"/>
-                        <segue destination="tIw-7L-l6E" kind="showDetail" identifier="showEarthquake" id="x7L-UA-Cpt">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="tIw-7L-l6E" kind="showDetail" identifier="showEarthquake" action="showViewController:sender:" id="G0L-qk-74B"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kf1-3J-Dsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,13 +300,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TY-47-g09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="300"/>
+            <point key="canvasLocation" x="1654" y="295"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BAn-jP-Gjr">
             <objects>
                 <navigationController id="0hO-qa-mhl" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dji-YN-DLe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dji-YN-DLe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -325,8 +323,8 @@
             <objects>
                 <splitViewController id="XVq-xk-APJ" customClass="AppController" customModule="Template" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="0hO-qa-mhl" kind="relationship" relationship="masterViewController" id="S6P-Au-iX0"/>
-                        <segue destination="tIw-7L-l6E" kind="relationship" relationship="detailViewController" id="dJY-Ca-3du"/>
+                        <segue destination="tIw-7L-l6E" kind="relationship" relationship="detailViewController" id="mff-tA-zNs"/>
+                        <segue destination="0hO-qa-mhl" kind="relationship" relationship="masterViewController" id="dMr-hh-Jwq"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1D-oL-BBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,6 +333,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="x7L-UA-Cpt"/>
+        <segue reference="G0L-qk-74B"/>
     </inferredMetricsTieBreakers>
 </document>

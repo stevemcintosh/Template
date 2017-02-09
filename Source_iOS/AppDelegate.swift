@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	// MARK: - Properties -
 	/// The main window for the application.
 	var window: UIWindow?
-
+	
 	// MARK: - UIApplicationDelegate -
 	func applicationDidFinishLaunching(_ application: UIApplication) {
 		_ = self.application(application, didFinishLaunchingWithOptions: nil)
@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// In some cases, the user launches your app with a Home screen quick action. 
 		// To ensure you handle this launch case correctly, read the discussion in the application(_:performActionFor:completionHandler:) method.
 		
-		_ = AppController()
 		return true
 	}
 

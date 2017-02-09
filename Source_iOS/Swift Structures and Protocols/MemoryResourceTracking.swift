@@ -20,7 +20,7 @@ import Foundation
 		public static func decrementTotal(_ file: String = #file, line: UInt = #line, function: String = #function) -> Swift.Void {
 			guard __get_atomic_count() > 0 else { return }
 			__atomic_decrement()
-			print("<" + String(repeating:"<-", count:Int(self.total)) + "\(file.components(separatedBy: "/").last!.components(separatedBy: ".").first!) count: \(self.total)")
+			print("<" + String(repeating:"-", count:Int(self.total+1)) + "\(file.components(separatedBy: "/").last!.components(separatedBy: ".").first!) count: \(self.total)")
 		}
 	}
 	

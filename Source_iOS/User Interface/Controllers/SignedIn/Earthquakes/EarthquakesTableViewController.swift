@@ -4,7 +4,7 @@ import ProcedureKit
 import ProcedureKitMobile
 import ProcedureKitNetwork
 
-class EarthquakesTableViewController: UITableViewController, UISplitViewControllerDelegate {
+class EarthquakesTableViewController: UITableViewController {
 	fileprivate struct Storyboard {
 		static let ShowEarthQuake = "showEarthquake"
 	}
@@ -16,8 +16,6 @@ class EarthquakesTableViewController: UITableViewController, UISplitViewControll
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		
-		splitViewController?.delegate = self
 		
 		let procedure = LoadEarthquakeModel { context in
 			// Now that we have a context, build our `FetchedResultsController`.
@@ -70,7 +68,7 @@ class EarthquakesTableViewController: UITableViewController, UISplitViewControll
 			}
         }
         
-		operation.add(condition: MutuallyExclusive<EarthquakesTableViewController>())
+		operation.add(condition: MutuallyExclusive<UIViewController>())
 		
 		operation.add(observer: BlockObserver(didFinish: { _, errors in
 			DispatchQueue.main.async {
@@ -81,16 +79,15 @@ class EarthquakesTableViewController: UITableViewController, UISplitViewControll
     }
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		guard let detailVC = segue.destination.contentViewController as? EarthquakeTableViewController else {
-				return
-		}
-		
-		if let indexPath = tableView.indexPathForSelectedRow {
-			guard let earthquake = fetchedResultsController?.object(at: indexPath) as? Earthquake else {
-				return
-			}
+		if segue.identifier == Storyboard.ShowEarthQuake {
+			guard let detailVC = segue.destination.contentViewController as? EarthquakeTableViewController else { return }
+			
 			detailVC.procedureQueue = procedureQueue
-			detailVC.earthquake = earthquake
+
+			if let indexPath = tableView.indexPathForSelectedRow {
+				guard let earthquake = fetchedResultsController?.object(at: indexPath) as? Earthquake else { return }
+				detailVC.earthquake = earthquake
+			}
 		}
 	}
 	    
@@ -126,14 +123,4 @@ class EarthquakesTableViewController: UITableViewController, UISplitViewControll
             print("Error in the fetched results controller: \(error).")
         }
     }
-	
-	func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-		if primaryViewController.contentViewController == self {
-			if let ivc = secondaryViewController.contentViewController as? EarthquakeTableViewController, ivc.earthquake == nil {
-				return true
-			}
-		}
-		return false
-	}
-
 }

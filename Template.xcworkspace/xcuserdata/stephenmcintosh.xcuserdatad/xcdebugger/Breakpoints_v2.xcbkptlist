@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/AppDelegate.swift"
-            timestampString = "506397342.018741"
+            timestampString = "508302103.489267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "applicationDidFinishLaunching(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
+            timestampString = "508299118.982733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141">
+            startingLineNumber = "133"
+            endingLineNumber = "133">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
+            timestampString = "508299118.982733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,43 +144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-            timestampString = "507639738.80026"
+            timestampString = "508300363.070044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-            timestampString = "507639744.792327"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "shareEarthquake(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-            timestampString = "507639747.175431"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "shareEarthquake(sender:)"
             landmarkType = "7">
             <Locations>
@@ -192,11 +160,11 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "508228023.27519"
+                  timestampString = "508302621.476061"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
                   offsetFromSymbolStart = "1070">
                </Location>
                <Location
@@ -207,14 +175,30 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "508228023.277661"
+                  timestampString = "508302621.479505"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
                   offsetFromSymbolStart = "30">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
+            timestampString = "508300363.070044"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "shareEarthquake(sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -231,86 +215,6 @@
             endingLineNumber = "5"
             landmarkName = "UIViewController"
             landmarkType = "4">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "updateUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "EarthquakesTableViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "getEarthquakes(userInitiated:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Template.EarthquakesTableViewController.(getEarthquakes in _0A667D4B990FD8C1E361CFE490274695) (userInitiated : Swift.Bool) -&gt; ()"
-                  moduleName = "Template"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-                  timestampString = "508228023.304114"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "1685">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Template.EarthquakesTableViewController.((getEarthquakes in _0A667D4B990FD8C1E361CFE490274695) (userInitiated : Swift.Bool) -&gt; ()).(closure #2)"
-                  moduleName = "Template"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-                  timestampString = "508228023.307068"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -367,13 +271,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
+            filePath = "Source_iOS/Extensions/UIViewController.swift"
+            timestampString = "508296104.76549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -383,13 +287,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
+            filePath = "Source_iOS/Extensions/UIViewController.swift"
+            timestampString = "508296106.163698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(coder:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -399,13 +303,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508228022.762337"
+            filePath = "Source_iOS/User Interface/Controllers/AppController.swift"
+            timestampString = "508302375.639077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "splitViewController(_:collapseSecondary:onto:)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "splitViewController(splitViewController:collapseSecondaryViewController:ontoPrimaryViewController:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source_iOS/Extensions/UIViewController.swift"
+            timestampString = "508302384.082692"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "deinit"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

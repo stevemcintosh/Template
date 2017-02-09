@@ -12,20 +12,13 @@ extension UIViewController {
 }
 
 class ViewController: UIViewController {
-	typealias CheckBlockType = (UIViewController) -> Void
-	var check: CheckBlockType? = nil
-	
 	deinit {
-		#if DEBUG
-			MemoryResourceTracking.decrementTotal()
-		#endif
+		MemoryResourceTracking.decrementTotal()
 	}
 	
 	init() {
-		#if DEBUG
-			MemoryResourceTracking.incrementTotal()
-		#endif
 		super.init(nibName: nil, bundle: nil)
+		MemoryResourceTracking.incrementTotal()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

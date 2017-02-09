@@ -18,14 +18,12 @@ class AppController: UISplitViewController {
 	let procedureQueue = ProcedureQueue()
 
 	deinit {
-		#if DEBUG
-			MemoryResourceTracking.decrementTotal()
-		#endif
+		MemoryResourceTracking.decrementTotal()
 	}
 	
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 		super.init(nibName: nil, bundle: nil)
-		debug()
+		MemoryResourceTracking.incrementTotal()
 		configure()
 	}
 	
@@ -39,30 +37,6 @@ class AppController: UISplitViewController {
 		delegate = self
 	}
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		updateMaximumPrimaryColumnWidthBasedOnSize(to: view.bounds.size)
-	}
-	
-	fileprivate func debug() {
-		#if DEBUG
-			MemoryResourceTracking.incrementTotal()
-		#endif
-	}
-	
-	func updateMaximumPrimaryColumnWidthBasedOnSize(to size: CGSize) {
-		if size.width < UIScreen.main.bounds.width || size.width < size.height {
-			maximumPrimaryColumnWidth = 480.0
-		} else {
-			maximumPrimaryColumnWidth = UISplitViewControllerAutomaticDimension
-		}
-	}
-	
-	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-		super.viewWillTransition(to: size, with: coordinator)
-		updateMaximumPrimaryColumnWidthBasedOnSize(to: size)
-	}
-		
 	func configure() {
 		let storyboard = UIStoryboard(name: "SignedIn", bundle: nil)
 		guard let splitViewController = storyboard.instantiateInitialViewController() as? AppController else {
@@ -74,9 +48,6 @@ class AppController: UISplitViewController {
 		appDelegate.window?.rootViewController = splitViewController
 		appDelegate.window?.makeKeyAndVisible()
 		
-		splitViewController.minimumPrimaryColumnWidth = 80
-		splitViewController.maximumPrimaryColumnWidth = 180
-			
 		self.configureBaseApplication()
 	}
 	
@@ -99,20 +70,6 @@ class AppController: UISplitViewController {
 		return alert
 	}
 
-	func startMemoryTest() {
-		#if DEBUG
-			MemoryResourceTracking.incrementTotal()
-			MemoryResourceTracking.incrementTotal()
-		#endif
-	}
-	
-	func endMemoryTest() -> Int {
-		#if DEBUG
-			MemoryResourceTracking.decrementTotal()
-			MemoryResourceTracking.decrementTotal()
-			return MemoryResourceTracking.total
-		#endif
-	}
 	
 	fileprivate func configureApplicationMonitoringTools() -> Swift.Void {
 //		fabric.debug = true
@@ -138,11 +95,11 @@ class AppController: UISplitViewController {
 //			}
 //		}
 //		ProcedureKit.LogManager.severity = .info
-	}	
+	}
 }
 
-extension AppController : UISplitViewControllerDelegate {
-	func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+extension AppController: UISplitViewControllerDelegate {
+	func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
 		guard let navigation = secondaryViewController as? UINavigationController else { return false }
 		guard let detail = navigation.viewControllers.first as? EarthquakeTableViewController else { return false }
 		

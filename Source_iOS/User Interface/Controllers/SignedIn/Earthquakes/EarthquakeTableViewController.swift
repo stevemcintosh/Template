@@ -25,7 +25,7 @@ class EarthquakeTableViewController: UITableViewController {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-//		procedureQueue.add(condition: MutuallyExclusive<UserLocationProcedure>())
+//		procedureQueue?.add(condition: MutuallyExclusive<UserLocationProcedure>) wierd error if this is uncommented out
 	}
 	
     override func viewDidLoad() {
@@ -60,7 +60,8 @@ class EarthquakeTableViewController: UITableViewController {
                 self.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
             }
 
-            self.locationRequest = nil
+            self.locationRequest?.waitUntilFinished()
+			self.locationRequest = nil
 		}
 
 		procedureQueue?.addOperation(locationOperation)
@@ -72,7 +73,7 @@ class EarthquakeTableViewController: UITableViewController {
         // If the LocationOperation is still going on, then cancel it.
         locationRequest?.cancel()
     }
-    
+	
     @IBAction func shareEarthquake(sender: UIBarButtonItem) {
         guard let earthquake = earthquake else { return }
         guard let url = NSURL(string: earthquake.webLink) else { return }
@@ -110,26 +111,26 @@ class EarthquakeTableViewController: UITableViewController {
         procedureQueue?.addOperation(shareOperation)
     }
     
-    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 {
-            // The user has tapped the "More Information" button.
-            if let link = earthquake?.webLink, let url = NSURL(string: link) {
-                // If we have a link, present the "More Information" dialog.
-//                let moreInformation = MoreInformationOperation(URL: url)
-
-//                queue?.addOperation(moreInformation)
-            }
-            else {
-                // No link; present an alert.
-//                let alert = AlertOperation()
-//                alert.title = "No Information"
-//                alert.message = "No other information is available for this earthquake"
-//                queue?.addOperation(alert)
-            }
-        }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if indexPath.section == 1 && indexPath.row == 0 {
+			// The user has tapped the "More Information" button.
+			if let link = earthquake?.webLink, let _ = URL(string: link) {
+				// If we have a link, present the "More Information" dialog.
+//				let moreInformation = MoreInformationOperation(URL: url)
+				
+//				procedureQueue?.addOperation(moreInformation)
+			}
+			else {
+				// No link; present an alert.
+//				let alert = AlertOperation()
+//				alert.title = "No Information"
+//				alert.message = "No other information is available for this earthquake"
+//				procedureQueue?.addOperation(alert)
+			}
+		}
+		
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
 }
 
 extension EarthquakeTableViewController: MKMapViewDelegate {
