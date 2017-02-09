@@ -10,19 +10,21 @@ import ProcedureKitNetwork
 import SwiftyBeaver
 
 class AppController: UISplitViewController {
-    /// Shared instance
-	static let shared = AppController(nibName: nil, bundle: nil)
 
-//	lazy var fabric: Fabric = Fabric.with([Crashlytics.self])
-	
+	//	lazy var fabric: Fabric = Fabric.with([Crashlytics.self])
 	let procedureQueue = ProcedureQueue()
 
 	deinit {
 		MemoryResourceTracking.decrementTotal()
 	}
 	
+	required convenience init() {
+		self.init(nibName: nil, bundle: nil)
+	}
+	
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 		super.init(nibName: nil, bundle: nil)
+	
 		MemoryResourceTracking.incrementTotal()
 		configure()
 	}
@@ -38,16 +40,6 @@ class AppController: UISplitViewController {
 	}
 	
 	func configure() {
-		let storyboard = UIStoryboard(name: "SignedIn", bundle: nil)
-		guard let splitViewController = storyboard.instantiateInitialViewController() as? AppController else {
-			fatalError("Unable to load the split view controller.")
-		}
-		
-		guard let appDelegate = (UIApplication.shared.delegate) as? AppDelegate else { return }
-		appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
-		appDelegate.window?.rootViewController = splitViewController
-		appDelegate.window?.makeKeyAndVisible()
-		
 		self.configureBaseApplication()
 	}
 	

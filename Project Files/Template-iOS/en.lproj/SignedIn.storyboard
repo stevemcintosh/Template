@@ -13,6 +13,7 @@
         <scene sceneID="hFP-fN-U7g">
             <objects>
                 <navigationController id="tIw-7L-l6E" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HXj-P7-Sh6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k2i-4v-qic">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,7 +110,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="refresh" destination="hNe-p2-l8R" id="MwV-ho-IEz"/>
-                        <segue destination="tIw-7L-l6E" kind="showDetail" identifier="showEarthquake" action="showViewController:sender:" id="G0L-qk-74B"/>
+                        <segue destination="tIw-7L-l6E" kind="showDetail" identifier="showEarthquake" id="Abd-xv-zVh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kf1-3J-Dsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,6 +334,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G0L-qk-74B"/>
+        <segue reference="Abd-xv-zVh"/>
     </inferredMetricsTieBreakers>
 </document>

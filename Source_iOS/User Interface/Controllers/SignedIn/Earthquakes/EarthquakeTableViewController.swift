@@ -21,7 +21,11 @@ class EarthquakeTableViewController: UITableViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
     
-    // MARK: View Controller
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+	}
+	
+	// MARK: View Controller
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -31,7 +35,7 @@ class EarthquakeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Default all labels if there's no earthquake.
+		// Default all labels if there's no earthquake.
         guard let earthquake = earthquake else {
             nameLabel.text = ""
             magnitudeLabel.text = ""
@@ -41,7 +45,9 @@ class EarthquakeTableViewController: UITableViewController {
 
             return
         }
-        
+		
+		title = earthquake.name
+
         let span = MKCoordinateSpan(latitudeDelta: 15, longitudeDelta: 15)
         map.region = MKCoordinateRegion(center: earthquake.coordinate, span: span)
         
@@ -60,14 +66,14 @@ class EarthquakeTableViewController: UITableViewController {
                 self.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
             }
 
-            self.locationRequest?.waitUntilFinished()
+			self.locationRequest?.finish(withErrors: [])
 			self.locationRequest = nil
 		}
 
 		procedureQueue?.addOperation(locationOperation)
         locationRequest = locationOperation
     }
-    
+	
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // If the LocationOperation is still going on, then cancel it.
