@@ -19,15 +19,15 @@ class EarthquakesTableViewController: UITableViewController {
 
 		let procedure = LoadEarthquakeModel { context in
 			// Now that we have a context, build our `FetchedResultsController`.
-			DispatchQueue.main.async() {
+			DispatchQueue.main.async() { [weak weakSelf = self] in
 				let request = NSFetchRequest<NSFetchRequestResult>(entityName: Earthquake.entityName)
 				request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
 				request.fetchLimit = 100
 				
 				let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-				self.fetchedResultsController = controller
+				weakSelf?.fetchedResultsController = controller
 				
-				self.updateUI()
+				weakSelf?.updateUI()
 			}
 		}
 		procedureQueue.add(operation: procedure)
@@ -63,8 +63,8 @@ class EarthquakesTableViewController: UITableViewController {
     
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let operation = BlockProcedure {
-			DispatchQueue.main.async {
-				self.performSegue(withIdentifier: Storyboard.ShowEarthQuake, sender: nil)
+			DispatchQueue.main.async { [weak weakSelf = self] in
+				weakSelf?.performSegue(withIdentifier: Storyboard.ShowEarthQuake, sender: nil)
 			}
         }
         
@@ -95,9 +95,9 @@ class EarthquakesTableViewController: UITableViewController {
     private func getEarthquakes(userInitiated: Bool = true) {
         if let context = fetchedResultsController?.managedObjectContext {
             let getEarthquakesOperation = GetLatestEarthquakes(context: context) {
-				DispatchQueue.main.async {
-                    self.refresh?.endRefreshing()
-					self.updateUI()
+				DispatchQueue.main.async { [weak weakSelf = self] in
+                    weakSelf?.refresh?.endRefreshing()
+					weakSelf?.updateUI()
                 }
             }
 
@@ -105,8 +105,8 @@ class EarthquakesTableViewController: UITableViewController {
             procedureQueue.add(operation: getEarthquakesOperation)
         }
         else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.refresh?.endRefreshing()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak weakSelf = self] in
+                weakSelf?.refresh?.endRefreshing()
             }
         }
     }

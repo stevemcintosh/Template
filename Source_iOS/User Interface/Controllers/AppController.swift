@@ -64,18 +64,18 @@ class AppController: UISplitViewController, UISplitViewControllerDelegate {
 //		let console = ConsoleDestination()
 //		log.addDestination(console)
 //		
-//		ProcedureKit.LogManager.logger = { message, severity, file, function, line in
+//		ProcedureKit.LogManager.logger = { [weak weakSelf = self] message, severity, file, function, line in
 //			switch severity {
 //			case .verbose:
-//				self.log.verbose(message, file, function, line: line)
+//				weakSelf?.log.verbose(message, file, function, line: line)
 //			case .notice:
-//				self.log.debug(message, file, function, line: line)
+//				weakSelf?.log.debug(message, file, function, line: line)
 //			case .info:
-//				self.log.info(message, file, function, line: line)
+//				weakSelf?.log.info(message, file, function, line: line)
 //			case .warning:
-//				self.log.warning(message, file, function, line: line)
+//				weakSelf?.log.warning(message, file, function, line: line)
 //			case .fatal:
-//				self.log.error(message, file, function, line: line)
+//				weakSelf?.log.error(message, file, function, line: line)
 //			}
 //		}
 //		ProcedureKit.LogManager.severity = .info

@@ -9,7 +9,7 @@ import ProcedureKitLocation
 
 class EarthquakeTableViewController: UITableViewController {
     // MARK: Properties
-
+	
 	var procedureQueue: ProcedureQueue?
     var earthquake: Earthquake?
     var locationRequest: ProcedureKitLocation.UserLocationProcedure?
@@ -29,7 +29,6 @@ class EarthquakeTableViewController: UITableViewController {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-//		procedureQueue?.add(condition: MutuallyExclusive<UserLocationProcedure>) wierd error if this is uncommented out
 	}
 	
     override func viewDidLoad() {
@@ -60,20 +59,19 @@ class EarthquakeTableViewController: UITableViewController {
         depthLabel.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
         timeLabel.text = Earthquake.timestampFormatter.string(from: earthquake.timestamp)
         
-		let locationOperation = ProcedureKitLocation.UserLocationProcedure(timeout: 1.0, accuracy: kCLLocationAccuracyHundredMeters) { (location) in
+		let locationProcedure = ProcedureKitLocation.UserLocationProcedure(timeout: 1.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak weakSelf = self] (location) in
 			
-			if let earthquakeLocation = self.earthquake?.location {
+			if let earthquakeLocation = weakSelf?.earthquake?.location {
                 let distance = location.distance(from: earthquakeLocation)
-                self.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
+                weakSelf?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
             }
 
-			self.locationRequest?.shouldFinish(afterReceivingLocation: location)
-			self.locationRequest?.stopLocationUpdates()
-			self.locationRequest = nil
+			weakSelf?.locationRequest?.stopLocationUpdates()
+			weakSelf?.locationRequest?.finish()
 		}
 
-		procedureQueue?.addOperation(locationOperation)
-        locationRequest = locationOperation
+		procedureQueue?.addOperation(locationProcedure)
+        locationRequest = locationProcedure
     }
 	
     override func viewWillDisappear(_ animated: Bool) {
@@ -96,7 +94,7 @@ class EarthquakeTableViewController: UITableViewController {
             that modify the view controller hierarchy.
         */
         let shareOperation = BlockOperation { (continuation) -> Void in
-			DispatchQueue.main.async {
+			DispatchQueue.main.async { [weak weakSelf = self] in
                 let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
                 
                 shareSheet.popoverPresentationController?.barButtonItem = sender
@@ -106,7 +104,7 @@ class EarthquakeTableViewController: UITableViewController {
                     continuation
                 }
                 
-                self.present(shareSheet, animated: true, completion: nil)
+                weakSelf?.present(shareSheet, animated: true, completion: nil)
             }
         }
         

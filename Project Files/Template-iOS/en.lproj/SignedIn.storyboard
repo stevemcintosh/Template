@@ -14,7 +14,7 @@
             <objects>
                 <navigationController restorationIdentifier="NavControllerDetail" id="tIw-7L-l6E" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="HXj-P7-Sh6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k2i-4v-qic">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k2i-4v-qic">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -136,10 +136,10 @@
                             <tableViewSection headerTitle="Information" id="PLk-cT-OVY">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="infoCell" textLabel="k0y-qR-Vk3" detailTextLabel="D5a-vc-SHR" style="IBUITableViewCellStyleValue1" id="t0t-a3-rmM">
-                                        <rect key="frame" x="0.0" y="234" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="234.33333333333334" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0t-a3-rmM" id="iwf-Yt-Twd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k0y-qR-Vk3">
@@ -160,10 +160,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="infoCell" textLabel="OHB-y4-n3q" detailTextLabel="IaM-nN-khs" style="IBUITableViewCellStyleValue1" id="gN9-VR-z49">
-                                        <rect key="frame" x="0.0" y="278" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="278.33333333333337" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gN9-VR-z49" id="jKC-ZN-0My">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Magnitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OHB-y4-n3q">
@@ -184,10 +184,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="infoCell" textLabel="xp0-jP-Zwz" detailTextLabel="ASm-DI-vmA" style="IBUITableViewCellStyleValue1" id="DJQ-KR-qcp">
-                                        <rect key="frame" x="0.0" y="322" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="322.33333333333337" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DJQ-KR-qcp" id="1fB-lt-7Pd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Depth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xp0-jP-Zwz">
@@ -208,10 +208,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="infoCell" textLabel="ptA-h0-gRd" detailTextLabel="re5-he-n2G" style="IBUITableViewCellStyleValue1" id="6ig-Gz-AAj">
-                                        <rect key="frame" x="0.0" y="366" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="366.33333333333337" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ig-Gz-AAj" id="FEp-Wd-mLd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ptA-h0-gRd">
@@ -232,10 +232,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="infoCell" textLabel="Y60-yp-Bmn" detailTextLabel="sBy-vB-RVc" style="IBUITableViewCellStyleValue1" id="Koq-04-Mbs">
-                                        <rect key="frame" x="0.0" y="410" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="410.33333333333337" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Koq-04-Mbs" id="AjF-b7-eFc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y60-yp-Bmn">
@@ -260,10 +260,10 @@
                             <tableViewSection id="j06-s2-y80">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moreInfoCell" id="voT-4R-3CB" userLabel="moreInfoCell">
-                                        <rect key="frame" x="0.0" y="474" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="474.33333333333337" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="voT-4R-3CB" id="vut-xS-i6L">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQd-ZA-aA3">
@@ -288,7 +288,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Earthquake" id="NSp-F1-iow">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="2ie-ob-E1a"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="2ie-ob-E1a">
+                            <connections>
+                                <action selector="shareEarthquakeWithSender:" destination="wLE-6y-yHD" id="UuQ-PV-tgG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="depthLabel" destination="xp0-jP-Zwz" id="0DM-zl-aZp"/>
@@ -307,7 +311,7 @@
         <scene sceneID="BAn-jP-Gjr">
             <objects>
                 <navigationController restorationIdentifier="NavControllerMaster" id="0hO-qa-mhl" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dji-YN-DLe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dji-YN-DLe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
