@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0701EA431E299FA70055FC19 /* TestingProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA371E299FA70055FC19 /* TestingProcedureKit.framework */; };
-		0701EA631E2B1AF70055FC19 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DA49C31E20BDB200FA9A6E /* SwiftyBeaver.framework */; };
 		070397601E20F4FB00856727 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0703975F1E20F4FB00856727 /* UIColor.swift */; };
 		07131EA71E34748700F0CFE7 /* DownloadEarthquakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729FFE01E319855003CB630 /* DownloadEarthquakes.swift */; };
 		0729FFDC1E2EF9FB003CB630 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37AF1E2DEC3900262192 /* AppController.swift */; };
@@ -19,7 +18,6 @@
 		072F37B11E2DED0E00262192 /* Earthquakes.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 072F37A81E2DDEC000262192 /* Earthquakes.xcdatamodeld */; };
 		072F3FB11E31BB2C00C419B0 /* GetLatestEarthquakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C985E41E2C7B1E00AD0635 /* GetLatestEarthquakes.swift */; };
 		07359CD41E430F450078E854 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07359CD31E430F450078E854 /* UIViewController.swift */; };
-		07569BBC1E0AD5C100D36893 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07569BBA1E0AD5C100D36893 /* GoogleAnalytics.framework */; };
 		07569BDF1E0FDE4A00D36893 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 38B3265B1D6E440E00D55C29 /* Settings.bundle */; };
 		07569BE01E0FDE6300D36893 /* Graphik-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0EB02D91D48DAE600A73147 /* Graphik-Bold.otf */; };
 		07569BE11E0FDE6300D36893 /* Graphik-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0EB02DA1D48DAE600A73147 /* Graphik-Light.otf */; };
@@ -32,7 +30,6 @@
 		075AAD921E2DF5CF00094457 /* EarthquakeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37A11E2DDA1D00262192 /* EarthquakeTableViewController.swift */; };
 		075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C985E21E2C77CB00AD0635 /* LoadEarthquakeModel.swift */; };
 		0764F3B81E2793E800181FAE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07569BCA1E0ADCCA00D36893 /* SystemConfiguration.framework */; };
-		07945A121E44680500ED28C6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FA10E51E06E4E000D1177B /* Fabric.framework */; };
 		07B68BC41E20DB9F00379EFE /* Crashlytics.framework in Embedded Frameworks */ = {isa = PBXBuildFile; fileRef = 07FA10E61E06E4E000D1177B /* Crashlytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07C985E71E2C85BF00AD0635 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA321E299FA70055FC19 /* ProcedureKit.framework */; };
 		07C985E81E2C85BF00AD0635 /* ProcedureKitCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA331E299FA70055FC19 /* ProcedureKitCloud.framework */; };
@@ -47,7 +44,6 @@
 		07DA49B61E1FBC5C00FA9A6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0325AC41D5C803F00F3BAF4 /* AppDelegate.swift */; };
 		07DA49BF1E1FBEAB00FA9A6E /* Fabric.framework in Embedded Frameworks */ = {isa = PBXBuildFile; fileRef = 07FA10E51E06E4E000D1177B /* Fabric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07DA49C01E1FBEBD00FA9A6E /* MemoryResourceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA49791E1F9AAF00FA9A6E /* MemoryResourceTracking.swift */; };
-		07FA10EB1E06EBF700D1177B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FA10E61E06E4E000D1177B /* Crashlytics.framework */; };
 		07FA10F21E06F3ED00D1177B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38503EA21D4781450089EC93 /* Assets.xcassets */; };
 		07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0325AC41D5C803F00F3BAF4 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -163,15 +159,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07945A121E44680500ED28C6 /* Fabric.framework in Frameworks */,
-				07FA10EB1E06EBF700D1177B /* Crashlytics.framework in Frameworks */,
-				07569BBC1E0AD5C100D36893 /* GoogleAnalytics.framework in Frameworks */,
 				07C985E71E2C85BF00AD0635 /* ProcedureKit.framework in Frameworks */,
 				07C985E81E2C85BF00AD0635 /* ProcedureKitCloud.framework in Frameworks */,
 				07C985E91E2C85BF00AD0635 /* ProcedureKitLocation.framework in Frameworks */,
 				07C985EA1E2C85BF00AD0635 /* ProcedureKitMobile.framework in Frameworks */,
 				07C985EB1E2C85BF00AD0635 /* ProcedureKitNetwork.framework in Frameworks */,
-				0701EA631E2B1AF70055FC19 /* SwiftyBeaver.framework in Frameworks */,
 				0764F3B81E2793E800181FAE /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,7 +671,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Frameworks/Fabric.framework/run fa101df80a3cb9460aa4a96ce38e3f9057c962ec f44c7eca066c1db16391164875dcdb6c2eaaeacaebc526e910183575aabd2479";
+			shellScript = "#./Frameworks/Fabric.framework/run fa101df80a3cb9460aa4a96ce38e3f9057c962ec f44c7eca066c1db16391164875dcdb6c2eaaeacaebc526e910183575aabd2479";
 		};
 		07569BB91E0AD3F500D36893 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -687,13 +679,11 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/../External/Carthage/Build/iOS/GoogleAnalytics.framework",
 				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKit.framework",
 				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitCloud.framework",
 				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitLocation.framework",
 				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitMobile.framework",
 				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitNetwork.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/SwiftyBeaver.framework",
 			);
 			name = Carthage;
 			outputPaths = (

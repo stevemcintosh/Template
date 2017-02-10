@@ -16,7 +16,7 @@ class EarthquakesTableViewController: UITableViewController {
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		
+
 		let procedure = LoadEarthquakeModel { context in
 			// Now that we have a context, build our `FetchedResultsController`.
 			DispatchQueue.main.async() {
@@ -124,4 +124,5 @@ class EarthquakesTableViewController: UITableViewController {
             print("Error in the fetched results controller: \(error).")
         }
     }
+	
 }

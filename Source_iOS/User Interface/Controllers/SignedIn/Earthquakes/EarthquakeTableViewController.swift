@@ -60,13 +60,15 @@ class EarthquakeTableViewController: UITableViewController {
         depthLabel.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
         timeLabel.text = Earthquake.timestampFormatter.string(from: earthquake.timestamp)
         
-		let locationOperation = ProcedureKitLocation.UserLocationProcedure(timeout: 1.0, accuracy: kCLLocationAccuracyNearestTenMeters) { (location) in
-            if let earthquakeLocation = self.earthquake?.location {
+		let locationOperation = ProcedureKitLocation.UserLocationProcedure(timeout: 1.0, accuracy: kCLLocationAccuracyHundredMeters) { (location) in
+			
+			if let earthquakeLocation = self.earthquake?.location {
                 let distance = location.distance(from: earthquakeLocation)
                 self.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
             }
 
-			self.locationRequest?.finish(withErrors: [])
+			self.locationRequest?.shouldFinish(afterReceivingLocation: location)
+			self.locationRequest?.stopLocationUpdates()
 			self.locationRequest = nil
 		}
 

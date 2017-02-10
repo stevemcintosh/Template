@@ -7,9 +7,9 @@ import ProcedureKit
 import ProcedureKitMobile
 import ProcedureKitNetwork
 
-import SwiftyBeaver
+//import SwiftyBeaver
 
-class AppController: UISplitViewController {
+class AppController: UISplitViewController, UISplitViewControllerDelegate {
 
 	//	lazy var fabric: Fabric = Fabric.with([Crashlytics.self])
 	let procedureQueue = ProcedureQueue()
@@ -18,26 +18,18 @@ class AppController: UISplitViewController {
 		MemoryResourceTracking.decrementTotal()
 	}
 	
-	required convenience init() {
-		self.init(nibName: nil, bundle: nil)
-	}
-	
-	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-		super.init(nibName: nil, bundle: nil)
-	
-		MemoryResourceTracking.incrementTotal()
-		configure()
-	}
-	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+		MemoryResourceTracking.incrementTotal()
 	}
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		preferredDisplayMode = .allVisible
 		delegate = self
+		configure()
 	}
+	
 	
 	func configure() {
 		self.configureBaseApplication()
@@ -88,13 +80,21 @@ class AppController: UISplitViewController {
 //		}
 //		ProcedureKit.LogManager.severity = .info
 	}
-}
-
-extension AppController: UISplitViewControllerDelegate {
-	func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+	
+	func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
 		guard let navigation = secondaryViewController as? UINavigationController else { return false }
 		guard let detail = navigation.viewControllers.first as? EarthquakeTableViewController else { return false }
 		
 		return detail.earthquake == nil
 	}
+	
+	func splitViewController(_ svc: UISplitViewController, willChangeTo displayMode: UISplitViewControllerDisplayMode) {
+		print()
+	}
+
+	func splitViewControllerPreferredInterfaceOrientationForPresentation(_ splitViewController: UISplitViewController) -> UIInterfaceOrientation {
+		return UIInterfaceOrientation.landscapeLeft
+	}
+
 }
+

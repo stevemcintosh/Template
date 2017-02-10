@@ -1,4 +1,4 @@
 #github "Anviking/Decodable"
 github "ProcedureKit/ProcedureKit" "development"
-github "akashivskyy/GoogleAnalytics-Framework"
-github "SwiftyBeaver/SwiftyBeaver"
+#github "akashivskyy/GoogleAnalytics-Framework"
+#github "SwiftyBeaver/SwiftyBeaver"

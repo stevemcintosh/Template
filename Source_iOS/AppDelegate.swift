@@ -33,10 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
 	// MARK: - UIApplicationDelegate -
-	func applicationDidFinishLaunching(_ application: UIApplication) {
-		_ = self.application(application, didFinishLaunchingWithOptions: nil)
-	}
-
+		
 	func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 		// launch process has begun, but restore state has not started.
 		// storyboard has been loaded, but app is in in-active state
