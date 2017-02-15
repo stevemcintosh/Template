@@ -15,6 +15,9 @@ class GetLatestEarthquakes: GroupProcedure {
 		
 		parseProcedure.add(dependency: downloadProcedure)
 		
+		downloadProcedure.add(observer: NetworkObserver(controller: NetworkActivityController.shared))
+		parseProcedure.add(observer: NetworkObserver(controller: NetworkActivityController.shared))
+
 		super.init(operations: [downloadProcedure, parseProcedure])
 		
 		add(condition: MutuallyExclusive<GetLatestEarthquakes>())

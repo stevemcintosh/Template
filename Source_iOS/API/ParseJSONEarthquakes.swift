@@ -46,7 +46,7 @@ private struct ParsedEarthquake {
 	}
 }
 
-class ParseJSONEarthquakes: GroupProcedure {
+class ParseJSONEarthquakes: Procedure {
 	typealias CompletionBlock = (Void) -> Void
 	
 	let cacheFile: URL
@@ -64,7 +64,7 @@ class ParseJSONEarthquakes: GroupProcedure {
 		self.context = importContext
 		self.completion = completion
 
-		super.init(operations: [])
+		super.init(disableAutomaticFinishing: false)
 		
 //		name = "Parse JSON Earthquakes data"
 	}

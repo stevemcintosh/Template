@@ -93,17 +93,10 @@ class EarthquakeTableViewController: UITableViewController {
             an `Operation`, we can make it mutually exclusive with other operations
             that modify the view controller hierarchy.
         */
-        let shareOperation = BlockOperation { (continuation) -> Void in
+        let shareOperation = BlockProcedure {
 			DispatchQueue.main.async { [weak weakSelf = self] in
                 let shareSheet = UIActivityViewController(activityItems: items, applicationActivities: nil)
-                
                 shareSheet.popoverPresentationController?.barButtonItem = sender
-
-                shareSheet.completionWithItemsHandler = { _ in
-                    // End the operation when the share sheet completes.
-                    continuation
-                }
-                
                 weakSelf?.present(shareSheet, animated: true, completion: nil)
             }
         }
@@ -112,7 +105,7 @@ class EarthquakeTableViewController: UITableViewController {
             Indicate that this operation modifies the View Controller hierarchy
             and is thus mutually exclusive.
         */
-//		shareOperation.add(condition: MutuallyExclusive<UIViewController>())
+		shareOperation.add(condition: MutuallyExclusive<UIViewController>())
 
         procedureQueue?.addOperation(shareOperation)
     }

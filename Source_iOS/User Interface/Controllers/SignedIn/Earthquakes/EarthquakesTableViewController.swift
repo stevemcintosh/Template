@@ -18,7 +18,7 @@ class EarthquakesTableViewController: UITableViewController {
 		super.awakeFromNib()
 
 		let procedure = LoadEarthquakeModel { context in
-			// Now that we have a context, build our `FetchedResultsController`.
+			
 			DispatchQueue.main.async() { [weak weakSelf = self] in
 				let request = NSFetchRequest<NSFetchRequestResult>(entityName: Earthquake.entityName)
 				request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
@@ -30,6 +30,7 @@ class EarthquakesTableViewController: UITableViewController {
 				weakSelf?.updateUI()
 			}
 		}
+		
 		procedureQueue.add(operation: procedure)
 	}
 	
@@ -93,6 +94,7 @@ class EarthquakesTableViewController: UITableViewController {
 	}
 	    
     private func getEarthquakes(userInitiated: Bool = true) {
+		
         if let context = fetchedResultsController?.managedObjectContext {
             let getEarthquakesOperation = GetLatestEarthquakes(context: context) {
 				DispatchQueue.main.async { [weak weakSelf = self] in
@@ -102,6 +104,7 @@ class EarthquakesTableViewController: UITableViewController {
             }
 
             getEarthquakesOperation.userIntent = .initiated
+			
             procedureQueue.add(operation: getEarthquakesOperation)
         }
         else {
