@@ -1,5 +1,4 @@
 import UIKit
-import ProcedureKit
 
 extension UIViewController {
 	var contentViewController: UIViewController {
@@ -9,19 +8,4 @@ extension UIViewController {
 			return self
 		}
 	}
-}
-
-class ViewController: UIViewController {
-	deinit {
-		MemoryResourceTracking.decrementTotal()
-	}
-	
-	init() {
-		super.init(nibName: nil, bundle: nil)
-		MemoryResourceTracking.incrementTotal()
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-	}	
 }

@@ -66,7 +66,6 @@ class ParseJSONEarthquakes: Procedure {
 
 		super.init(disableAutomaticFinishing: false)
 		
-//		name = "Parse JSON Earthquakes data"
 	}
 	
 	override func execute() {

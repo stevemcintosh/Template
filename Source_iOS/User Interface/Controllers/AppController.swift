@@ -9,19 +9,10 @@ import ProcedureKitNetwork
 
 //import SwiftyBeaver
 
-class AppController: UISplitViewController, UISplitViewControllerDelegate {
+class AppController : BaseAppController {
 
 	//	lazy var fabric: Fabric = Fabric.with([Crashlytics.self])
 	let procedureQueue = ProcedureQueue()
-
-	deinit {
-		MemoryResourceTracking.decrementTotal()
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		MemoryResourceTracking.incrementTotal()
-	}
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -43,17 +34,6 @@ class AppController: UISplitViewController, UISplitViewControllerDelegate {
 		configureLogging()
 		configureApplicationMonitoringTools()
 	}
-	
-	fileprivate func createInfoAlert() -> AlertProcedure {
-		let alert = AlertProcedure(presentAlertFrom: self)
-		alert.add(actionWithTitle: "Sweet") { alert, action in
-			alert.log.info(message: "Running the handler!")
-		}
-		alert.title = "Hello World"
-		alert.message = "This is a message in an alert"
-		return alert
-	}
-
 	
 	fileprivate func configureApplicationMonitoringTools() -> Swift.Void {
 //		fabric.debug = true
@@ -93,7 +73,7 @@ class AppController: UISplitViewController, UISplitViewControllerDelegate {
 	}
 
 	func splitViewControllerPreferredInterfaceOrientationForPresentation(_ splitViewController: UISplitViewController) -> UIInterfaceOrientation {
-		return UIInterfaceOrientation.landscapeLeft
+		return UIInterfaceOrientation.portrait
 	}
 
 }

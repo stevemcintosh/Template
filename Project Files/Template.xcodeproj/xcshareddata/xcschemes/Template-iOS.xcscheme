@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07FA10B01E06C64100D1177B"
                BuildableName = "Template.app"
-               BlueprintName = "Development"
+               BlueprintName = "Template"
                ReferencedContainer = "container:Template.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FA10B01E06C64100D1177B"
             BuildableName = "Template.app"
-            BlueprintName = "Development"
+            BlueprintName = "Template"
             ReferencedContainer = "container:Template.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -89,7 +89,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FA10B01E06C64100D1177B"
             BuildableName = "Template.app"
-            BlueprintName = "Development"
+            BlueprintName = "Template"
             ReferencedContainer = "container:Template.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -107,7 +107,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FA10B01E06C64100D1177B"
             BuildableName = "Template.app"
-            BlueprintName = "Development"
+            BlueprintName = "Template"
             ReferencedContainer = "container:Template.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -116,7 +116,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Standard"
+      buildConfiguration = "Ad-hoc"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

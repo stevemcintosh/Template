@@ -8,7 +8,7 @@ A UITableViewCell to display the high-level information of an earthquake
 
 import UIKit
 
-class EarthquakeTableViewCell: UITableViewCell {
+class EarthquakeTableViewCell: TableViewCell {
     // MARK: Properties
 
     @IBOutlet var locationLabel: UILabel!

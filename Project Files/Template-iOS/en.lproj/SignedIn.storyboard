@@ -295,12 +295,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="depthLabel" destination="xp0-jP-Zwz" id="0DM-zl-aZp"/>
-                        <outlet property="distanceLabel" destination="Y60-yp-Bmn" id="gqK-lZ-65q"/>
-                        <outlet property="magnitudeLabel" destination="OHB-y4-n3q" id="gIN-M5-NL8"/>
+                        <outlet property="depthLabel" destination="ASm-DI-vmA" id="BQK-rQ-2MD"/>
+                        <outlet property="distanceLabel" destination="sBy-vB-RVc" id="s8S-wb-SH2"/>
+                        <outlet property="magnitudeLabel" destination="IaM-nN-khs" id="Jpr-hk-7Uu"/>
                         <outlet property="map" destination="uFn-du-Tw6" id="Zg6-7k-Spc"/>
-                        <outlet property="nameLabel" destination="k0y-qR-Vk3" id="E5C-6O-uHB"/>
-                        <outlet property="timeLabel" destination="ptA-h0-gRd" id="79Q-MG-5jP"/>
+                        <outlet property="nameLabel" destination="D5a-vc-SHR" id="tlU-bP-36C"/>
+                        <outlet property="timeLabel" destination="re5-he-n2G" id="tsl-4i-CpT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TY-47-g09" userLabel="First Responder" sceneMemberID="firstResponder"/>

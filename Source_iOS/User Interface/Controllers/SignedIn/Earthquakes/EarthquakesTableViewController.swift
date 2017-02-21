@@ -4,7 +4,7 @@ import ProcedureKit
 import ProcedureKitMobile
 import ProcedureKitNetwork
 
-class EarthquakesTableViewController: UITableViewController {
+class EarthquakesTableViewController: TableViewController {
 	fileprivate struct Storyboard {
 		static let ShowEarthQuake = "showEarthquake"
 	}
@@ -69,7 +69,7 @@ class EarthquakesTableViewController: UITableViewController {
 			}
         }
         
-		operation.add(condition: MutuallyExclusive<UIViewController>())
+//		operation.add(condition: MutuallyExclusive<UIViewController>()) not sure if this is necessary
 		
 		operation.add(observer: BlockObserver(didFinish: { _, errors in
 			DispatchQueue.main.async {

@@ -1,13 +1,13 @@
-import UIKit
-import MapKit
 import Foundation
-import Dispatch
 import CoreLocation
+import MapKit
+import SafariServices
 
 import ProcedureKit
 import ProcedureKitLocation
+import ProcedureKitMobile
 
-class EarthquakeTableViewController: UITableViewController {
+class EarthquakeTableViewController: TableViewController {
     // MARK: Properties
 	
 	var procedureQueue: ProcedureQueue?
@@ -105,7 +105,7 @@ class EarthquakeTableViewController: UITableViewController {
             Indicate that this operation modifies the View Controller hierarchy
             and is thus mutually exclusive.
         */
-		shareOperation.add(condition: MutuallyExclusive<UIViewController>())
+		shareOperation.add(condition: MutuallyExclusive<UIActivityViewController>())
 
         procedureQueue?.addOperation(shareOperation)
     }
@@ -113,18 +113,21 @@ class EarthquakeTableViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == 1 && indexPath.row == 0 {
 			// The user has tapped the "More Information" button.
-			if let link = earthquake?.webLink, let _ = URL(string: link) {
+			if let link = earthquake?.webLink, let url = URL(string: link) {
 				// If we have a link, present the "More Information" dialog.
-//				let moreInformation = MoreInformationOperation(URL: url)
-				
-//				procedureQueue?.addOperation(moreInformation)
+				let moreInformation = MoreInformation(url: url)
+				moreInformation.add(condition: MutuallyExclusive<SFSafariViewController>())
+				procedureQueue?.addOperation(moreInformation)
 			}
 			else {
 				// No link; present an alert.
-//				let alert = AlertOperation()
-//				alert.title = "No Information"
-//				alert.message = "No other information is available for this earthquake"
-//				procedureQueue?.addOperation(alert)
+				let alert = AlertProcedure(presentAlertFrom: self)
+//				alert.add(actionWithTitle: "Sweet") { alert, action in
+//					alert.log.info(message: "Running the handler!")
+//				}
+				alert.title = "No Information"
+				alert.message = "No other information is available for this earthquake"
+				procedureQueue?.addOperation(alert)
 			}
 		}
 		
