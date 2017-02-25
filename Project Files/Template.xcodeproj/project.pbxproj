@@ -15,6 +15,8 @@
 		072F37B01E2DEC3900262192 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37AF1E2DEC3900262192 /* AppController.swift */; };
 		072F37B11E2DED0E00262192 /* Earthquakes.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 072F37A81E2DDEC000262192 /* Earthquakes.xcdatamodeld */; };
 		072F3FB11E31BB2C00C419B0 /* GetLatestEarthquakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C985E41E2C7B1E00AD0635 /* GetLatestEarthquakes.swift */; };
+		072F756B1E5D143C000A5E3C /* UINavigationController+UIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F75691E5D143C000A5E3C /* UINavigationController+UIProgressView.swift */; };
+		072F756C1E5D143C000A5E3C /* ProgressBarIndeterminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F756A1E5D143C000A5E3C /* ProgressBarIndeterminate.swift */; };
 		07359CD41E430F450078E854 /* BaseClassControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07359CD31E430F450078E854 /* BaseClassControllers.swift */; };
 		07497E441E5697B0006A8F13 /* MoreInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07497E431E5697B0006A8F13 /* MoreInformation.swift */; };
 		07569BDF1E0FDE4A00D36893 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 38B3265B1D6E440E00D55C29 /* Settings.bundle */; };
@@ -75,6 +77,8 @@
 		072F37A31E2DDA2B00262192 /* Earthquake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
 		072F37A91E2DDEC000262192 /* Earthquakes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Earthquakes.xcdatamodel; sourceTree = "<group>"; };
 		072F37AF1E2DEC3900262192 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		072F75691E5D143C000A5E3C /* UINavigationController+UIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+UIProgressView.swift"; sourceTree = "<group>"; };
+		072F756A1E5D143C000A5E3C /* ProgressBarIndeterminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarIndeterminate.swift; sourceTree = "<group>"; };
 		07359CD31E430F450078E854 /* BaseClassControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClassControllers.swift; sourceTree = "<group>"; };
 		07497E431E5697B0006A8F13 /* MoreInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInformation.swift; sourceTree = "<group>"; };
 		07569BBA1E0AD5C100D36893 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = Build/iOS/GoogleAnalytics.framework; sourceTree = "<group>"; };
@@ -473,6 +477,8 @@
 				0703975F1E20F4FB00856727 /* UIColor.swift */,
 				072F379B1E2DD6CE00262192 /* KeychainError.swift */,
 				07359CD31E430F450078E854 /* BaseClassControllers.swift */,
+				072F756A1E5D143C000A5E3C /* ProgressBarIndeterminate.swift */,
+				072F75691E5D143C000A5E3C /* UINavigationController+UIProgressView.swift */,
 				07A7D7501E56BE6100D33992 /* UIViewController.swift */,
 			);
 			path = Extensions;
@@ -674,6 +680,8 @@
 				072F379C1E2DD6CE00262192 /* KeychainError.swift in Sources */,
 				070397601E20F4FB00856727 /* UIColor.swift in Sources */,
 				075AAD911E2DF5CC00094457 /* EarthquakeTableViewCell.swift in Sources */,
+				072F756C1E5D143C000A5E3C /* ProgressBarIndeterminate.swift in Sources */,
+				072F756B1E5D143C000A5E3C /* UINavigationController+UIProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

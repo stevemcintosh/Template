@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508820361.427784"
+            timestampString = "509425000.623419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138">
+            startingLineNumber = "141"
+            endingLineNumber = "141">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -114,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/User Interface/Controllers/SignedIn/Earthquakes/EarthquakesTableViewController.swift"
-            timestampString = "508820361.427784"
+            timestampString = "509425000.623419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139">
+            startingLineNumber = "142"
+            endingLineNumber = "142">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,7 +144,7 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "509188825.630349"
+                  timestampString = "509421854.628992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -159,7 +159,7 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "509188825.634179"
+                  timestampString = "509421854.63363"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -192,7 +192,7 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "509188825.643781"
+                  timestampString = "509421854.643322"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -207,7 +207,7 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "509188825.647304"
+                  timestampString = "509421854.648053"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -254,11 +254,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/User Interface/Controllers/AppController.swift"
-            timestampString = "509008609.556566"
+            timestampString = "509603575.497405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "splitViewController(_:willChangeTo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,11 +270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source_iOS/User Interface/Controllers/AppController.swift"
-            timestampString = "509008609.556566"
+            timestampString = "509603575.497405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "splitViewControllerPreferredInterfaceOrientationForPresentation(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,7 +302,7 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "509188825.666445"
+                  timestampString = "509421854.669986"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -317,7 +317,7 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "509188825.669698"
+                  timestampString = "509421854.673748"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -332,7 +332,7 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/User%20Interface/Controllers/SignedIn/Earthquakes/EarthquakeTableViewController.swift"
-                  timestampString = "509188825.672333"
+                  timestampString = "509421854.678727"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -455,11 +455,11 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/API/MoreInformation.swift"
-                  timestampString = "509188825.698119"
+                  timestampString = "509421854.713707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
                   offsetFromSymbolStart = "220">
                </Location>
                <Location
@@ -470,11 +470,11 @@
                   moduleName = "Template"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenmcintosh/Developer/Projects/Template/Source_iOS/API/MoreInformation.swift"
-                  timestampString = "509188825.70014"
+                  timestampString = "509421854.717338"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>

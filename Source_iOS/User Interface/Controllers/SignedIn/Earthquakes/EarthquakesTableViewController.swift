@@ -17,6 +17,8 @@ class EarthquakesTableViewController: TableViewController {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 
+		DispatchQueue.main.async() { self.navigationController?.startAnimating() }
+		
 		let procedure = LoadEarthquakeModel { context in
 			
 			DispatchQueue.main.async() { [weak weakSelf = self] in
@@ -27,6 +29,7 @@ class EarthquakesTableViewController: TableViewController {
 				let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
 				weakSelf?.fetchedResultsController = controller
 				
+				self.navigationController?.stopAnimating()
 				weakSelf?.updateUI()
 			}
 		}
@@ -95,10 +98,13 @@ class EarthquakesTableViewController: TableViewController {
 	    
     private func getEarthquakes(userInitiated: Bool = true) {
 		
+		self.navigationController?.startAnimating()
+		
         if let context = fetchedResultsController?.managedObjectContext {
             let getEarthquakesOperation = GetLatestEarthquakes(context: context) {
 				DispatchQueue.main.async { [weak weakSelf = self] in
                     weakSelf?.refresh?.endRefreshing()
+					self.navigationController?.stopAnimating()
 					weakSelf?.updateUI()
                 }
             }
@@ -110,6 +116,7 @@ class EarthquakesTableViewController: TableViewController {
         else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak weakSelf = self] in
                 weakSelf?.refresh?.endRefreshing()
+				self.navigationController?.stopAnimating()
             }
         }
     }

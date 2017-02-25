@@ -1,18 +1,11 @@
 import UIKit
-
 //import Fabric
 //import Crashlytics
-
-import ProcedureKit
-import ProcedureKitMobile
-import ProcedureKitNetwork
-
 //import SwiftyBeaver
 
 class AppController : BaseAppController {
 
 	//	lazy var fabric: Fabric = Fabric.with([Crashlytics.self])
-	let procedureQueue = ProcedureQueue()
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
