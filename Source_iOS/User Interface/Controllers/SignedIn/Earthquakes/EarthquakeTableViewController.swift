@@ -117,17 +117,17 @@ class EarthquakeTableViewController: TableViewController {
 				// If we have a link, present the "More Information" dialog.
 				let moreInformation = MoreInformation(url: url)
 				moreInformation.add(condition: MutuallyExclusive<SFSafariViewController>())
-				procedureQueue?.addOperation(moreInformation)
-			}
-			else {
+				procedureQueue?.add(operation: moreInformation)
+			} else {
 				// No link; present an alert.
-				let alert = AlertProcedure(presentAlertFrom: self)
-//				alert.add(actionWithTitle: "Sweet") { alert, action in
-//					alert.log.info(message: "Running the handler!")
-//				}
+				let alert = AlertProcedure(presentAlertFrom: self, waitForDismissal: true)
+				alert.add(actionWithTitle: "Ok") { alert, action in
+					alert.log.info(message: "Running the handler!")
+				}
 				alert.title = "No Information"
-				alert.message = "No other information is available for this earthquake"
-				procedureQueue?.addOperation(alert)
+				alert.message = "Please select an earthquake and try again"
+				if self.procedureQueue == nil { self.procedureQueue = ProcedureQueue() }
+				procedureQueue?.add(operation: alert)
 			}
 		}
 		

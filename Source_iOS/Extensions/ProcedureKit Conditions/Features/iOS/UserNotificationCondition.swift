@@ -172,6 +172,9 @@ public class UserNotificationPermissionOperation: Procedure {
     }
 
     public override func execute() {
+		
+		guard !cancelled else { return }
+		
         NotificationCenter.default
             .addObserver(self, selector: NotificationObserver.settingsDidChange.selector, name: NSNotification.Name(rawValue: DidRegisterSettingsNotificationName), object: nil)
         Queue.main.queue.async(execute: request)

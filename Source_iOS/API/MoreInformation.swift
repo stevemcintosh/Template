@@ -17,6 +17,9 @@ class MoreInformation: Procedure {
     // MARK: Overrides
  
     override func execute() {
+		
+		guard !cancelled else { return }
+		
 		DispatchQueue.main.async {
             self.showSafariViewController()
         }

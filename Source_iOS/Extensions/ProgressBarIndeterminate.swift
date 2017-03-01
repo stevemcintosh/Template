@@ -51,7 +51,7 @@ class ProgressBarIndeterminate: UIView {
     var animationFromValue: CGFloat             = 0.0
     var animationToValue: CGFloat               = 0.0
     
-    var progressBarThickness: CGFloat           = 3.0 {
+    var progressBarThickness: CGFloat           = 2.0 {
         willSet {
             progressLayer.lineWidth             = progressBarThickness
             
@@ -69,7 +69,7 @@ class ProgressBarIndeterminate: UIView {
         }
     }
 	
-    var primaryColor                            = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 255.0/255.0, alpha: 1.0) {
+	var primaryColor                            = UIColor.blue {
         willSet {
             indeterminateLayer.backgroundColor  = self.primaryColor.cgColor
             self.setNeedsDisplay()

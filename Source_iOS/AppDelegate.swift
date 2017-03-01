@@ -1,5 +1,4 @@
 import UIKit
-import ProcedureKit
 import UserNotifications
 
 /*
@@ -29,6 +28,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	// MARK: - Properties -
+
 	/// The main window for the application.
 	var window: UIWindow?
 	
@@ -52,9 +52,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		This method represents your last chance to process any keys in the launchOptions dictionary. If you did not evaluate the keys in your application(_:willFinishLaunchingWithOptions:) method, you should look at them in this method and provide an appropriate response.
 		Objects that are not the app delegate can access the same launchOptions dictionary values by observing the notification named UIApplicationDidFinishLaunching and accessing the notification’s userInfo dictionary. That notification is sent shortly after this method returns.
 		*/
+		window = UIWindow(frame: UIScreen.main.bounds)
+		window?.makeKeyAndVisible()
+
+		self.guideUserJourney()
 		return true
 	}
-
+	
+	private func guideUserJourney() {
+		// guard let token = KeyChain.apiToken, let email = KeyChain.email else {
+		 self.showUserLoginOnboarding()
+		// return
+		// }
+//		self.showSignedIn()
+	}
+	
+	private func showUserLoginOnboarding() {
+		let storyboard = UIStoryboard(name: "LoginOnboarding", bundle: nil)
+		guard let _ = storyboard.instantiateInitialViewController() as? LoginOnboardingController else {
+			fatalError("Unable to load the Login controller.")
+		}
+	}
+	
+	private func showSignedIn() {
+		let storyboard = UIStoryboard(name: "SignedIn", bundle: nil)
+		guard let _ = storyboard.instantiateInitialViewController() as? AppController else {
+			fatalError("Unable to load the SignedIn controller.")
+		}
+	}
+	
 	func applicationWillEnterForeground(_ application: UIApplication) {
 	}
 

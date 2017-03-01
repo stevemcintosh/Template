@@ -18,6 +18,9 @@
 		072F756B1E5D143C000A5E3C /* UINavigationController+UIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F75691E5D143C000A5E3C /* UINavigationController+UIProgressView.swift */; };
 		072F756C1E5D143C000A5E3C /* ProgressBarIndeterminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F756A1E5D143C000A5E3C /* ProgressBarIndeterminate.swift */; };
 		07359CD41E430F450078E854 /* BaseClassControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07359CD31E430F450078E854 /* BaseClassControllers.swift */; };
+		0735B2491E63EE62000EA664 /* LoginOnboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0735B2471E63EE62000EA664 /* LoginOnboarding.storyboard */; };
+		0735B24B1E63F192000EA664 /* LogInOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735B24A1E63F192000EA664 /* LogInOnboardingController.swift */; };
+		0735B24D1E64F341000EA664 /* LoginOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735B24C1E64F341000EA664 /* LoginOnboardingPageViewController.swift */; };
 		07497E441E5697B0006A8F13 /* MoreInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07497E431E5697B0006A8F13 /* MoreInformation.swift */; };
 		07569BDF1E0FDE4A00D36893 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 38B3265B1D6E440E00D55C29 /* Settings.bundle */; };
 		07569BE01E0FDE6300D36893 /* Graphik-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0EB02D91D48DAE600A73147 /* Graphik-Bold.otf */; };
@@ -76,10 +79,13 @@
 		072F37A11E2DDA1D00262192 /* EarthquakeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarthquakeTableViewController.swift; path = Earthquakes/EarthquakeTableViewController.swift; sourceTree = "<group>"; };
 		072F37A31E2DDA2B00262192 /* Earthquake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
 		072F37A91E2DDEC000262192 /* Earthquakes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Earthquakes.xcdatamodel; sourceTree = "<group>"; };
-		072F37AF1E2DEC3900262192 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		072F37AF1E2DEC3900262192 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = AppController.swift; path = ../AppController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		072F75691E5D143C000A5E3C /* UINavigationController+UIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+UIProgressView.swift"; sourceTree = "<group>"; };
 		072F756A1E5D143C000A5E3C /* ProgressBarIndeterminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarIndeterminate.swift; sourceTree = "<group>"; };
 		07359CD31E430F450078E854 /* BaseClassControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClassControllers.swift; sourceTree = "<group>"; };
+		0735B2481E63EE62000EA664 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = LoginOnboarding.storyboard; sourceTree = "<group>"; };
+		0735B24A1E63F192000EA664 /* LogInOnboardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInOnboardingController.swift; path = ../LogInOnboardingController.swift; sourceTree = "<group>"; };
+		0735B24C1E64F341000EA664 /* LoginOnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOnboardingPageViewController.swift; sourceTree = "<group>"; };
 		07497E431E5697B0006A8F13 /* MoreInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInformation.swift; sourceTree = "<group>"; };
 		07569BBA1E0AD5C100D36893 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = Build/iOS/GoogleAnalytics.framework; sourceTree = "<group>"; };
 		07569BCA1E0ADCCA00D36893 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -103,7 +109,6 @@
 		07DA49A11E1FB0C500FA9A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07DA49AD1E1FB2BC00FA9A6E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		07DA49AF1E1FB2BC00FA9A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07DA49C11E20B93D00FA9A6E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../../External/Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		07DA49C31E20BDB200FA9A6E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		07FA10E51E06E4E000D1177B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		07FA10E61E06E4E000D1177B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -157,7 +162,6 @@
 		070397621E21019A00856727 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				072F37AF1E2DEC3900262192 /* AppController.swift */,
 				070397631E2101F500856727 /* LogOut */,
 				070397641E2101F500856727 /* Onboarding */,
 				070397651E2101F500856727 /* SignedIn */,
@@ -175,6 +179,8 @@
 		070397641E2101F500856727 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				0735B24A1E63F192000EA664 /* LogInOnboardingController.swift */,
+				0735B24C1E64F341000EA664 /* LoginOnboardingPageViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 		070397651E2101F500856727 /* SignedIn */ = {
 			isa = PBXGroup;
 			children = (
+				072F37AF1E2DEC3900262192 /* AppController.swift */,
 				072F379D1E2DD90900262192 /* EarthquakesTableViewController.swift */,
 				072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */,
 				072F37A11E2DDA1D00262192 /* EarthquakeTableViewController.swift */,
@@ -255,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				07DA496E1E1E1DF500FA9A6E /* LaunchScreen.storyboard */,
+				0735B2471E63EE62000EA664 /* LoginOnboarding.storyboard */,
 				07DA49701E1E1DF500FA9A6E /* SignedIn.storyboard */,
 			);
 			name = en.lproj;
@@ -446,7 +454,6 @@
 		E0423D641D8AF8BF0031D0D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07DA49C11E20B93D00FA9A6E /* SwiftyBeaver.framework */,
 				E94B878E1DA7A43500E66730 /* AVFoundation.framework */,
 				07FA10E61E06E4E000D1177B /* Crashlytics.framework */,
 				07FA10E51E06E4E000D1177B /* Fabric.framework */,
@@ -603,6 +610,7 @@
 				07DA49731E1E1DF500FA9A6E /* SignedIn.storyboard in Resources */,
 				07569BE01E0FDE6300D36893 /* Graphik-Bold.otf in Resources */,
 				07569BE11E0FDE6300D36893 /* Graphik-Light.otf in Resources */,
+				0735B2491E63EE62000EA664 /* LoginOnboarding.storyboard in Resources */,
 				07569BE21E0FDE6300D36893 /* Graphik-Medium.otf in Resources */,
 				07569BE31E0FDE6300D36893 /* Graphik-Regular.otf in Resources */,
 				07569BE41E0FDE6300D36893 /* Graphik-Thin.otf in Resources */,
@@ -665,6 +673,8 @@
 			files = (
 				075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */,
 				07DA497A1E1F9AAF00FA9A6E /* MemoryResourceTracking.swift in Sources */,
+				0735B24D1E64F341000EA664 /* LoginOnboardingPageViewController.swift in Sources */,
+				0735B24B1E63F192000EA664 /* LogInOnboardingController.swift in Sources */,
 				072F3FB11E31BB2C00C419B0 /* GetLatestEarthquakes.swift in Sources */,
 				07497E441E5697B0006A8F13 /* MoreInformation.swift in Sources */,
 				07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */,
@@ -696,6 +706,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0735B2471E63EE62000EA664 /* LoginOnboarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0735B2481E63EE62000EA664 /* en */,
+			);
+			name = LoginOnboarding.storyboard;
+			sourceTree = "<group>";
+		};
 		07DA496E1E1E1DF500FA9A6E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

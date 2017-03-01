@@ -77,7 +77,7 @@ class EarthquakesTableViewController: TableViewController {
 		operation.add(observer: BlockObserver(didFinish: { _, errors in
 			DispatchQueue.main.async {
 				tableView.deselectRow(at: indexPath, animated: true)
-				operation.finish(withErrors: [])
+				operation.finish(withErrors: errors)
 			}
 		}))
         procedureQueue.addOperation(operation)

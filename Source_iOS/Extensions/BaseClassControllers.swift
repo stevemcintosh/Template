@@ -11,6 +11,17 @@ class BaseAppController : UISplitViewController, UISplitViewControllerDelegate {
 	}
 }
 
+class ViewController: UIViewController {
+	deinit {
+		MemoryResourceTracking.decrementTotal()
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		MemoryResourceTracking.incrementTotal()
+	}
+}
+
 class TableViewController: UITableViewController {
 	deinit {
 		MemoryResourceTracking.decrementTotal()

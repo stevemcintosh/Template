@@ -91,6 +91,9 @@
 		}
 		
 		func execute() {
+			
+			guard !cancelled else { return }
+			
 			DispatchQueue.main.async {
 				let notificationCenter = NotificationCenter.default
 				

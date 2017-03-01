@@ -1,25 +1,44 @@
 import UIKit
+import ProcedureKit
 //import Fabric
 //import Crashlytics
 //import SwiftyBeaver
 
 class AppController : BaseAppController {
 
+	let procedureQueue = ProcedureQueue()
+
 	//	lazy var fabric: Fabric = Fabric.with([Crashlytics.self])
-	
+	static var appController: AppController? {
+		willSet {
+			self.appController = newValue
+		}
+	}
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		preferredDisplayMode = .allVisible
 		delegate = self
+		AppController.appController = self
 		configure()
 	}
 	
 	
 	func configure() {
-		self.configureBaseApplication()
+		UIApplication.shared.keyWindow?.rootViewController = AppController.appController
+		let operation = BlockProcedure {
+			DispatchQueue.default.async { [weak weakSelf = self] in
+				weakSelf?.configureBaseApplication()
+			}
+		}
+		operation.add(observer: BlockObserver(didFinish: { _, errors in
+			DispatchQueue.default.async {
+				operation.finish(withErrors: errors)
+			}
+		}))
+		procedureQueue.addOperation(operation)
 	}
 	
-	open func configureBaseApplication() -> Void {
+	open func configureBaseApplication() {
 //		Answers.logCustomEvent(withName: "configureBaseApplication", customAttributes: ["Category" : "App Launched", "configureBaseApplication" : 1])
 
 		UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
