@@ -26,7 +26,7 @@ class LoadEarthquakeModel: Procedure, OutputProcedure {
 	
 	override func execute() {
 		
-		guard !cancelled else { return }
+		guard !isCancelled else { return }
 		
 		let cachesFolder = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
 		

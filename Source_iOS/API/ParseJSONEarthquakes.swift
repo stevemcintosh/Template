@@ -70,7 +70,7 @@ class ParseJSONEarthquakes: Procedure {
 	
 	override func execute() {
 
-		guard !cancelled else { return }
+		guard !isCancelled else { return }
 		
 		guard let stream = InputStream(url: cacheFile) else {
 			finish()
