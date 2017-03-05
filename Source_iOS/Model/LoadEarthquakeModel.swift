@@ -1,5 +1,4 @@
 import ProcedureKit
-import Dispatch
 import CoreData
 
 struct LoadEarthquakeModelComponent: ProcedureKitComponent {
