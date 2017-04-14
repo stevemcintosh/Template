@@ -552,6 +552,7 @@
 				07A7D7541E56D58400D33992 /* Sources */,
 				07A7D7551E56D58400D33992 /* Frameworks */,
 				07A7D7561E56D58400D33992 /* Resources */,
+				07215EEE1EA0B7E100CA7D26 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -665,6 +666,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07215EEE1EA0B7E100CA7D26 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKit.framework",
+				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitCloud.framework",
+				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitLocation.framework",
+				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitMobile.framework",
+				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitNetwork.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/../Scripts/Carthage.sh\"";
+		};
 		072A91621E1A4DDE0054C122 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
