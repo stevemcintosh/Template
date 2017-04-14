@@ -5,10 +5,11 @@ import ProcedureKitMobile
 import ProcedureKitNetwork
 
 class EarthquakesTableViewController: TableViewController {
-	fileprivate struct Storyboard {
+	
+	fileprivate struct Constants {
 		static let ShowEarthQuake = "showEarthquake"
 	}
-	
+
     // MARK: Properties
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
 
@@ -36,8 +37,6 @@ class EarthquakesTableViewController: TableViewController {
 		
 		procedureQueue.add(operation: procedure)
 	}
-	
-	// MARK: View Controller
 	
 	@IBOutlet weak var refresh: UIRefreshControl!
 	
@@ -68,24 +67,23 @@ class EarthquakesTableViewController: TableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let operation = BlockProcedure {
 			DispatchQueue.main.async { [weak weakSelf = self] in
-				weakSelf?.performSegue(withIdentifier: Storyboard.ShowEarthQuake, sender: nil)
+				weakSelf?.performSegue(withIdentifier: Constants.ShowEarthQuake, sender: nil)
 			}
         }
         
-//		operation.add(condition: MutuallyExclusive<UIViewController>()) not sure if this is necessary
-		
 		operation.add(observer: BlockObserver(didFinish: { _, errors in
 			DispatchQueue.main.async {
 				tableView.deselectRow(at: indexPath, animated: true)
 				operation.finish(withErrors: errors)
 			}
 		}))
+		operation.add(observer: NetworkObserver())
         procedureQueue.addOperation(operation)
     }
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == Storyboard.ShowEarthQuake {
-			guard let detailVC = segue.destination.contentViewController as? EarthquakeTableViewController else { return }
+		if segue.identifier == Constants.ShowEarthQuake {
+			guard let detailVC = segue.destination.contentViewController as? EarthquakeBaseController else { return }
 			
 			detailVC.procedureQueue = procedureQueue
 
@@ -134,5 +132,4 @@ class EarthquakesTableViewController: TableViewController {
             print("Error in the fetched results controller: \(error).")
         }
     }
-	
 }

@@ -7,6 +7,7 @@
 //
 
 import UserNotifications
+import OLExtension
 
 class NotificationService: UNNotificationServiceExtension {
 
@@ -17,9 +18,13 @@ class NotificationService: UNNotificationServiceExtension {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
 		
+		OLExtension.notificationService().didReceive(request) { (content) in
+		}
+			
+//			.didReceiveNotificationRequest:request withContentHandler:contentHandler
 		if let attachment = request.content.attachments.first {
 			if attachment.url.startAccessingSecurityScopedResource() {
-				guard let path = attachment.url.path as? String else { }
+				_ = attachment.url.path
 				attachment.url.stopAccessingSecurityScopedResource()
 			}
 		}

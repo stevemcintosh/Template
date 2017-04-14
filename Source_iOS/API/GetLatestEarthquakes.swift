@@ -1,4 +1,5 @@
 import ProcedureKit
+import ProcedureKitMobile
 import CoreData
 
 class GetLatestEarthquakes: GroupProcedure {
@@ -15,8 +16,8 @@ class GetLatestEarthquakes: GroupProcedure {
 		
 		parseProcedure.add(dependency: downloadProcedure)
 		
-		downloadProcedure.add(observer: NetworkObserver(controller: NetworkActivityController.shared))
-		parseProcedure.add(observer: NetworkObserver(controller: NetworkActivityController.shared))
+		downloadProcedure.add(observer: NetworkObserver())
+		parseProcedure.add(observer: NetworkObserver())
 
 		super.init(operations: [downloadProcedure, parseProcedure])
 		

@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		070397601E20F4FB00856727 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0703975F1E20F4FB00856727 /* UIColor.swift */; };
 		07131EA71E34748700F0CFE7 /* DownloadEarthquakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729FFE01E319855003CB630 /* DownloadEarthquakes.swift */; };
+		07222C2B1E90DC090024BE9B /* Template.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 07222C2A1E90DAA60024BE9B /* Template.entitlements */; };
 		072A91351E19D62D0054C122 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38652C4E1D47AE550006F4DC /* Config.plist */; };
-		072F379C1E2DD6CE00262192 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379B1E2DD6CE00262192 /* KeychainError.swift */; };
+		072F379C1E2DD6CE00262192 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379B1E2DD6CE00262192 /* Keychain.swift */; };
 		072F37A41E2DDA2B00262192 /* Earthquake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37A31E2DDA2B00262192 /* Earthquake.swift */; };
 		072F37B01E2DEC3900262192 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37AF1E2DEC3900262192 /* AppController.swift */; };
 		072F37B11E2DED0E00262192 /* Earthquakes.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 072F37A81E2DDEC000262192 /* Earthquakes.xcdatamodeld */; };
@@ -21,9 +22,8 @@
 		0735B2491E63EE62000EA664 /* LoginOnboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0735B2471E63EE62000EA664 /* LoginOnboarding.storyboard */; };
 		0735B24B1E63F192000EA664 /* LogInOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735B24A1E63F192000EA664 /* LogInOnboardingController.swift */; };
 		0735B24D1E64F341000EA664 /* LoginOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735B24C1E64F341000EA664 /* LoginOnboardingPageViewController.swift */; };
+		074053031E88F05B00DBA05F /* EarthquakeFromUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074053021E88F05B00DBA05F /* EarthquakeFromUserController.swift */; };
 		07497E441E5697B0006A8F13 /* MoreInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07497E431E5697B0006A8F13 /* MoreInformation.swift */; };
-		0752D30B1E66AF1C00F830E2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752D30A1E66AF1C00F830E2 /* NotificationService.swift */; };
-		0752D30F1E66AF1C00F830E2 /* notificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0752D3081E66AF1C00F830E2 /* notificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		07569BDF1E0FDE4A00D36893 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 38B3265B1D6E440E00D55C29 /* Settings.bundle */; };
 		07569BE01E0FDE6300D36893 /* Graphik-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0EB02D91D48DAE600A73147 /* Graphik-Bold.otf */; };
 		07569BE11E0FDE6300D36893 /* Graphik-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0EB02DA1D48DAE600A73147 /* Graphik-Light.otf */; };
@@ -33,10 +33,9 @@
 		0756AF601E403C8600C9A825 /* ParseJSONEarthquakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DB1C51E3DCD9100034EE1 /* ParseJSONEarthquakes.swift */; };
 		075AAD901E2DF5C500094457 /* EarthquakesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379D1E2DD90900262192 /* EarthquakesTableViewController.swift */; };
 		075AAD911E2DF5CC00094457 /* EarthquakeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */; };
-		075AAD921E2DF5CF00094457 /* EarthquakeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37A11E2DDA1D00262192 /* EarthquakeTableViewController.swift */; };
+		075AAD921E2DF5CF00094457 /* EarthquakeBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37A11E2DDA1D00262192 /* EarthquakeBaseController.swift */; };
 		075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C985E21E2C77CB00AD0635 /* LoadEarthquakeModel.swift */; };
 		0764F3B81E2793E800181FAE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07569BCA1E0ADCCA00D36893 /* SystemConfiguration.framework */; };
-		0771E0471E67CDB90045CEE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0771E0461E67CDB90045CEE9 /* MapKit.framework */; };
 		07A7D7511E56BE6100D33992 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7D7501E56BE6100D33992 /* UIViewController.swift */; };
 		07A7D75B1E56D58400D33992 /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7D75A1E56D58400D33992 /* TemplateTests.swift */; };
 		07A7D7641E56DE4400D33992 /* earthquakes.json in Resources */ = {isa = PBXBuildFile; fileRef = 07A7D7631E56DE4400D33992 /* earthquakes.json */; };
@@ -49,18 +48,13 @@
 		07DA49721E1E1DF500FA9A6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DA496E1E1E1DF500FA9A6E /* LaunchScreen.storyboard */; };
 		07DA49731E1E1DF500FA9A6E /* SignedIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DA49701E1E1DF500FA9A6E /* SignedIn.storyboard */; };
 		07DA497A1E1F9AAF00FA9A6E /* MemoryResourceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA49791E1F9AAF00FA9A6E /* MemoryResourceTracking.swift */; };
+		07EF1BA51E7E7980006ED396 /* EditableEarthquakepoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF1BA41E7E7980006ED396 /* EditableEarthquakepoint.swift */; };
+		07EF1BA71E7E7A80006ED396 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF1BA61E7E7A80006ED396 /* String.swift */; };
 		07FA10F21E06F3ED00D1177B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38503EA21D4781450089EC93 /* Assets.xcassets */; };
 		07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0325AC41D5C803F00F3BAF4 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0752D30D1E66AF1C00F830E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 38503E621D477F580089EC93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0752D3071E66AF1C00F830E2;
-			remoteInfo = notificationServiceExtension;
-		};
 		07A7D75D1E56D58400D33992 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38503E621D477F580089EC93 /* Project object */;
@@ -77,7 +71,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0752D30F1E66AF1C00F830E2 /* notificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,12 +88,13 @@
 		070397661E210C2500856727 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
 		0703976B1E210CDA00856727 /* RemoteNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationCondition.swift; sourceTree = "<group>"; };
 		071DB1C51E3DCD9100034EE1 /* ParseJSONEarthquakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJSONEarthquakes.swift; sourceTree = "<group>"; };
+		07222C2A1E90DAA60024BE9B /* Template.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = Template.entitlements; path = Resources/Template.entitlements; sourceTree = SOURCE_ROOT; };
 		0729FFE01E319855003CB630 /* DownloadEarthquakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DownloadEarthquakes.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		072A91601E1A4A610054C122 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		072F379B1E2DD6CE00262192 /* KeychainError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		072F379B1E2DD6CE00262192 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		072F379D1E2DD90900262192 /* EarthquakesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarthquakesTableViewController.swift; path = Earthquakes/EarthquakesTableViewController.swift; sourceTree = "<group>"; };
 		072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarthquakeTableViewCell.swift; path = Earthquakes/EarthquakeTableViewCell.swift; sourceTree = "<group>"; };
-		072F37A11E2DDA1D00262192 /* EarthquakeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarthquakeTableViewController.swift; path = Earthquakes/EarthquakeTableViewController.swift; sourceTree = "<group>"; };
+		072F37A11E2DDA1D00262192 /* EarthquakeBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarthquakeBaseController.swift; path = Earthquakes/EarthquakeBaseController.swift; sourceTree = "<group>"; };
 		072F37A31E2DDA2B00262192 /* Earthquake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
 		072F37A91E2DDEC000262192 /* Earthquakes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Earthquakes.xcdatamodel; sourceTree = "<group>"; };
 		072F37AF1E2DEC3900262192 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = AppController.swift; path = ../AppController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -110,8 +104,8 @@
 		0735B2481E63EE62000EA664 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = LoginOnboarding.storyboard; sourceTree = "<group>"; };
 		0735B24A1E63F192000EA664 /* LogInOnboardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInOnboardingController.swift; path = ../LogInOnboardingController.swift; sourceTree = "<group>"; };
 		0735B24C1E64F341000EA664 /* LoginOnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOnboardingPageViewController.swift; sourceTree = "<group>"; };
+		074053021E88F05B00DBA05F /* EarthquakeFromUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarthquakeFromUserController.swift; path = Earthquakes/EarthquakeFromUserController.swift; sourceTree = "<group>"; };
 		07497E431E5697B0006A8F13 /* MoreInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInformation.swift; sourceTree = "<group>"; };
-		0752D3081E66AF1C00F830E2 /* notificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0752D30A1E66AF1C00F830E2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		0752D30C1E66AF1C00F830E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07569BBA1E0AD5C100D36893 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = Build/iOS/GoogleAnalytics.framework; sourceTree = "<group>"; };
@@ -130,7 +124,6 @@
 		07DA49651E1E1B8B00FA9A6E /* Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DA49681E1E1C4100FA9A6E /* atomics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomics.h; sourceTree = "<group>"; };
 		07DA496A1E1E1D0400FA9A6E /* atomics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = atomics.m; sourceTree = "<group>"; };
-		07DA496C1E1E1DBA00FA9A6E /* Template.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Template.entitlements; sourceTree = "<group>"; };
 		07DA496F1E1E1DF500FA9A6E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07DA49711E1E1DF500FA9A6E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = SignedIn.storyboard; sourceTree = "<group>"; };
 		07DA49791E1F9AAF00FA9A6E /* MemoryResourceTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryResourceTracking.swift; sourceTree = "<group>"; };
@@ -139,6 +132,8 @@
 		07DA49AD1E1FB2BC00FA9A6E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		07DA49AF1E1FB2BC00FA9A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07DA49C31E20BDB200FA9A6E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		07EF1BA41E7E7980006ED396 /* EditableEarthquakepoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableEarthquakepoint.swift; sourceTree = "<group>"; };
+		07EF1BA61E7E7A80006ED396 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		07FA10E51E06E4E000D1177B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		07FA10E61E06E4E000D1177B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		38503EA21D4781450089EC93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,14 +152,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0752D3051E66AF1C00F830E2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0771E0471E67CDB90045CEE9 /* MapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		07A7D7551E56D58400D33992 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,7 +215,9 @@
 				072F37AF1E2DEC3900262192 /* AppController.swift */,
 				072F379D1E2DD90900262192 /* EarthquakesTableViewController.swift */,
 				072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */,
-				072F37A11E2DDA1D00262192 /* EarthquakeTableViewController.swift */,
+				072F37A11E2DDA1D00262192 /* EarthquakeBaseController.swift */,
+				074053021E88F05B00DBA05F /* EarthquakeFromUserController.swift */,
+				07EF1BA41E7E7980006ED396 /* EditableEarthquakepoint.swift */,
 			);
 			path = SignedIn;
 			sourceTree = "<group>";
@@ -356,7 +345,6 @@
 		38503E611D477F580089EC93 = {
 			isa = PBXGroup;
 			children = (
-				07DA496C1E1E1DBA00FA9A6E /* Template.entitlements */,
 				E02A25951D4A5F75001E01E3 /* Constants */,
 				E0325AC21D5C803F00F3BAF4 /* Source_iOS */,
 				E0693FE51D4A578000432D57 /* Documentation */,
@@ -371,7 +359,6 @@
 				07DA49741E1E1F8800FA9A6E /* Products */,
 				E0423D641D8AF8BF0031D0D5 /* Frameworks */,
 				07A7D7581E56D58400D33992 /* TemplateTests.xctest */,
-				0752D3081E66AF1C00F830E2 /* notificationServiceExtension.appex */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -389,6 +376,7 @@
 		38503E9F1D4781450089EC93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07222C2A1E90DAA60024BE9B /* Template.entitlements */,
 				38503EA11D4781450089EC93 /* General */,
 				38503EA01D4781450089EC93 /* Development */,
 				38503EA31D4781450089EC93 /* Release */,
@@ -532,11 +520,12 @@
 			isa = PBXGroup;
 			children = (
 				0703975F1E20F4FB00856727 /* UIColor.swift */,
-				072F379B1E2DD6CE00262192 /* KeychainError.swift */,
+				072F379B1E2DD6CE00262192 /* Keychain.swift */,
 				07359CD31E430F450078E854 /* BaseClassControllers.swift */,
 				072F756A1E5D143C000A5E3C /* ProgressBarIndeterminate.swift */,
 				072F75691E5D143C000A5E3C /* UINavigationController+UIProgressView.swift */,
 				07A7D7501E56BE6100D33992 /* UIViewController.swift */,
+				07EF1BA61E7E7A80006ED396 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -556,23 +545,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0752D3071E66AF1C00F830E2 /* notificationServiceExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0752D3131E66AF1C00F830E2 /* Build configuration list for PBXNativeTarget "notificationServiceExtension" */;
-			buildPhases = (
-				0752D3041E66AF1C00F830E2 /* Sources */,
-				0752D3051E66AF1C00F830E2 /* Frameworks */,
-				0752D3061E66AF1C00F830E2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = notificationServiceExtension;
-			productName = notificationServiceExtension;
-			productReference = 0752D3081E66AF1C00F830E2 /* notificationServiceExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		07A7D7571E56D58400D33992 /* TemplateTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07A7D75F1E56D58400D33992 /* Build configuration list for PBXNativeTarget "TemplateTests" */;
@@ -605,7 +577,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0752D30E1E66AF1C00F830E2 /* PBXTargetDependency */,
 			);
 			name = Template;
 			productName = "Template-iOS";
@@ -622,29 +593,15 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Stephen McIntosh";
 				TargetAttributes = {
-					0752D3071E66AF1C00F830E2 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.DataProtection = {
-								enabled = 1;
-							};
-							com.apple.Maps.iOS = {
-								enabled = 1;
-							};
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
-					};
 					07A7D7571E56D58400D33992 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 07FA10B01E06C64100D1177B;
 					};
 					07FA10B01E06C64100D1177B = {
 						CreatedOnToolsVersion = 8.2;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -672,19 +629,11 @@
 			targets = (
 				07FA10B01E06C64100D1177B /* Template */,
 				07A7D7571E56D58400D33992 /* TemplateTests */,
-				0752D3071E66AF1C00F830E2 /* notificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0752D3061E66AF1C00F830E2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		07A7D7561E56D58400D33992 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,6 +646,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07222C2B1E90DC090024BE9B /* Template.entitlements in Resources */,
 				072F37B11E2DED0E00262192 /* Earthquakes.xcdatamodeld in Resources */,
 				07DA49721E1E1DF500FA9A6E /* LaunchScreen.storyboard in Resources */,
 				07DA49731E1E1DF500FA9A6E /* SignedIn.storyboard in Resources */,
@@ -751,14 +701,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0752D3041E66AF1C00F830E2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0752D30B1E66AF1C00F830E2 /* NotificationService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		07A7D7541E56D58400D33992 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,23 +715,26 @@
 			files = (
 				075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */,
 				07DA497A1E1F9AAF00FA9A6E /* MemoryResourceTracking.swift in Sources */,
+				07EF1BA71E7E7A80006ED396 /* String.swift in Sources */,
 				0735B24D1E64F341000EA664 /* LoginOnboardingPageViewController.swift in Sources */,
 				0735B24B1E63F192000EA664 /* LogInOnboardingController.swift in Sources */,
 				072F3FB11E31BB2C00C419B0 /* GetLatestEarthquakes.swift in Sources */,
 				07497E441E5697B0006A8F13 /* MoreInformation.swift in Sources */,
 				07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */,
-				075AAD921E2DF5CF00094457 /* EarthquakeTableViewController.swift in Sources */,
+				075AAD921E2DF5CF00094457 /* EarthquakeBaseController.swift in Sources */,
 				072F37B01E2DEC3900262192 /* AppController.swift in Sources */,
 				07131EA71E34748700F0CFE7 /* DownloadEarthquakes.swift in Sources */,
+				074053031E88F05B00DBA05F /* EarthquakeFromUserController.swift in Sources */,
 				07A7D7511E56BE6100D33992 /* UIViewController.swift in Sources */,
 				072F37A41E2DDA2B00262192 /* Earthquake.swift in Sources */,
 				07359CD41E430F450078E854 /* BaseClassControllers.swift in Sources */,
 				075AAD901E2DF5C500094457 /* EarthquakesTableViewController.swift in Sources */,
 				0756AF601E403C8600C9A825 /* ParseJSONEarthquakes.swift in Sources */,
 				07DA496B1E1E1D0400FA9A6E /* atomics.m in Sources */,
-				072F379C1E2DD6CE00262192 /* KeychainError.swift in Sources */,
+				072F379C1E2DD6CE00262192 /* Keychain.swift in Sources */,
 				070397601E20F4FB00856727 /* UIColor.swift in Sources */,
 				075AAD911E2DF5CC00094457 /* EarthquakeTableViewCell.swift in Sources */,
+				07EF1BA51E7E7980006ED396 /* EditableEarthquakepoint.swift in Sources */,
 				072F756C1E5D143C000A5E3C /* ProgressBarIndeterminate.swift in Sources */,
 				072F756B1E5D143C000A5E3C /* UINavigationController+UIProgressView.swift in Sources */,
 			);
@@ -798,11 +743,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0752D30E1E66AF1C00F830E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0752D3071E66AF1C00F830E2 /* notificationServiceExtension */;
-			targetProxy = 0752D30D1E66AF1C00F830E2 /* PBXContainerItemProxy */;
-		};
 		07A7D75E1E56D58400D33992 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 07FA10B01E06C64100D1177B /* Template */;
@@ -838,70 +778,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0752D3101E66AF1C00F830E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_ENTITLEMENTS = notificationServiceExtension/notificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen McIntosh (LTFC84M3CR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7W43VPB8DS;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = notificationServiceExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenjmcintoshau.TemplateAU.notificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		0752D3111E66AF1C00F830E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_ENTITLEMENTS = notificationServiceExtension/notificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Stephen McIntosh (7W43VPB8DS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 7W43VPB8DS;
-				ENABLE_NS_ASSERTIONS = NO;
-				INFOPLIST_FILE = notificationServiceExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenjmcintoshau.TemplateAU.notificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		0752D3121E66AF1C00F830E2 /* Ad-hoc */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_ENTITLEMENTS = notificationServiceExtension/notificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Stephen McIntosh (7W43VPB8DS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 7W43VPB8DS;
-				ENABLE_NS_ASSERTIONS = NO;
-				INFOPLIST_FILE = notificationServiceExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenjmcintoshau.TemplateAU.notificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Ad-hoc";
-		};
 		07839B501E1D09050023CBB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -922,6 +798,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/Resources/Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 7W43VPB8DS;
@@ -970,7 +847,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Template.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/Resources/Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Stephen McIntosh (7W43VPB8DS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1014,7 +891,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Template-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
@@ -1103,6 +980,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/Resources/Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 7W43VPB8DS;
@@ -1151,7 +1029,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Template.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/Resources/Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Stephen McIntosh (7W43VPB8DS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1227,7 +1105,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Template.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/Resources/Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen McIntosh (LTFC84M3CR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1299,6 +1177,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/Resources/Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1332,16 +1211,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0752D3131E66AF1C00F830E2 /* Build configuration list for PBXNativeTarget "notificationServiceExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0752D3101E66AF1C00F830E2 /* Debug */,
-				0752D3111E66AF1C00F830E2 /* Release */,
-				0752D3121E66AF1C00F830E2 /* Ad-hoc */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Ad-hoc";
-		};
 		07A7D75F1E56D58400D33992 /* Build configuration list for PBXNativeTarget "TemplateTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

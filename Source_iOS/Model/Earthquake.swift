@@ -75,4 +75,28 @@ class Earthquake: NSManagedObject {
     var location: CLLocation {
         return CLLocation(coordinate: coordinate, altitude: -depth, horizontalAccuracy: kCLLocationAccuracyBest, verticalAccuracy: kCLLocationAccuracyBest, timestamp: timestamp as Date)
     }
+	
+	class Waypoint: NSObject {
+		var latitude: Double
+		var longitude: Double
+		var name: String?
+		var info: String?
+		
+		init(latitude: Double, longitude: Double, name: String?, info: String?) {
+			self.latitude = latitude
+			self.longitude = longitude
+			self.name = name
+			self.info = info
+			super.init()
+		}
+		
+		override var description: String {
+			return ["lat=\(latitude)", "lon=\(longitude)", super.description].joined(separator: " ")
+		}
+	}
+	
+	override var description: String {
+		let descriptions = [String]()
+		return descriptions.joined(separator: "\n")
+	}
 }

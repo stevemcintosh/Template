@@ -1,6 +1,5 @@
 import Foundation
 
-@testable
 #if DEBUG
 	
 	/// Resource utilization information

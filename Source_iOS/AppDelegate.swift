@@ -55,16 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window = UIWindow(frame: UIScreen.main.bounds)
 		window?.makeKeyAndVisible()
 
-		self.guideUserJourney()
-		return true
-	}
-	
-	private func guideUserJourney() {
 		// guard let token = KeyChain.apiToken, let email = KeyChain.email else {
-		 self.showUserLoginOnboarding()
-		// return
+		//		 self.showUserLoginOnboarding()
+		// return true
 		// }
-//		self.showSignedIn()
+		self.showSignedIn()
+
+		return true
 	}
 	
 	private func showUserLoginOnboarding() {

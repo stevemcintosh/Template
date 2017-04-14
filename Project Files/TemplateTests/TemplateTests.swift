@@ -46,7 +46,7 @@ class TemplateTests: XCTestCase {
 					ascending: false
 					)]
 				let count = try? context.fetch(request).count
-				print("inserted: \(count)")
+				print("inserted: \(String(describing: count))")
 				if let earthquake = (try? context.fetch(request))?.first as? Earthquake {
 					print(earthquake.identifier, earthquake.name)
 					if earthquake.name == "26km WNW of Rock Creek, Alabama" &&
