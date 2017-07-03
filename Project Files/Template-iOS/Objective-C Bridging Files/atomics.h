@@ -4,9 +4,9 @@
 #import <stdatomic.h>
 
 static atomic_int cnt = ATOMIC_VAR_INIT(0);
-void __atomic_increment();
-void __atomic_decrement();
-void __atomic_reset();
-int __get_atomic_count();
+void __atomic_increment(void);
+void __atomic_decrement(void);
+void __atomic_reset(void);
+int __get_atomic_count(void);
 
 #endif /* Atomics_h */

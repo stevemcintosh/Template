@@ -40,7 +40,7 @@ class TemplateTests: XCTestCase {
 			
 			let bundle = Bundle(for: type(of: self))
 			let resourceURL = bundle.url(forResource: "earthquakes", withExtension: "json")
-			let parseProcedure = ParseJSONEarthquakes(cacheFile: resourceURL!, context: context) {
+			let parseProcedure = ParseJSONEarthquakes(cacheURL: resourceURL!, context: context) {
 				request.sortDescriptors = [NSSortDescriptor(
 					key: "timestamp",
 					ascending: false

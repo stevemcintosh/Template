@@ -17,21 +17,21 @@ class MoreInformation: Procedure {
     // MARK: Overrides
  
     override func execute() {
-		
-		guard !isCancelled else { return }
-		
-		DispatchQueue.main.async {
+        
+        guard !isCancelled else { return }
+        
+        DispatchQueue.main.async {
             self.showSafariViewController()
         }
     }
     
     private func showSafariViewController() {
         if let context = UIApplication.shared.keyWindow?.rootViewController {
-            let safari = SFSafariViewController(url: self.url, entersReaderIfAvailable: false)
+            let safari = SFSafariViewController(url: self.url)
             safari.delegate = self
-			context.present(safari, animated: true, completion: { [weak weakSelf = self] in
-				weakSelf?.finish()
-			})
+            context.present(safari, animated: true, completion: { [weak weakSelf = self] in
+                weakSelf?.finish()
+            })
         }
         else {
             finish()

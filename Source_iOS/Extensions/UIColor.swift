@@ -2,9 +2,9 @@ import UIKit
 
 extension UIColor {
     
-	static var globalTintColor: UIColor? {
-		return UIApplication.shared.keyWindow?.tintColor
-	}
+    static var globalTintColor: UIColor? {
+        return UIApplication.shared.keyWindow?.tintColor
+    }
     class var cerulean: UIColor {
         return UIColor(red: 6.0 / 255.0, green: 141.0 / 255.0, blue: 202.0 / 255.0, alpha: 1.0)
     }

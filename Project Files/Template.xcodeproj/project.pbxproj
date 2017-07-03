@@ -22,8 +22,27 @@
 		0735B2491E63EE62000EA664 /* LoginOnboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0735B2471E63EE62000EA664 /* LoginOnboarding.storyboard */; };
 		0735B24B1E63F192000EA664 /* LogInOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735B24A1E63F192000EA664 /* LogInOnboardingController.swift */; };
 		0735B24D1E64F341000EA664 /* LoginOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735B24C1E64F341000EA664 /* LoginOnboardingPageViewController.swift */; };
-		074053031E88F05B00DBA05F /* EarthquakeFromUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074053021E88F05B00DBA05F /* EarthquakeFromUserController.swift */; };
 		07497E441E5697B0006A8F13 /* MoreInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07497E431E5697B0006A8F13 /* MoreInformation.swift */; };
+		074FBAC91F0A2F8300CC01FF /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FBAC81F0A2F6D00CC01FF /* NetworkReachabilityManager.swift */; };
+		074FBAE21F0A333A00CC01FF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACA1F0A315600CC01FF /* Alamofire.framework */; };
+		074FBAE31F0A333A00CC01FF /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACA1F0A315600CC01FF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAE41F0A333A00CC01FF /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACF1F0A315600CC01FF /* KeychainAccess.framework */; };
+		074FBAE51F0A333A00CC01FF /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACF1F0A315600CC01FF /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAE61F0A333A00CC01FF /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACD1F0A315600CC01FF /* ProcedureKit.framework */; };
+		074FBAE71F0A333A00CC01FF /* ProcedureKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACD1F0A315600CC01FF /* ProcedureKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAE81F0A333A00CC01FF /* ProcedureKitCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBAD11F0A315600CC01FF /* ProcedureKitCloud.framework */; };
+		074FBAE91F0A333A00CC01FF /* ProcedureKitCloud.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBAD11F0A315600CC01FF /* ProcedureKitCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAEA1F0A333A00CC01FF /* ProcedureKitLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACE1F0A315600CC01FF /* ProcedureKitLocation.framework */; };
+		074FBAEB1F0A333A00CC01FF /* ProcedureKitLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACE1F0A315600CC01FF /* ProcedureKitLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAEC1F0A333A00CC01FF /* ProcedureKitMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBAD01F0A315600CC01FF /* ProcedureKitMobile.framework */; };
+		074FBAED1F0A333A00CC01FF /* ProcedureKitMobile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBAD01F0A315600CC01FF /* ProcedureKitMobile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAEE1F0A333A00CC01FF /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACB1F0A315600CC01FF /* ProcedureKitNetwork.framework */; };
+		074FBAEF1F0A333A00CC01FF /* ProcedureKitNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACB1F0A315600CC01FF /* ProcedureKitNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAF01F0A333A00CC01FF /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACC1F0A315600CC01FF /* SwiftyBeaver.framework */; };
+		074FBAF11F0A333A00CC01FF /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 074FBACC1F0A315600CC01FF /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		074FBAF51F0A35FA00CC01FF /* EarthquakesTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FBAF31F0A33EF00CC01FF /* EarthquakesTableViewCoordinator.swift */; };
+		074FBAF61F0A360200CC01FF /* EarthquakeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FBAF41F0A349100CC01FF /* EarthquakeSectionHeaderView.swift */; };
+		074FBAF81F0A365F00CC01FF /* BaseTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FBAF71F0A365B00CC01FF /* BaseTableViewCoordinator.swift */; };
 		07569BDF1E0FDE4A00D36893 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 38B3265B1D6E440E00D55C29 /* Settings.bundle */; };
 		07569BE01E0FDE6300D36893 /* Graphik-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0EB02D91D48DAE600A73147 /* Graphik-Bold.otf */; };
 		07569BE11E0FDE6300D36893 /* Graphik-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0EB02DA1D48DAE600A73147 /* Graphik-Light.otf */; };
@@ -35,15 +54,11 @@
 		075AAD911E2DF5CC00094457 /* EarthquakeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */; };
 		075AAD921E2DF5CF00094457 /* EarthquakeBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37A11E2DDA1D00262192 /* EarthquakeBaseController.swift */; };
 		075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C985E21E2C77CB00AD0635 /* LoadEarthquakeModel.swift */; };
-		0764F3B81E2793E800181FAE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07569BCA1E0ADCCA00D36893 /* SystemConfiguration.framework */; };
+		0764592E1EADC27C006A93F1 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0764592D1EADC27C006A93F1 /* VarelaRound-Regular.ttf */; };
+		078721381F0A297600692126 /* NetworkStatusSlideDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0764592A1EADB45A006A93F1 /* NetworkStatusSlideDownView.swift */; };
 		07A7D7511E56BE6100D33992 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7D7501E56BE6100D33992 /* UIViewController.swift */; };
 		07A7D75B1E56D58400D33992 /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7D75A1E56D58400D33992 /* TemplateTests.swift */; };
 		07A7D7641E56DE4400D33992 /* earthquakes.json in Resources */ = {isa = PBXBuildFile; fileRef = 07A7D7631E56DE4400D33992 /* earthquakes.json */; };
-		07C985E71E2C85BF00AD0635 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA321E299FA70055FC19 /* ProcedureKit.framework */; };
-		07C985E81E2C85BF00AD0635 /* ProcedureKitCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA331E299FA70055FC19 /* ProcedureKitCloud.framework */; };
-		07C985E91E2C85BF00AD0635 /* ProcedureKitLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA341E299FA70055FC19 /* ProcedureKitLocation.framework */; };
-		07C985EA1E2C85BF00AD0635 /* ProcedureKitMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA351E299FA70055FC19 /* ProcedureKitMobile.framework */; };
-		07C985EB1E2C85BF00AD0635 /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701EA361E299FA70055FC19 /* ProcedureKitNetwork.framework */; };
 		07DA496B1E1E1D0400FA9A6E /* atomics.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DA496A1E1E1D0400FA9A6E /* atomics.m */; };
 		07DA49721E1E1DF500FA9A6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DA496E1E1E1DF500FA9A6E /* LaunchScreen.storyboard */; };
 		07DA49731E1E1DF500FA9A6E /* SignedIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DA49701E1E1DF500FA9A6E /* SignedIn.storyboard */; };
@@ -65,6 +80,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		074FBAF21F0A333B00CC01FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				074FBAE71F0A333A00CC01FF /* ProcedureKit.framework in Embed Frameworks */,
+				074FBAEF1F0A333A00CC01FF /* ProcedureKitNetwork.framework in Embed Frameworks */,
+				074FBAED1F0A333A00CC01FF /* ProcedureKitMobile.framework in Embed Frameworks */,
+				074FBAEB1F0A333A00CC01FF /* ProcedureKitLocation.framework in Embed Frameworks */,
+				074FBAE51F0A333A00CC01FF /* KeychainAccess.framework in Embed Frameworks */,
+				074FBAF11F0A333A00CC01FF /* SwiftyBeaver.framework in Embed Frameworks */,
+				074FBAE31F0A333A00CC01FF /* Alamofire.framework in Embed Frameworks */,
+				074FBAE91F0A333A00CC01FF /* ProcedureKitCloud.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0752D3141E66AF1C00F830E2 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,15 +111,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0701EA321E299FA70055FC19 /* ProcedureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKit.framework; path = Build/iOS/ProcedureKit.framework; sourceTree = "<group>"; };
-		0701EA331E299FA70055FC19 /* ProcedureKitCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitCloud.framework; path = Build/iOS/ProcedureKitCloud.framework; sourceTree = "<group>"; };
-		0701EA341E299FA70055FC19 /* ProcedureKitLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitLocation.framework; path = Build/iOS/ProcedureKitLocation.framework; sourceTree = "<group>"; };
-		0701EA351E299FA70055FC19 /* ProcedureKitMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitMobile.framework; path = Build/iOS/ProcedureKitMobile.framework; sourceTree = "<group>"; };
-		0701EA361E299FA70055FC19 /* ProcedureKitNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitNetwork.framework; path = Build/iOS/ProcedureKitNetwork.framework; sourceTree = "<group>"; };
-		0701EA371E299FA70055FC19 /* TestingProcedureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TestingProcedureKit.framework; path = Build/iOS/TestingProcedureKit.framework; sourceTree = "<group>"; };
 		0703975F1E20F4FB00856727 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		070397661E210C2500856727 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
 		0703976B1E210CDA00856727 /* RemoteNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationCondition.swift; sourceTree = "<group>"; };
+		070E2A6B1EDAF0730074E696 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		071DB1C51E3DCD9100034EE1 /* ParseJSONEarthquakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJSONEarthquakes.swift; sourceTree = "<group>"; };
 		07222C2A1E90DAA60024BE9B /* Template.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = Template.entitlements; path = Resources/Template.entitlements; sourceTree = SOURCE_ROOT; };
 		0729FFE01E319855003CB630 /* DownloadEarthquakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DownloadEarthquakes.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -104,15 +132,31 @@
 		0735B2481E63EE62000EA664 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = LoginOnboarding.storyboard; sourceTree = "<group>"; };
 		0735B24A1E63F192000EA664 /* LogInOnboardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInOnboardingController.swift; path = ../LogInOnboardingController.swift; sourceTree = "<group>"; };
 		0735B24C1E64F341000EA664 /* LoginOnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOnboardingPageViewController.swift; sourceTree = "<group>"; };
-		074053021E88F05B00DBA05F /* EarthquakeFromUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarthquakeFromUserController.swift; path = Earthquakes/EarthquakeFromUserController.swift; sourceTree = "<group>"; };
 		07497E431E5697B0006A8F13 /* MoreInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInformation.swift; sourceTree = "<group>"; };
+		074FBAC81F0A2F6D00CC01FF /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		074FBACA1F0A315600CC01FF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		074FBACB1F0A315600CC01FF /* ProcedureKitNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProcedureKitNetwork.framework; sourceTree = "<group>"; };
+		074FBACC1F0A315600CC01FF /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = "<group>"; };
+		074FBACD1F0A315600CC01FF /* ProcedureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProcedureKit.framework; sourceTree = "<group>"; };
+		074FBACE1F0A315600CC01FF /* ProcedureKitLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProcedureKitLocation.framework; sourceTree = "<group>"; };
+		074FBACF1F0A315600CC01FF /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = "<group>"; };
+		074FBAD01F0A315600CC01FF /* ProcedureKitMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProcedureKitMobile.framework; sourceTree = "<group>"; };
+		074FBAD11F0A315600CC01FF /* ProcedureKitCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProcedureKitCloud.framework; sourceTree = "<group>"; };
+		074FBAF31F0A33EF00CC01FF /* EarthquakesTableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EarthquakesTableViewCoordinator.swift; path = Earthquakes/EarthquakesTableViewCoordinator.swift; sourceTree = "<group>"; };
+		074FBAF41F0A349100CC01FF /* EarthquakeSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EarthquakeSectionHeaderView.swift; path = Earthquakes/EarthquakeSectionHeaderView.swift; sourceTree = "<group>"; };
+		074FBAF71F0A365B00CC01FF /* BaseTableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCoordinator.swift; sourceTree = "<group>"; };
+		074FBAF91F0A3A3B00CC01FF /* Earthquakes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Earthquakes 2.xcdatamodel"; sourceTree = "<group>"; };
+		074FBAFA1F0A3B1900CC01FF /* Earthquakes 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Earthquakes 3.xcdatamodel"; sourceTree = "<group>"; };
+		074FBAFB1F0A3B3B00CC01FF /* Earthquakes 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Earthquakes 4.xcdatamodel"; sourceTree = "<group>"; };
+		074FBAFC1F0A3B9000CC01FF /* Earthquakes 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Earthquakes 5.xcdatamodel"; sourceTree = "<group>"; };
 		0752D30A1E66AF1C00F830E2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		0752D30C1E66AF1C00F830E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07569BBA1E0AD5C100D36893 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = Build/iOS/GoogleAnalytics.framework; sourceTree = "<group>"; };
-		07569BCA1E0ADCCA00D36893 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		0764592A1EADB45A006A93F1 /* NetworkStatusSlideDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatusSlideDownView.swift; sourceTree = "<group>"; };
+		0764592D1EADC27C006A93F1 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		0769C9091E22574800F4D604 /* UserNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCondition.swift; sourceTree = "<group>"; };
 		0771E0451E67CDAE0045CEE9 /* notificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		0771E0461E67CDB90045CEE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		078096551EDD975C00CFB2A3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		07A7D7501E56BE6100D33992 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		07A7D7581E56D58400D33992 /* TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A7D75A1E56D58400D33992 /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
@@ -131,8 +175,7 @@
 		07DA49A11E1FB0C500FA9A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07DA49AD1E1FB2BC00FA9A6E /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		07DA49AF1E1FB2BC00FA9A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07DA49C31E20BDB200FA9A6E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
-		07EF1BA41E7E7980006ED396 /* EditableEarthquakepoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableEarthquakepoint.swift; sourceTree = "<group>"; };
+		07EF1BA41E7E7980006ED396 /* EditableEarthquakepoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditableEarthquakepoint.swift; path = Earthquakes/EditableEarthquakepoint.swift; sourceTree = "<group>"; };
 		07EF1BA61E7E7A80006ED396 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		07FA10E51E06E4E000D1177B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		07FA10E61E06E4E000D1177B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -163,12 +206,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C985E71E2C85BF00AD0635 /* ProcedureKit.framework in Frameworks */,
-				07C985E81E2C85BF00AD0635 /* ProcedureKitCloud.framework in Frameworks */,
-				07C985E91E2C85BF00AD0635 /* ProcedureKitLocation.framework in Frameworks */,
-				07C985EA1E2C85BF00AD0635 /* ProcedureKitMobile.framework in Frameworks */,
-				07C985EB1E2C85BF00AD0635 /* ProcedureKitNetwork.framework in Frameworks */,
-				0764F3B81E2793E800181FAE /* SystemConfiguration.framework in Frameworks */,
+				074FBAE61F0A333A00CC01FF /* ProcedureKit.framework in Frameworks */,
+				074FBAEE1F0A333A00CC01FF /* ProcedureKitNetwork.framework in Frameworks */,
+				074FBAEC1F0A333A00CC01FF /* ProcedureKitMobile.framework in Frameworks */,
+				074FBAEA1F0A333A00CC01FF /* ProcedureKitLocation.framework in Frameworks */,
+				074FBAE41F0A333A00CC01FF /* KeychainAccess.framework in Frameworks */,
+				074FBAF01F0A333A00CC01FF /* SwiftyBeaver.framework in Frameworks */,
+				074FBAE21F0A333A00CC01FF /* Alamofire.framework in Frameworks */,
+				074FBAE81F0A333A00CC01FF /* ProcedureKitCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				070397621E21019A00856727 /* Controllers */,
+				076459291EADB419006A93F1 /* Views */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -214,9 +260,10 @@
 			children = (
 				072F37AF1E2DEC3900262192 /* AppController.swift */,
 				072F379D1E2DD90900262192 /* EarthquakesTableViewController.swift */,
+				074FBAF31F0A33EF00CC01FF /* EarthquakesTableViewCoordinator.swift */,
+				074FBAF41F0A349100CC01FF /* EarthquakeSectionHeaderView.swift */,
 				072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */,
 				072F37A11E2DDA1D00262192 /* EarthquakeBaseController.swift */,
-				074053021E88F05B00DBA05F /* EarthquakeFromUserController.swift */,
 				07EF1BA41E7E7980006ED396 /* EditableEarthquakepoint.swift */,
 			);
 			path = SignedIn;
@@ -248,6 +295,22 @@
 				0752D30C1E66AF1C00F830E2 /* Info.plist */,
 			);
 			path = notificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		076459291EADB419006A93F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0764592A1EADB45A006A93F1 /* NetworkStatusSlideDownView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0764592C1EADC27C006A93F1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0764592D1EADC27C006A93F1 /* VarelaRound-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		0769C8F61E22572600F4D604 /* Features */ = {
@@ -366,6 +429,7 @@
 		38503E9C1D4781450089EC93 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				070E2A6B1EDAF0730074E696 /* Podfile */,
 				38F30A9A1D61B4C7006D8E94 /* Cartfile */,
 				38C246361D58CE1800811892 /* Carthage */,
 			);
@@ -380,6 +444,7 @@
 				38503EA11D4781450089EC93 /* General */,
 				38503EA01D4781450089EC93 /* Development */,
 				38503EA31D4781450089EC93 /* Release */,
+				0764592C1EADC27C006A93F1 /* fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -433,16 +498,17 @@
 		38C246361D58CE1800811892 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
-				0701EA321E299FA70055FC19 /* ProcedureKit.framework */,
-				0701EA331E299FA70055FC19 /* ProcedureKitCloud.framework */,
-				0701EA341E299FA70055FC19 /* ProcedureKitLocation.framework */,
-				0701EA351E299FA70055FC19 /* ProcedureKitMobile.framework */,
-				0701EA361E299FA70055FC19 /* ProcedureKitNetwork.framework */,
-				0701EA371E299FA70055FC19 /* TestingProcedureKit.framework */,
-				07569BBA1E0AD5C100D36893 /* GoogleAnalytics.framework */,
-				07DA49C31E20BDB200FA9A6E /* SwiftyBeaver.framework */,
+				074FBACA1F0A315600CC01FF /* Alamofire.framework */,
+				074FBACF1F0A315600CC01FF /* KeychainAccess.framework */,
+				074FBACD1F0A315600CC01FF /* ProcedureKit.framework */,
+				074FBAD11F0A315600CC01FF /* ProcedureKitCloud.framework */,
+				074FBACE1F0A315600CC01FF /* ProcedureKitLocation.framework */,
+				074FBAD01F0A315600CC01FF /* ProcedureKitMobile.framework */,
+				074FBACB1F0A315600CC01FF /* ProcedureKitNetwork.framework */,
+				074FBACC1F0A315600CC01FF /* SwiftyBeaver.framework */,
 			);
-			path = Carthage;
+			name = Carthage;
+			path = Carthage/Build/iOS;
 			sourceTree = "<group>";
 		};
 		38F30AE81D62FF61006D8E94 /* API */ = {
@@ -491,11 +557,11 @@
 		E0423D641D8AF8BF0031D0D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				078096551EDD975C00CFB2A3 /* SystemConfiguration.framework */,
 				0771E0461E67CDB90045CEE9 /* MapKit.framework */,
 				E94B878E1DA7A43500E66730 /* AVFoundation.framework */,
 				07FA10E61E06E4E000D1177B /* Crashlytics.framework */,
 				07FA10E51E06E4E000D1177B /* Fabric.framework */,
-				07569BCA1E0ADCCA00D36893 /* SystemConfiguration.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -522,10 +588,12 @@
 				0703975F1E20F4FB00856727 /* UIColor.swift */,
 				072F379B1E2DD6CE00262192 /* Keychain.swift */,
 				07359CD31E430F450078E854 /* BaseClassControllers.swift */,
+				074FBAF71F0A365B00CC01FF /* BaseTableViewCoordinator.swift */,
 				072F756A1E5D143C000A5E3C /* ProgressBarIndeterminate.swift */,
 				072F75691E5D143C000A5E3C /* UINavigationController+UIProgressView.swift */,
 				07A7D7501E56BE6100D33992 /* UIViewController.swift */,
 				07EF1BA61E7E7A80006ED396 /* String.swift */,
+				074FBAC81F0A2F6D00CC01FF /* NetworkReachabilityManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -552,7 +620,6 @@
 				07A7D7541E56D58400D33992 /* Sources */,
 				07A7D7551E56D58400D33992 /* Frameworks */,
 				07A7D7561E56D58400D33992 /* Resources */,
-				07215EEE1EA0B7E100CA7D26 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -571,9 +638,9 @@
 				07FA10AD1E06C64100D1177B /* Sources */,
 				07FA10AE1E06C64100D1177B /* Frameworks */,
 				07FA10AF1E06C64100D1177B /* Resources */,
-				07569BB91E0AD3F500D36893 /* Carthage */,
 				072A91621E1A4DDE0054C122 /* Crashlytics */,
 				0752D3141E66AF1C00F830E2 /* Embed App Extensions */,
+				074FBAF21F0A333B00CC01FF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -591,18 +658,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Stephen McIntosh";
 				TargetAttributes = {
 					07A7D7571E56D58400D33992 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 07FA10B01E06C64100D1177B;
 					};
 					07FA10B01E06C64100D1177B = {
 						CreatedOnToolsVersion = 8.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -658,6 +725,7 @@
 				07569BE31E0FDE6300D36893 /* Graphik-Regular.otf in Resources */,
 				07569BE41E0FDE6300D36893 /* Graphik-Thin.otf in Resources */,
 				07569BDF1E0FDE4A00D36893 /* Settings.bundle in Resources */,
+				0764592E1EADC27C006A93F1 /* VarelaRound-Regular.ttf in Resources */,
 				072A91351E19D62D0054C122 /* Config.plist in Resources */,
 				07FA10F21E06F3ED00D1177B /* Assets.xcassets in Resources */,
 			);
@@ -666,25 +734,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07215EEE1EA0B7E100CA7D26 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKit.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitCloud.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitLocation.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitMobile.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitNetwork.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../Scripts/Carthage.sh\"";
-		};
 		072A91621E1A4DDE0054C122 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,26 +746,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#./Frameworks/Fabric.framework/run fa101df80a3cb9460aa4a96ce38e3f9057c962ec f44c7eca066c1db16391164875dcdb6c2eaaeacaebc526e910183575aabd2479";
-		};
-		07569BB91E0AD3F500D36893 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKit.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitCloud.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitLocation.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitMobile.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitNetwork.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../Scripts/Carthage.sh\"";
+			shellScript = "./Frameworks/Fabric.framework/run fa101df80a3cb9460aa4a96ce38e3f9057c962ec f44c7eca066c1db16391164875dcdb6c2eaaeacaebc526e910183575aabd2479";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -736,20 +766,24 @@
 				075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */,
 				07DA497A1E1F9AAF00FA9A6E /* MemoryResourceTracking.swift in Sources */,
 				07EF1BA71E7E7A80006ED396 /* String.swift in Sources */,
+				074FBAF81F0A365F00CC01FF /* BaseTableViewCoordinator.swift in Sources */,
 				0735B24D1E64F341000EA664 /* LoginOnboardingPageViewController.swift in Sources */,
 				0735B24B1E63F192000EA664 /* LogInOnboardingController.swift in Sources */,
 				072F3FB11E31BB2C00C419B0 /* GetLatestEarthquakes.swift in Sources */,
 				07497E441E5697B0006A8F13 /* MoreInformation.swift in Sources */,
 				07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */,
 				075AAD921E2DF5CF00094457 /* EarthquakeBaseController.swift in Sources */,
+				074FBAF51F0A35FA00CC01FF /* EarthquakesTableViewCoordinator.swift in Sources */,
 				072F37B01E2DEC3900262192 /* AppController.swift in Sources */,
 				07131EA71E34748700F0CFE7 /* DownloadEarthquakes.swift in Sources */,
-				074053031E88F05B00DBA05F /* EarthquakeFromUserController.swift in Sources */,
 				07A7D7511E56BE6100D33992 /* UIViewController.swift in Sources */,
 				072F37A41E2DDA2B00262192 /* Earthquake.swift in Sources */,
 				07359CD41E430F450078E854 /* BaseClassControllers.swift in Sources */,
 				075AAD901E2DF5C500094457 /* EarthquakesTableViewController.swift in Sources */,
+				078721381F0A297600692126 /* NetworkStatusSlideDownView.swift in Sources */,
+				074FBAF61F0A360200CC01FF /* EarthquakeSectionHeaderView.swift in Sources */,
 				0756AF601E403C8600C9A825 /* ParseJSONEarthquakes.swift in Sources */,
+				074FBAC91F0A2F8300CC01FF /* NetworkReachabilityManager.swift in Sources */,
 				07DA496B1E1E1D0400FA9A6E /* atomics.m in Sources */,
 				072F379C1E2DD6CE00262192 /* Keychain.swift in Sources */,
 				070397601E20F4FB00856727 /* UIColor.swift in Sources */,
@@ -807,14 +841,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -833,7 +873,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../External/**\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -899,7 +939,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Development-Template-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -912,7 +952,8 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Template-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
@@ -922,6 +963,7 @@
 		07A7D7601E56D58400D33992 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -935,7 +977,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Template.app/Template";
 			};
 			name = Debug;
@@ -943,6 +986,7 @@
 		07A7D7611E56D58400D33992 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -954,7 +998,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenjmcintoshau.TemplateAU.TemplateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Template.app/Template";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -963,6 +1008,7 @@
 		07A7D7621E56D58400D33992 /* Ad-hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -974,7 +1020,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenjmcintoshau.TemplateAU.TemplateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Template.app/Template";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -989,14 +1036,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1015,7 +1068,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../External/**\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1081,7 +1134,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Development-Template-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1094,7 +1147,8 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Template-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
@@ -1146,10 +1200,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1157,7 +1208,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Development-Template-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1170,7 +1221,8 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Template-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
@@ -1186,14 +1238,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1217,7 +1275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../External/**\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1267,9 +1325,13 @@
 		072F37A81E2DDEC000262192 /* Earthquakes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				074FBAFC1F0A3B9000CC01FF /* Earthquakes 5.xcdatamodel */,
+				074FBAFB1F0A3B3B00CC01FF /* Earthquakes 4.xcdatamodel */,
+				074FBAFA1F0A3B1900CC01FF /* Earthquakes 3.xcdatamodel */,
+				074FBAF91F0A3A3B00CC01FF /* Earthquakes 2.xcdatamodel */,
 				072F37A91E2DDEC000262192 /* Earthquakes.xcdatamodel */,
 			);
-			currentVersion = 072F37A91E2DDEC000262192 /* Earthquakes.xcdatamodel */;
+			currentVersion = 074FBAFC1F0A3B9000CC01FF /* Earthquakes 5.xcdatamodel */;
 			path = Earthquakes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

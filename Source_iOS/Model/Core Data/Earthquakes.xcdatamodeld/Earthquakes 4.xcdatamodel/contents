@@ -8,8 +8,8 @@
         <attribute name="magnitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="sectionIdentifier" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="webLink" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="webLink" optional="YES" attributeType="String" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="identifier"/>

@@ -1,6 +1,8 @@
 import UIKit
 import UserNotifications
 
+import Alamofire
+
 /*
 		not running -----<<<----------------------------------------|
 			|														|
@@ -31,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	/// The main window for the application.
 	var window: UIWindow?
+	var statusView: NetworkStatusSlideDownView?
 	
 	// MARK: - UIApplicationDelegate -
 		
@@ -59,8 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		//		 self.showUserLoginOnboarding()
 		// return true
 		// }
+		
 		self.showSignedIn()
 
+		let reachabilityManager = NetworkReachabilityManager()
+		let statusView = NetworkStatusSlideDownView(reachabilityManager: reachabilityManager!)
+		self.window?.addSubview(statusView)
+		self.statusView = statusView
+		self.window?.bringSubview(toFront: self.statusView!)
+		
 		return true
 	}
 	

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="44U-lq-1uF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="44U-lq-1uF">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,10 +13,6 @@
         <scene sceneID="GQT-zU-qX9">
             <objects>
                 <viewController id="44U-lq-1uF" customClass="LoginOnboardingController" customModule="Template" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yPF-YQ-kyx"/>
-                        <viewControllerLayoutGuide type="bottom" id="78X-4t-o4o"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SDH-If-hO4">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,15 +42,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="K0M-uK-3uJ" firstAttribute="top" secondItem="yPF-YQ-kyx" secondAttribute="bottom" constant="20" id="49B-Yx-d62"/>
-                            <constraint firstItem="yC2-fe-sii" firstAttribute="leading" secondItem="SDH-If-hO4" secondAttribute="leading" id="9XJ-k5-a1H"/>
-                            <constraint firstItem="yC2-fe-sii" firstAttribute="top" secondItem="yPF-YQ-kyx" secondAttribute="bottom" id="9wS-5B-C1b"/>
-                            <constraint firstItem="K0M-uK-3uJ" firstAttribute="leading" secondItem="SDH-If-hO4" secondAttribute="leading" constant="20" id="Kj5-ce-G8A"/>
-                            <constraint firstAttribute="trailing" secondItem="wqf-SI-XxL" secondAttribute="trailing" constant="20" id="SXN-8z-T0s"/>
-                            <constraint firstItem="78X-4t-o4o" firstAttribute="top" secondItem="wqf-SI-XxL" secondAttribute="bottom" constant="20" id="gdf-Es-mHl"/>
-                            <constraint firstItem="78X-4t-o4o" firstAttribute="top" secondItem="yC2-fe-sii" secondAttribute="bottom" id="mfK-Gu-Yzc"/>
-                            <constraint firstAttribute="trailing" secondItem="yC2-fe-sii" secondAttribute="trailing" id="nAP-Ho-xLu"/>
+                            <constraint firstItem="K0M-uK-3uJ" firstAttribute="top" secondItem="PzT-Oy-h5T" secondAttribute="top" constant="20" id="49B-Yx-d62"/>
+                            <constraint firstItem="yC2-fe-sii" firstAttribute="leading" secondItem="PzT-Oy-h5T" secondAttribute="leading" id="9XJ-k5-a1H"/>
+                            <constraint firstItem="yC2-fe-sii" firstAttribute="top" secondItem="PzT-Oy-h5T" secondAttribute="top" id="9wS-5B-C1b"/>
+                            <constraint firstItem="K0M-uK-3uJ" firstAttribute="leading" secondItem="PzT-Oy-h5T" secondAttribute="leading" constant="20" id="Kj5-ce-G8A"/>
+                            <constraint firstItem="PzT-Oy-h5T" firstAttribute="trailing" secondItem="wqf-SI-XxL" secondAttribute="trailing" constant="20" id="SXN-8z-T0s"/>
+                            <constraint firstItem="PzT-Oy-h5T" firstAttribute="bottom" secondItem="wqf-SI-XxL" secondAttribute="bottom" constant="20" id="gdf-Es-mHl"/>
+                            <constraint firstItem="PzT-Oy-h5T" firstAttribute="bottom" secondItem="yC2-fe-sii" secondAttribute="bottom" id="mfK-Gu-Yzc"/>
+                            <constraint firstItem="PzT-Oy-h5T" firstAttribute="trailing" secondItem="yC2-fe-sii" secondAttribute="trailing" id="nAP-Ho-xLu"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="PzT-Oy-h5T"/>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="yC2-fe-sii" id="d2K-fo-8Nz"/>
@@ -77,14 +74,11 @@
         <scene sceneID="yRY-aF-Bjw">
             <objects>
                 <viewController storyboardIdentifier="GreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n98-Dc-AEI" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fzb-6s-Yc0"/>
-                        <viewControllerLayoutGuide type="bottom" id="fNj-yn-YIC"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="t1J-dK-CfG">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="8NG-yL-wib"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQ1-kC-yjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,14 +89,11 @@
         <scene sceneID="BRc-dy-toY">
             <objects>
                 <viewController storyboardIdentifier="RedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0cd-9A-b6P" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="15a-6M-LZA"/>
-                        <viewControllerLayoutGuide type="bottom" id="eu5-xz-3c0"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lqT-Os-efn">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.24425050000000001" blue="0.072994126549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="vw4-Rk-eQg"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-6a-DVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,14 +104,11 @@
         <scene sceneID="c1e-GL-eY2">
             <objects>
                 <viewController storyboardIdentifier="BlueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H36-87-RBg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xoI-p9-Tyx"/>
-                        <viewControllerLayoutGuide type="bottom" id="WGu-Lh-8BF"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KFI-WB-YV2">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.27881835220000001" green="0.40340159660000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ztg-37-Nd8"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEK-Al-XF0" userLabel="First Responder" sceneMemberID="firstResponder"/>

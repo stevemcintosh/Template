@@ -7,14 +7,27 @@ import ProcedureKit
 import ProcedureKitLocation
 import ProcedureKitMobile
 
+public struct LocationPlacemark: Equatable {
+	public static func == (lhs: LocationPlacemark, rhs: LocationPlacemark) -> Bool {
+		return lhs.location == rhs.location && lhs.placemark == rhs.placemark
+	}
+	public let location: CLLocation
+	public let placemark: CLPlacemark
+}
+
 class EarthquakeBaseController: TableViewController {
     // MARK: Properties
-	
-	var procedureQueue: ProcedureQueue?
     var earthquake: Earthquake?
 
     private var locationProcedure: ProcedureKitLocation.UserLocationProcedure?
 	private var placeMark: MKPlacemark?
+	
+	fileprivate struct Constants {
+		static let LeftCalloutFrame = CGRect(x: 0, y: 0, width: 59, height: 59)
+		static let AnnotationViewReuseIdentifier = "pin"
+		static let ShowImageSegue = "ShowImageSegue"
+		static let EditUserWaypoint = "Edit Earthquake"
+	}
 	
 	@IBOutlet var map: MKMapView! {
 		didSet {
@@ -28,20 +41,15 @@ class EarthquakeBaseController: TableViewController {
     @IBOutlet var depthLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
-    
+	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
 	
 	// MARK: View Controller
-	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
-
+		
 		// Default all labels if there's no earthquake.
         guard let earthquake = earthquake else {
             nameLabel.text = ""
@@ -67,36 +75,36 @@ class EarthquakeBaseController: TableViewController {
         nameLabel.text = earthquake.name
 		magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
         depthLabel.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
-        timeLabel.text = Earthquake.timestampFormatter.string(from: earthquake.timestamp)
+		timeLabel.text = Earthquake.timestampFormatter.string(from: earthquake.timestamp)
 		
-		let locationProcedure = UserLocationProcedure(timeout: 10.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak weakSelf = self] (location) in
+		let locationProcedure = UserLocationProcedure(timeout: 60.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak self] (location) in
 			
-			if let earthquakeLocation = weakSelf?.earthquake?.location {
+			if let earthquakeLocation = self?.earthquake?.location {
                 let distance = location.distance(from: earthquakeLocation)
-                weakSelf?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
+                self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
             }
 
-			weakSelf?.locationProcedure?.finish()
+			self?.locationProcedure?.finish()
 		}
 
 		locationProcedure.add(observer: NetworkObserver())
-		procedureQueue?.addOperation(locationProcedure)
+		procedureQueue.addOperation(locationProcedure)
         self.locationProcedure = locationProcedure
     }
 	
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         // If the locationProcedure is still going on, then cancel it.
         locationProcedure?.cancel()
+		super.viewWillDisappear(animated)
     }
 	
     @IBAction func shareEarthquake(sender: UIBarButtonItem) {
         guard let earthquake = earthquake else { return }
-        guard let url = NSURL(string: earthquake.webLink) else { return }
-        
+		guard let url = NSURL(string: earthquake.webLink)
+		else { return }
+		
         let location = earthquake.location
-        
-        let items = [url, location]
+		let items = [url, location]
         
         let shareOperation = BlockProcedure {
 			DispatchQueue.main.async { [weak weakSelf = self] in
@@ -108,7 +116,7 @@ class EarthquakeBaseController: TableViewController {
         
 		shareOperation.add(condition: MutuallyExclusive<UIActivityViewController>())
 
-        procedureQueue?.addOperation(shareOperation)
+        procedureQueue.addOperation(shareOperation)
     }
     
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -117,7 +125,7 @@ class EarthquakeBaseController: TableViewController {
 			if let link = earthquake?.webLink, let url = URL(string: link) {
 				let moreInformation = MoreInformation(url: url)
 				moreInformation.add(condition: MutuallyExclusive<SFSafariViewController>())
-				procedureQueue?.add(operation: moreInformation)
+				procedureQueue.add(operation: moreInformation)
 			} else {
 				let alert = AlertProcedure(presentAlertFrom: self, waitForDismissal: true)
 				alert.add(actionWithTitle: "Ok") { alert, action in
@@ -125,17 +133,11 @@ class EarthquakeBaseController: TableViewController {
 				}
 				alert.title = "No Information"
 				alert.message = "Please select an earthquake and try again"
-				if self.procedureQueue == nil { self.procedureQueue = ProcedureQueue() }
-				procedureQueue?.add(operation: alert)
+				procedureQueue.add(operation: alert)
 			}
 		}
 		
 		tableView.deselectRow(at: indexPath, animated: true)
-	}
-	
-	fileprivate struct Constants {
-		static let LeftCalloutFrame = CGRect(x: 0, y: 0, width: 59, height: 59)
-		static let AnnotationViewReuseIdentifier = "pin"
 	}
 }
 
@@ -167,7 +169,59 @@ extension EarthquakeBaseController: MKMapViewDelegate {
             case 4..<5: pin.pinTintColor = UIColor.orange
             default:    pin.pinTintColor = UIColor.red
         }
-        
         return pin
-    }	
+    }
+	
+	func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//		var imageData: Data?
+//		let thumbnailImageButton = view.leftCalloutAccessoryView as? UIButton
+//
+//		let operation = BlockProcedure {
+//			guard let url = (view.annotation as? Earthquake.Waypoint)?.thumbnailURL else { return }
+//			imageData = try? Data(contentsOf: url as URL)
+//		}
+//
+//		operation.add(observer: BlockObserver(didFinish: { _, errors in
+//			DispatchQueue.main.async {
+//				if imageData != nil {
+//					let image = UIImage(data: imageData!)
+//					thumbnailImageButton?.setImage(image, for: UIControlState())
+//				}
+//				operation.finish(withErrors: errors)
+//			}
+//		}))
+//
+//		procedureQueue.addOperation(operation)
+	}
+	
+	
+	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+		if control == view.leftCalloutAccessoryView {
+			let operation = BlockProcedure {
+				DispatchQueue.main.async { [weak weakSelf = self] in
+					weakSelf?.performSegue(withIdentifier: EarthquakeBaseController.Constants.ShowImageSegue, sender: weakSelf?.view)
+				}
+			}
+			
+			operation.add(observer: BlockObserver(didFinish: { _, errors in
+				DispatchQueue.main.async {
+					operation.finish(withErrors: errors)
+				}
+			}))
+			procedureQueue.addOperation(operation)
+		} else if control == view.rightCalloutAccessoryView  {
+			let operation = BlockProcedure {
+				DispatchQueue.main.async {
+					mapView.deselectAnnotation(view.annotation, animated: true)
+				}
+			}
+			operation.add(observer: BlockObserver(didFinish: { _, errors in
+				DispatchQueue.main.async { [weak weakSelf = self] in
+					weakSelf?.performSegue(withIdentifier: EarthquakeBaseController.Constants.EditUserWaypoint, sender: view)
+					operation.finish(withErrors: errors)
+				}
+			}))
+			procedureQueue.addOperation(operation)
+		}
+	}
 }

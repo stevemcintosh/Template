@@ -3,14 +3,14 @@ import ProcedureKitMobile
 import CoreData
 
 class GetLatestEarthquakes: GroupProcedure {
-	typealias CompletionBlock = (Void) -> Void
+	typealias CompletionBlock = () -> Void
 	
 	init(context: NSManagedObjectContext, completion: @escaping CompletionBlock) {
 		let cachesFolder = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-		let cacheFile = cachesFolder.appendingPathComponent("earthquakes.json")
+		let cacheURL = cachesFolder.appendingPathComponent("earthquakes.json")
 
-		let downloadProcedure = DownloadEarthquakes(cacheFile: cacheFile)
-		let parseProcedure = ParseJSONEarthquakes(cacheFile: cacheFile, context: context) {
+		let downloadProcedure = DownloadEarthquakes(cacheURL: cacheURL)
+		let parseProcedure = ParseJSONEarthquakes(cacheURL: cacheURL, context: context) {
 			completion()
 		}
 		

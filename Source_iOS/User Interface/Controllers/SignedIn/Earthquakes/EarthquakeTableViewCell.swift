@@ -21,7 +21,7 @@ class EarthquakeTableViewCell: TableViewCell {
     func configure(earthquake: Earthquake) {
         timestampLabel.text = Earthquake.timestampFormatter.string(from: earthquake.timestamp)
 
-		magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
+        magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
         
         locationLabel.text = earthquake.name
         

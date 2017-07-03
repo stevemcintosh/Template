@@ -1,1 +1,4 @@
-github "ProcedureKit/ProcedureKit" "2eab2d50b54e308313db4b25ea55f52e93105f1f"
+github "Alamofire/Alamofire" "4.5.0"
+github "ProcedureKit/ProcedureKit" "07d4885fed92f41371d316aac5130ea073f05e31"
+github "SwiftyBeaver/SwiftyBeaver" "1.3.0"
+github "kishikawakatsumi/KeychainAccess" "v3.0.2"

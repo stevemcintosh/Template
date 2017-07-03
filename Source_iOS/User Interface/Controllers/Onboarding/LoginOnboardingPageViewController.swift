@@ -2,7 +2,7 @@ import UIKit
 
 class LoginOnboardingPageViewController: UIPageViewController {
     
-	weak var loginOnboardingDelegate: LoginOnboardingPageViewControllerDelegate?
+    weak var loginOnboardingDelegate: LoginOnboardingPageViewControllerDelegate?
     
     fileprivate(set) lazy var orderedViewControllers: [UIViewController] = {
         // The view controllers will be shown in this order

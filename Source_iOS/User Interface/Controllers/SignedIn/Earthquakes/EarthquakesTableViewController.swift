@@ -1,135 +1,150 @@
 import UIKit
 import CoreData
+
 import ProcedureKit
 import ProcedureKitMobile
 import ProcedureKitNetwork
 
+protocol EarthquakesTableViewControllerDelegate: class  {
+	func updateUI()
+	func navigationBarAnimation(state: EarthquakesTableViewController.AnimationState)
+	func refreshControl(state: EarthquakesTableViewController.AnimationState)
+	func getTableView() -> UITableView
+}
+
 class EarthquakesTableViewController: TableViewController {
+	
+	enum AnimationState {
+		case start
+		case stop
+	}
 	
 	fileprivate struct Constants {
 		static let ShowEarthQuake = "showEarthquake"
 	}
-
-    // MARK: Properties
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
-
-	let procedureQueue = ProcedureQueue()
-
+	
+	// MARK: Properties
+	var viewCoordinator: EarthquakesTableViewCoordinator?
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-
-		DispatchQueue.main.async() { self.navigationController?.startAnimating() }
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.tableView.delegate = self
+		self.tableView.dataSource = self
 		
-		let procedure = LoadEarthquakeModel { context in
-			
-			DispatchQueue.main.async() { [weak weakSelf = self] in
-				let request = NSFetchRequest<NSFetchRequestResult>(entityName: Earthquake.entityName)
-				request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
-				request.fetchLimit = 100
-				
-				let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-				weakSelf?.fetchedResultsController = controller
-				
-				self.navigationController?.stopAnimating()
-				weakSelf?.updateUI()
-			}
-		}
-		
-		procedureQueue.add(operation: procedure)
+		viewCoordinator = EarthquakesTableViewCoordinator()
+		viewCoordinator?.procedureQueue = procedureQueue
+		viewCoordinator?.delegate = self
+		viewCoordinator?.getEarthquakes()
 	}
 	
 	@IBOutlet weak var refresh: UIRefreshControl!
 	
+	func refreshControl(state: EarthquakesTableViewController.AnimationState) {
+		switch state {
+		case .start:
+			self.refresh.beginRefreshing()
+		case .stop:
+			self.refresh.endRefreshing()
+		}
+	}
+	
 	@IBAction func startRefreshing() {
-		getEarthquakes()
+		viewCoordinator?.getEarthquakes()
 	}
-
-	override func numberOfSections(in tableView: UITableView) -> Int {
-		return fetchedResultsController?.sections?.count ?? 0
-	}
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = fetchedResultsController?.sections?[section]
-
-        return section?.numberOfObjects ?? 0
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "earthquakeCell", for: indexPath) as! EarthquakeTableViewCell
-        
-        if let earthquake = fetchedResultsController?.object(at: indexPath) as? Earthquake {
-            cell.configure(earthquake: earthquake)
-        }
-
-        return cell
-    }
-    
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let operation = BlockProcedure {
-			DispatchQueue.main.async { [weak weakSelf = self] in
-				weakSelf?.performSegue(withIdentifier: Constants.ShowEarthQuake, sender: nil)
-			}
-        }
-        
-		operation.add(observer: BlockObserver(didFinish: { _, errors in
-			DispatchQueue.main.async {
-				tableView.deselectRow(at: indexPath, animated: true)
-				operation.finish(withErrors: errors)
-			}
-		}))
-		operation.add(observer: NetworkObserver())
-        procedureQueue.addOperation(operation)
-    }
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Constants.ShowEarthQuake {
 			guard let detailVC = segue.destination.contentViewController as? EarthquakeBaseController else { return }
 			
-			detailVC.procedureQueue = procedureQueue
-
+			detailVC.procedureQueue = self.procedureQueue
 			if let indexPath = tableView.indexPathForSelectedRow {
-				guard let earthquake = fetchedResultsController?.object(at: indexPath) as? Earthquake else { return }
+				guard let earthquake = viewCoordinator?.earthquakeInfo(at: indexPath) else { return }
 				detailVC.earthquake = earthquake
 			}
 		}
 	}
-	    
-    private func getEarthquakes(userInitiated: Bool = true) {
-		
-		self.navigationController?.startAnimating()
-		
-        if let context = fetchedResultsController?.managedObjectContext {
-            let getEarthquakesOperation = GetLatestEarthquakes(context: context) {
-				DispatchQueue.main.async { [weak weakSelf = self] in
-                    weakSelf?.refresh?.endRefreshing()
-					self.navigationController?.stopAnimating()
-					weakSelf?.updateUI()
-                }
-            }
-
-            getEarthquakesOperation.userIntent = .initiated
-			
-            procedureQueue.add(operation: getEarthquakesOperation)
-        }
-        else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak weakSelf = self] in
-                weakSelf?.refresh?.endRefreshing()
-				self.navigationController?.stopAnimating()
-            }
-        }
-    }
-    
-    func updateUI() {
-        do {
-            try fetchedResultsController?.performFetch()
-            if (self.fetchedResultsController?.fetchedObjects?.count == 0) {
-                getEarthquakes()
-			} else {
-				tableView.reloadData()		
-			}
-        }
-        catch {
-            print("Error in the fetched results controller: \(error).")
-        }
-    }
 }
+
+extension EarthquakesTableViewController { // UITableViewDataSource methods
+	
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		if let headerCell = self.tableView.dequeueReusableCell(withIdentifier: "sectionHeaderCell") as? EarthquakeSectionHeaderView {
+			headerCell.textLabel?.text = viewCoordinator?.titleForHeaderInSection(section: section)
+			headerCell.textLabel?.textColor = UIColor.almostWhite
+			headerCell.contentView.backgroundColor = UIColor.cerulean
+			return headerCell
+		}
+		return nil
+	}
+	
+	override func numberOfSections(in tableView: UITableView) -> Int {
+		return viewCoordinator?.numberofSections ?? 0
+	}
+	
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		let numberOfRows = viewCoordinator?.numberOfRowsInSection(section) ?? 0
+		return numberOfRows
+	}
+	
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "earthquakeCell", for: indexPath) as! EarthquakeTableViewCell
+		
+		if let earthquake = viewCoordinator?.earthquakeInfo(at: indexPath) {
+			cell.configure(earthquake: earthquake)
+			return cell
+		}
+		return cell
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let blockProcedure = BlockProcedure {
+			DispatchQueue.main.async { [weak weakSelf = self] in
+				weakSelf?.performSegue(withIdentifier: Constants.ShowEarthQuake, sender: nil)
+			}
+		}
+		
+		blockProcedure.add(observer: BlockObserver(didFinish: { _, errors in
+			DispatchQueue.main.async {
+				tableView.deselectRow(at: indexPath, animated: true)
+				blockProcedure.finish(withErrors: errors)
+			}
+		}))
+		blockProcedure.add(observer: NetworkObserver())
+		procedureQueue.addOperation(blockProcedure)
+	}
+}
+
+extension EarthquakesTableViewController: UITableViewDragDelegate {
+	func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+		return [UIDragItem.init(itemProvider: NSItemProvider())]
+	}
+}
+
+extension EarthquakesTableViewController: UITableViewDropDelegate {
+	func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+	}
+}
+
+extension EarthquakesTableViewController: EarthquakesTableViewControllerDelegate {
+	func getTableView() -> UITableView {
+		return self.tableView
+	}
+	
+	func updateUI() {
+		tableView.reloadData()
+	}
+	
+	func navigationBarAnimation(state: AnimationState) {
+		switch state {
+		case .start:
+			self.navigationController?.startAnimating()
+		case .stop:
+			self.navigationController?.stopAnimating()
+		}
+	}
+}
+

@@ -103,7 +103,7 @@
 			}
 		}
 		
-		@objc func didReceiveResponse(_ notification: Notification) {
+		func didReceiveResponse(_ notification: Notification) {
 			NotificationCenter.default.removeObserver(self)
 			
 			let userInfo = notification.userInfo
