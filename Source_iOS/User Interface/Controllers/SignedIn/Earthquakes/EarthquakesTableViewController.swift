@@ -38,6 +38,10 @@ class EarthquakesTableViewController: TableViewController {
 		viewCoordinator = EarthquakesTableViewCoordinator()
 		viewCoordinator?.procedureQueue = procedureQueue
 		viewCoordinator?.delegate = self
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		viewCoordinator?.getEarthquakes()
 	}
 	
@@ -53,7 +57,7 @@ class EarthquakesTableViewController: TableViewController {
 	}
 	
 	@IBAction func startRefreshing() {
-		viewCoordinator?.getEarthquakes()
+		viewCoordinator?.getEarthquakes(showRefreshControl: true)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

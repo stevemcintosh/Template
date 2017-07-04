@@ -32,4 +32,23 @@ public extension UINavigationController {
             }
         }
     }
+	
+	override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		super.viewWillTransition(to: size, with: coordinator)
+		
+		coordinator.animate(alongsideTransition: nil) { (transitionContext) in
+			for i in self.view.subviews {
+				if i.tag == 999 {
+					if let progressViewHorizontal: ProgressBarIndeterminate = i as? ProgressBarIndeterminate {
+						self.stopAnimating()
+						let frame = self.navigationBar.frame
+						progressViewHorizontal.frame.origin.y = frame.origin.y - UIApplication.shared.statusBarFrame.size.height
+						progressViewHorizontal.frame.size.width = frame.size.width
+						self.startAnimating()
+					}
+					break
+				}
+			}
+		}
+	}
 }

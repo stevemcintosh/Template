@@ -51,7 +51,7 @@ class ProgressBarIndeterminate: UIView {
     var animationFromValue: CGFloat             = 0.0
     var animationToValue: CGFloat               = 0.0
     
-    var progressBarThickness: CGFloat           = 2.0 {
+    var progressBarThickness: CGFloat           = 3.0 {
         willSet {
             progressLayer.lineWidth             = progressBarThickness
             
@@ -96,6 +96,10 @@ class ProgressBarIndeterminate: UIView {
             self.setNeedsDisplay()
         }
     }
+	
+	deinit {
+		MemoryResourceTracking.decrementTotal(String(describing: self))
+	}
 
     init() {
         super.init(frame: CGRect.zero)
@@ -113,6 +117,9 @@ class ProgressBarIndeterminate: UIView {
     }
     
     func setup() {
+		
+		MemoryResourceTracking.incrementTotal(String(describing: self))
+		
         self.backgroundColor                    = UIColor.clear
         
         progressBar                             = UIView.init()
@@ -143,7 +150,7 @@ class ProgressBarIndeterminate: UIView {
         
         var progressFrame = CGRect(x: 0.0, y: (self.bounds.size.height - progressBarThickness), width: self.bounds.size.width, height: progressBarThickness)
         progressFrame.origin = CGPoint(x: 0.0, y: (self.bounds.size.height - progressBarThickness))
-
+		
         progressBar.frame = CGRect(x: 0.0, y: (self.bounds.size.height - progressBarThickness), width: self.bounds.size.width, height: progressBarThickness)
         
         progressLayer.frame = progressFrame

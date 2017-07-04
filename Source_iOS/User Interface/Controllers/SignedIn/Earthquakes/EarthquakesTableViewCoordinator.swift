@@ -45,8 +45,8 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 		return nil
 	}
 	
-	func getEarthquakes() {
-		self.delegate?.refreshControl(state: .start)
+	func getEarthquakes(showRefreshControl: Bool = false) {
+		if showRefreshControl { self.delegate?.refreshControl(state: .start) }
 		self.delegate?.navigationBarAnimation(state: .start)
 		
 		self.loadEarthquakeModel {
@@ -63,7 +63,7 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 					self.performFetch()
 					
 					DispatchQueue.main.async { [weak self] in
-						self?.delegate?.refreshControl(state: .stop)
+						if showRefreshControl { self?.delegate?.refreshControl(state: .stop) }
 						self?.delegate?.navigationBarAnimation(state: .stop)
 						self?.delegate?.updateUI()
 					}
@@ -72,7 +72,7 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 				self.procedureQueue?.add(operation: getEarthquakesGroupProcedure)
 			} else {
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-					self?.delegate?.refreshControl(state: .stop)
+					if showRefreshControl { self?.delegate?.refreshControl(state: .stop) }
 					self?.delegate?.navigationBarAnimation(state: .stop)
 				}
 			}

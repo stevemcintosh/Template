@@ -10,16 +10,18 @@ import Foundation
 		}
 		
 		/// Increments `Resources.total` resource count.
-		public static func incrementTotal(_ file: String = #file, line: UInt = #line, function: String = #function) -> Swift.Void {
+		public static func incrementTotal(_ className: String, _ file: String = #file, line: UInt = #line, function: String = #function) -> Swift.Void {
 			__atomic_increment()
-			print(String(repeating:"-", count:Int(self.total)) + ">\(file.components(separatedBy: "/").last!.components(separatedBy: ".").first!) count: \(self.total)")
+			let classStr = (className.components(separatedBy: CharacterSet([".",":"])).count >= 2) ? className.components(separatedBy: CharacterSet([".",":"]))[1] : ""
+			print(String(repeating:"-", count:Int(self.total)) + ">\(classStr) count: \(self.total)")
 		}
 		
 		/// Decrements `Resources.total` resource count
-		public static func decrementTotal(_ file: String = #file, line: UInt = #line, function: String = #function) -> Swift.Void {
+		public static func decrementTotal(_ className: String, _ file: String = #file, line: UInt = #line, function: String = #function) -> Swift.Void {
 			guard __get_atomic_count() > 0 else { return }
 			__atomic_decrement()
-			print("<" + String(repeating:"-", count:Int(self.total+1)) + "\(file.components(separatedBy: "/").last!.components(separatedBy: ".").first!) count: \(self.total)")
+			let classStr = (className.components(separatedBy: CharacterSet([".",":"])).count >= 2) ? className.components(separatedBy: CharacterSet([".",":"]))[1] : ""
+			print("<" + String(repeating:"-", count:Int(self.total)) + "\(classStr) count: \(self.total)")
 		}
 	}
 	
