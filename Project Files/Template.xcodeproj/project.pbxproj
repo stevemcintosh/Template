@@ -114,7 +114,6 @@
 		0703975F1E20F4FB00856727 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		070397661E210C2500856727 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
 		0703976B1E210CDA00856727 /* RemoteNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationCondition.swift; sourceTree = "<group>"; };
-		070E2A6B1EDAF0730074E696 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		071DB1C51E3DCD9100034EE1 /* ParseJSONEarthquakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJSONEarthquakes.swift; sourceTree = "<group>"; };
 		07222C2A1E90DAA60024BE9B /* Template.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = Template.entitlements; path = Resources/Template.entitlements; sourceTree = SOURCE_ROOT; };
 		0729FFE01E319855003CB630 /* DownloadEarthquakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DownloadEarthquakes.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -429,7 +428,6 @@
 		38503E9C1D4781450089EC93 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				070E2A6B1EDAF0730074E696 /* Podfile */,
 				38F30A9A1D61B4C7006D8E94 /* Cartfile */,
 				38C246361D58CE1800811892 /* Carthage */,
 			);
