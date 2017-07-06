@@ -97,7 +97,7 @@ extension EarthquakesTableViewController { // UITableViewDataSource methods
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "earthquakeCell", for: indexPath) as! EarthquakeTableViewCell
 		
-		if let earthquake = viewCoordinator?.earthquakeInfo(at: indexPath) {
+		if let earthquake = viewCoordinator?.earthquakeInfo(at: indexPath), earthquake.identifier != "" {
 			cell.configure(earthquake: earthquake)
 			return cell
 		}

@@ -82,6 +82,8 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 	func titleForHeaderInSection(section: Int) -> String? {
 		guard let sectionInfo = fetchedResultsController?.sections else { return "" }
 		var sectionHeadingStr = sectionInfo[section].name
+		
+		guard self.earthquakeInfo(at: IndexPath(row: 0, section:0))?.identifier != "" else { return sectionInfo[section].name }
 		guard let sectionHeadingDate = self.earthquakeInfo(at: IndexPath(row: 0, section: section))?.timestamp else { return sectionInfo[section].name }
 		
 		if NSCalendar.current.isDateInToday(sectionHeadingDate) {

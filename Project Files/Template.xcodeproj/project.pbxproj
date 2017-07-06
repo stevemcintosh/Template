@@ -419,8 +419,8 @@
 				07A7D7591E56D58400D33992 /* TemplateTests */,
 				0752D3091E66AF1C00F830E2 /* notificationServiceExtension */,
 				07DA49741E1E1F8800FA9A6E /* Products */,
-				E0423D641D8AF8BF0031D0D5 /* Frameworks */,
 				07A7D7581E56D58400D33992 /* TemplateTests.xctest */,
+				E0423D641D8AF8BF0031D0D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
