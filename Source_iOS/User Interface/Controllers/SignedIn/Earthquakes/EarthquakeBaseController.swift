@@ -75,7 +75,7 @@ class EarthquakeBaseController: TableViewController {
         nameLabel.text = earthquake.name
 		magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
         depthLabel.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
-		timeLabel.text = Earthquake.timestampFormatter.string(from: earthquake.timestamp)
+		timeLabel.text = Earthquake.datetimestampFormatter.string(from: earthquake.timestamp)
 		
 		let locationProcedure = UserLocationProcedure(timeout: 60.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak self] (location) in
 			

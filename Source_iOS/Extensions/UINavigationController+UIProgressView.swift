@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public extension UINavigationController {
+extension UINavigationController {
     
    func startAnimating() {
         for i in self.view.subviews {
@@ -52,3 +52,4 @@ public extension UINavigationController {
 		}
 	}
 }
+

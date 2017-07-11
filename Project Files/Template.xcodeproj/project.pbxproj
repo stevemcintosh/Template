@@ -152,6 +152,7 @@
 		0752D30C1E66AF1C00F830E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0764592A1EADB45A006A93F1 /* NetworkStatusSlideDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatusSlideDownView.swift; sourceTree = "<group>"; };
 		0764592D1EADC27C006A93F1 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
+		076944341F14B6620064204E /* Earthquakes 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Earthquakes 6.xcdatamodel"; sourceTree = "<group>"; };
 		0769C9091E22574800F4D604 /* UserNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCondition.swift; sourceTree = "<group>"; };
 		0771E0451E67CDAE0045CEE9 /* notificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		0771E0461E67CDB90045CEE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -1323,13 +1324,14 @@
 		072F37A81E2DDEC000262192 /* Earthquakes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				076944341F14B6620064204E /* Earthquakes 6.xcdatamodel */,
 				074FBAFC1F0A3B9000CC01FF /* Earthquakes 5.xcdatamodel */,
 				074FBAFB1F0A3B3B00CC01FF /* Earthquakes 4.xcdatamodel */,
 				074FBAFA1F0A3B1900CC01FF /* Earthquakes 3.xcdatamodel */,
 				074FBAF91F0A3A3B00CC01FF /* Earthquakes 2.xcdatamodel */,
 				072F37A91E2DDEC000262192 /* Earthquakes.xcdatamodel */,
 			);
-			currentVersion = 074FBAFC1F0A3B9000CC01FF /* Earthquakes 5.xcdatamodel */;
+			currentVersion = 076944341F14B6620064204E /* Earthquakes 6.xcdatamodel */;
 			path = Earthquakes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

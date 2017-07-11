@@ -52,15 +52,8 @@ class ParseJSONEarthquakes: Procedure {
     let cacheURL: URL
     let context: NSManagedObjectContext
     let completion: CompletionBlock
-    let mediumDateFormatter: DateFormatter
 	
-    init(cacheURL: URL, context: NSManagedObjectContext, completion: @escaping CompletionBlock) {
-		
-		mediumDateFormatter = DateFormatter()
-		mediumDateFormatter.locale = Locale.current
-		mediumDateFormatter.timeZone = TimeZone.autoupdatingCurrent
-		mediumDateFormatter.dateStyle = .medium
-		
+	init(cacheURL: URL, context: NSManagedObjectContext, completion: @escaping CompletionBlock) {
         let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         importContext.persistentStoreCoordinator = context.persistentStoreCoordinator
     
@@ -126,7 +119,8 @@ class ParseJSONEarthquakes: Procedure {
         if let _ = (try? context.fetch(request))?.first as? Earthquake {
             return
         } else if let earthquake = NSEntityDescription.insertNewObject(forEntityName: Earthquake.entityName, into: context) as? Earthquake {
-			earthquake.sectionIdentifier = mediumDateFormatter.string(from: parsed.date)
+			let (date: date, string: _) = Earthquake.ddMMYYYFromDate(date: parsed.date)
+			earthquake.sectionIdentifier = date
             earthquake.identifier = parsed.identifier
             earthquake.timestamp = parsed.date
             earthquake.latitude = parsed.latitude

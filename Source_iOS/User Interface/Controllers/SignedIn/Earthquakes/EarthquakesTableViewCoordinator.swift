@@ -15,17 +15,35 @@ import ProcedureKitMobile
 import ProcedureKitNetwork
 
 class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
-	let timestampFormatter = DateFormatter()
 	weak var delegate: EarthquakesTableViewControllerDelegate?
 	var procedureQueue: ProcedureQueue?
 	
+	fileprivate var fetchTimer: Timer?
+	
 	override init() {
 		super.init()
-		timestampFormatter.dateStyle = .medium
+	}
+	
+	@objc func updateEarthquakes() {
+		getEarthquakes(showRefreshControl: false, reloadTable: true)
+	}
+	
+	func startFetchingEarthquakes(every time: TimeInterval = 300) {
+		stopFetchingEarthquakes()
+		getEarthquakes(showRefreshControl: false, reloadTable: true)
+		fetchTimer = Timer.scheduledTimer(timeInterval: time,
+		                                  target: self,
+		                                  selector: #selector(self.updateEarthquakes),
+		                                  userInfo: nil,
+		                                  repeats: true)
+	}
+	
+	func stopFetchingEarthquakes() {
+		fetchTimer?.invalidate()
+		fetchTimer = nil
 	}
 	
 	func loadEarthquakeModel(completionHandler: @escaping () -> Void) {
-		
 		if self.context != nil {
 			completionHandler()
 			return
@@ -45,7 +63,7 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 		return nil
 	}
 	
-	func getEarthquakes(showRefreshControl: Bool = false) {
+	 @objc func getEarthquakes(showRefreshControl: Bool = false, reloadTable: Bool = false) {
 		if showRefreshControl { self.delegate?.refreshControl(state: .start) }
 		self.delegate?.navigationBarAnimation(state: .start)
 		
@@ -53,11 +71,11 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 			if let context = self.context {
 				let getEarthquakesGroupProcedure = GetLatestEarthquakes(context: context) {
 					let request = NSFetchRequest<NSFetchRequestResult>(entityName: Earthquake.entityName)
-					request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
-					request.fetchLimit = 100
+					request.sortDescriptors = [NSSortDescriptor(key: "sectionIdentifier", ascending: false), NSSortDescriptor(key: "timestamp", ascending: false)]
 					request.fetchBatchSize = 20
+					request.fetchOffset = 0
 					
-					let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier", cacheName: "Root")
+					let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier", cacheName: nil)
 					self.fetchedResultsController = controller
 					self.fetchedResultsController?.delegate = self
 					self.performFetch()
@@ -65,7 +83,7 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 					DispatchQueue.main.async { [weak self] in
 						if showRefreshControl { self?.delegate?.refreshControl(state: .stop) }
 						self?.delegate?.navigationBarAnimation(state: .stop)
-						self?.delegate?.updateUI()
+						if reloadTable { self?.delegate?.updateUI() }
 					}
 				}
 				getEarthquakesGroupProcedure.userIntent = .initiated
@@ -81,10 +99,11 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 	
 	func titleForHeaderInSection(section: Int) -> String? {
 		guard let sectionInfo = fetchedResultsController?.sections else { return "" }
-		var sectionHeadingStr = sectionInfo[section].name
 		
-		guard self.earthquakeInfo(at: IndexPath(row: 0, section:0))?.identifier != "" else { return sectionInfo[section].name }
-		guard let sectionHeadingDate = self.earthquakeInfo(at: IndexPath(row: 0, section: section))?.timestamp else { return sectionInfo[section].name }
+		guard let objectsInSection = sectionInfo[section].objects as? [Earthquake] else { return sectionInfo[section].name }
+		let sortedObjects = objectsInSection.sorted(by: { $0.timestamp > $1.timestamp })
+		guard var (_, sectionHeadingStr) = Earthquake.ddMMYYYFromDate(date: (sortedObjects.first?.sectionIdentifier)!) as? (Date, String) else { return sectionInfo[section].name }
+		guard let sectionHeadingDate = sortedObjects.first?.timestamp else { return sectionHeadingStr }
 		
 		if NSCalendar.current.isDateInToday(sectionHeadingDate) {
 			sectionHeadingStr = "Today"

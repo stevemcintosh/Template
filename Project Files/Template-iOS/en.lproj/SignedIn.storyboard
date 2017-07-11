@@ -75,10 +75,10 @@
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-i8-bpB">
-                                            <rect key="frame" x="262" y="11" width="90" height="43"/>
+                                            <rect key="frame" x="277" y="11" width="75" height="43"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="43" id="Ng4-85-Zjx"/>
-                                                <constraint firstAttribute="width" constant="90" id="YeI-FR-K2N"/>
+                                                <constraint firstAttribute="width" constant="75" id="YeI-FR-K2N"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxQ-FP-9Eb">
@@ -100,7 +100,7 @@
                                 </tableViewCellContentView>
                                 <constraints>
                                     <constraint firstItem="BhM-CM-Jkn" firstAttribute="top" secondItem="Req-b0-uFl" secondAttribute="top" constant="9" id="4Y4-63-tsF"/>
-                                    <constraint firstItem="Brb-i8-bpB" firstAttribute="leading" secondItem="KxQ-FP-9Eb" secondAttribute="trailing" constant="8" symbolic="YES" id="NMO-n1-0Rj"/>
+                                    <constraint firstItem="Brb-i8-bpB" firstAttribute="leading" secondItem="KxQ-FP-9Eb" secondAttribute="trailing" constant="23" id="NMO-n1-0Rj"/>
                                     <constraint firstItem="BhM-CM-Jkn" firstAttribute="leading" secondItem="Req-b0-uFl" secondAttribute="leading" constant="14" id="NZN-q5-qUk"/>
                                     <constraint firstItem="43J-N2-7Ru" firstAttribute="leading" secondItem="Brb-i8-bpB" secondAttribute="trailing" constant="8" symbolic="YES" id="O1n-F9-qu0"/>
                                     <constraint firstAttribute="centerY" secondItem="43J-N2-7Ru" secondAttribute="centerY" id="Sft-IF-LwR"/>

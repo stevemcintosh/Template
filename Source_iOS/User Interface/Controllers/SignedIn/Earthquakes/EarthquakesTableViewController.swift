@@ -42,7 +42,12 @@ class EarthquakesTableViewController: TableViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		viewCoordinator?.getEarthquakes()
+		viewCoordinator?.startFetchingEarthquakes()
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		viewCoordinator?.stopFetchingEarthquakes()
 	}
 	
 	@IBOutlet weak var refresh: UIRefreshControl!
@@ -57,7 +62,7 @@ class EarthquakesTableViewController: TableViewController {
 	}
 	
 	@IBAction func startRefreshing() {
-		viewCoordinator?.getEarthquakes(showRefreshControl: true)
+		viewCoordinator?.getEarthquakes(showRefreshControl: true, reloadTable: false)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,6 +125,7 @@ extension EarthquakesTableViewController { // UITableViewDataSource methods
 		blockProcedure.add(observer: NetworkObserver())
 		procedureQueue.addOperation(blockProcedure)
 	}
+	
 }
 
 extension EarthquakesTableViewController: UITableViewDragDelegate {
@@ -139,7 +145,9 @@ extension EarthquakesTableViewController: EarthquakesTableViewControllerDelegate
 	}
 	
 	func updateUI() {
-		tableView.reloadData()
+		DispatchQueue.main.async { [weak self] in
+			self?.tableView.reloadData()
+		}
 	}
 	
 	func navigationBarAnimation(state: AnimationState) {

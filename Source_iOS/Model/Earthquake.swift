@@ -21,15 +21,28 @@ class Earthquake: NSManagedObject {
     
     // MARK: Formatters
 
-    static let timestampFormatter: DateFormatter = {
-        let timestampFormatter = DateFormatter()
-        
-        timestampFormatter.dateStyle = .medium
-        timestampFormatter.timeStyle = .medium
+    static let datetimestampFormatter: DateFormatter = {
+        let datetimestampFormatter = DateFormatter()
+		datetimestampFormatter.locale = Locale.current
+		datetimestampFormatter.timeZone = TimeZone.autoupdatingCurrent
+		datetimestampFormatter.dateStyle = .medium
+        datetimestampFormatter.timeStyle = .medium
 
-        return timestampFormatter
+        return datetimestampFormatter
     }()
-    
+	
+	static func ddMMYYYFromDate(date: Date) -> (date: Date?, string: String?) {
+		guard let calendar = NSCalendar(identifier: .gregorian) else { return (nil, nil) }
+		let components = calendar.components([.month, .day, .year], from: date)
+		guard let date = calendar.date(from: components) else { return (nil, nil) }
+		let dateFormatter = DateFormatter()
+		dateFormatter.locale = Locale.current
+		dateFormatter.timeZone = TimeZone.autoupdatingCurrent
+		dateFormatter.dateStyle = .medium
+		dateFormatter.timeStyle = .none
+		return (date, dateFormatter.string(from: date))
+	}
+	
     static let magnitudeFormatter: NumberFormatter = {
         let magnitudeFormatter = NumberFormatter()
         
@@ -58,7 +71,7 @@ class Earthquake: NSManagedObject {
     }()
 
     // MARK: Properties
-    @NSManaged public var sectionIdentifier: String?
+    @NSManaged public var sectionIdentifier: Date?
     @NSManaged var identifier: String
     @NSManaged var latitude: Double
     @NSManaged var longitude: Double

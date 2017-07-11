@@ -25,7 +25,6 @@ class DownloadEarthquakes: GroupProcedure {
                     try fileManager.removeItem(at: cacheURL)
                 }
                 try data.write(to: cacheURL, options: .atomic)
-//                self.finish()
                 return cacheURL
             } catch {
                 self.finish(withError: ProcedureKitError.requirementNotSatisfied())
