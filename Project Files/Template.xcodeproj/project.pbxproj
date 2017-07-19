@@ -157,6 +157,7 @@
 		0771E0451E67CDAE0045CEE9 /* notificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		0771E0461E67CDB90045CEE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		078096551EDD975C00CFB2A3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		078F265A1F1F2F5400C93832 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		07A7D7501E56BE6100D33992 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		07A7D7581E56D58400D33992 /* TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A7D75A1E56D58400D33992 /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
@@ -408,6 +409,7 @@
 		38503E611D477F580089EC93 = {
 			isa = PBXGroup;
 			children = (
+				078F265A1F1F2F5400C93832 /* README.md */,
 				E02A25951D4A5F75001E01E3 /* Constants */,
 				E0325AC21D5C803F00F3BAF4 /* Source_iOS */,
 				E0693FE51D4A578000432D57 /* Documentation */,
