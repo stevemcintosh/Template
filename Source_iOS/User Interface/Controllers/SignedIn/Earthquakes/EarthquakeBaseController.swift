@@ -76,24 +76,25 @@ class EarthquakeBaseController: TableViewController {
         depthLabel.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
 		timeLabel.text = Earthquake.datetimestampFormatter.string(from: earthquake.timestamp)
 		distanceLabel.text = "finding your location..."
-		
+    }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		let locationProcedure = UserLocationProcedure(timeout: 60.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak self] (location) in
 			
 			if let earthquakeLocation = self?.earthquake?.location {
-                let distance = location.distance(from: earthquakeLocation)
-                self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
+				let distance = location.distance(from: earthquakeLocation)
+				self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
 			} else {
-				distanceLabel.text = "The location of the earthquake was not found from the feed from http://earthquake.usgs.gov.\r Try to do a pull/refresh to reload data."
+				self?.distanceLabel.text = "The location information for this earthquake is missing."
 			}
 			self?.locationProcedure?.finish()
-		} else {
-			distanceLabel.text = "Your location could not be determined"
 		}
-
+		
 		locationProcedure.add(observer: NetworkObserver())
 		procedureQueue.addOperation(locationProcedure)
-        self.locationProcedure = locationProcedure
-    }
+		self.locationProcedure = locationProcedure
+	}
 	
     override func viewWillDisappear(_ animated: Bool) {
         // If the locationProcedure is still going on, then cancel it.
