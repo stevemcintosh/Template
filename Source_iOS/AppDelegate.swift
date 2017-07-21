@@ -17,8 +17,11 @@ import Alamofire
 																	|-<<<---[Foreground]----------
 																	|
 																	|->>>---[Background]----------
-		 background -----<<<-applicationDidEnterBackground----------| - runnning code for a very limited time (< 30 secs), no UI events, get ready to be killed,
-			|														|     but it may not happen, depends on systems resources, etc
+		 background -----<<<-applicationDidEnterBackground----------| - runnning code for a very limited time
+			|														| (<30 secs), no UI events,
+			|														| get ready to be killed,
+			|														| but it may not happen, depends on
+			|  														| systems resources, etc
 			|														|-<<<---[Background]----------
 		   /|\														|
 			|														|

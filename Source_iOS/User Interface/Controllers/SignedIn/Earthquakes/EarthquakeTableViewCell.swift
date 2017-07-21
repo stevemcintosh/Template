@@ -17,7 +17,12 @@ class EarthquakeTableViewCell: TableViewCell {
     @IBOutlet var magnitudeImage: UIImageView!
     
     // MARK: Configuration
-    
+	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		initializeCell()
+	}
+	
     func configure(earthquake: Earthquake) {
 		let timestamp = earthquake.timestamp
 		timestampLabel.text = Earthquake.datetimestampFormatter.string(from: timestamp)
@@ -40,3 +45,13 @@ class EarthquakeTableViewCell: TableViewCell {
     }
 
 }
+
+private extension EarthquakeTableViewCell {
+	func initializeCell() {
+		locationLabel.text = nil
+		timestampLabel.text = nil
+		magnitudeLabel.text = nil
+		magnitudeImage.image = nil
+	}
+}
+
