@@ -18,6 +18,8 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 	weak var delegate: EarthquakesTableViewControllerDelegate?
 	var procedureQueue: ProcedureQueue?
 	
+	static let UpdateEarthquakeInfoWithUserLocationName = "UpdateEarthquakeInfoWithUserLocation"
+
 	fileprivate var fetchTimer: Timer?
 	
 	override init() {

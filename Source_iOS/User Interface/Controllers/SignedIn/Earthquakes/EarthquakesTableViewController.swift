@@ -10,6 +10,7 @@ protocol EarthquakesTableViewControllerDelegate: class  {
 	func navigationBarAnimation(state: EarthquakesTableViewController.AnimationState)
 	func refreshControl(state: EarthquakesTableViewController.AnimationState)
 	func getTableView() -> UITableView
+//	func updateEarthquakeInfoWithUserLocation()
 }
 
 class EarthquakesTableViewController: TableViewController {

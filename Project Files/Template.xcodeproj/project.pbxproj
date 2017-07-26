@@ -54,6 +54,7 @@
 		075AAD911E2DF5CC00094457 /* EarthquakeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */; };
 		075AAD921E2DF5CF00094457 /* EarthquakeBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37A11E2DDA1D00262192 /* EarthquakeBaseController.swift */; };
 		075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C985E21E2C77CB00AD0635 /* LoadEarthquakeModel.swift */; };
+		0763C02F1F243F5400E02C24 /* CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763C02E1F243F5400E02C24 /* CLLocation.swift */; };
 		0764592E1EADC27C006A93F1 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0764592D1EADC27C006A93F1 /* VarelaRound-Regular.ttf */; };
 		078721381F0A297600692126 /* NetworkStatusSlideDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0764592A1EADB45A006A93F1 /* NetworkStatusSlideDownView.swift */; };
 		07A7D7511E56BE6100D33992 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7D7501E56BE6100D33992 /* UIViewController.swift */; };
@@ -150,6 +151,7 @@
 		074FBAFC1F0A3B9000CC01FF /* Earthquakes 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Earthquakes 5.xcdatamodel"; sourceTree = "<group>"; };
 		0752D30A1E66AF1C00F830E2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		0752D30C1E66AF1C00F830E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0763C02E1F243F5400E02C24 /* CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
 		0764592A1EADB45A006A93F1 /* NetworkStatusSlideDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatusSlideDownView.swift; sourceTree = "<group>"; };
 		0764592D1EADC27C006A93F1 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		076944341F14B6620064204E /* Earthquakes 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Earthquakes 6.xcdatamodel"; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				07A7D7501E56BE6100D33992 /* UIViewController.swift */,
 				07EF1BA61E7E7A80006ED396 /* String.swift */,
 				074FBAC81F0A2F6D00CC01FF /* NetworkReachabilityManager.swift */,
+				0763C02E1F243F5400E02C24 /* CLLocation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -770,7 +773,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../Scripts/Carthage.sh\"";
+			shellScript = "#\"$SRCROOT/../Scripts/Carthage.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -798,6 +801,7 @@
 				07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */,
 				075AAD921E2DF5CF00094457 /* EarthquakeBaseController.swift in Sources */,
 				074FBAF51F0A35FA00CC01FF /* EarthquakesTableViewCoordinator.swift in Sources */,
+				0763C02F1F243F5400E02C24 /* CLLocation.swift in Sources */,
 				072F37B01E2DEC3900262192 /* AppController.swift in Sources */,
 				07131EA71E34748700F0CFE7 /* DownloadEarthquakes.swift in Sources */,
 				07A7D7511E56BE6100D33992 /* UIViewController.swift in Sources */,

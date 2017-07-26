@@ -19,7 +19,8 @@ class EarthquakeBaseController: TableViewController {
     // MARK: Properties
     var earthquake: Earthquake?
 
-    private var locationProcedure: ProcedureKitLocation.UserLocationProcedure?
+	fileprivate var fetchTimer: Timer?
+	private var locationProcedure: ProcedureKitLocation.UserLocationProcedure?
 	private var placeMark: MKPlacemark?
 	
 	fileprivate struct Constants {
@@ -76,29 +77,13 @@ class EarthquakeBaseController: TableViewController {
         depthLabel.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
 		timeLabel.text = Earthquake.datetimestampFormatter.string(from: earthquake.timestamp)
 		distanceLabel.text = "finding your location..."
+		self.startFetchingUserLocation()
     }
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		let locationProcedure = UserLocationProcedure(timeout: 60.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak self] (location) in
-			
-			if let earthquakeLocation = self?.earthquake?.location {
-				let distance = location.distance(from: earthquakeLocation)
-				self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
-			} else {
-				self?.distanceLabel.text = "The location information for this earthquake is missing."
-			}
-			self?.locationProcedure?.finish()
-		}
-		
-		locationProcedure.add(observer: NetworkObserver())
-		procedureQueue.addOperation(locationProcedure)
-		self.locationProcedure = locationProcedure
-	}
-	
-    override func viewWillDisappear(_ animated: Bool) {
+	override func viewWillDisappear(_ animated: Bool) {
         // If the locationProcedure is still going on, then cancel it.
         locationProcedure?.cancel()
+		self.stopFetchingUserLocation()
 		super.viewWillDisappear(animated)
     }
 	
@@ -122,7 +107,39 @@ class EarthquakeBaseController: TableViewController {
 
         procedureQueue.addOperation(shareOperation)
     }
-    
+	
+	func startFetchingUserLocation(every time: TimeInterval = 300) {
+		stopFetchingUserLocation()
+		updateEarthquakeInfoWithUserLocation()
+		fetchTimer = Timer.scheduledTimer(timeInterval: time,
+		                                  target: self,
+		                                  selector: #selector(self.updateEarthquakeInfoWithUserLocation),
+		                                  userInfo: nil,
+		                                  repeats: true)
+	}
+	
+	func stopFetchingUserLocation() {
+		fetchTimer?.invalidate()
+		fetchTimer = nil
+	}
+
+	@objc func updateEarthquakeInfoWithUserLocation() {
+		let locationProcedure = UserLocationProcedure(timeout: 60.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak self] (location) in
+			if let earthquakeLocation = self?.earthquake?.location {
+				let distance = location.distance(from: earthquakeLocation)
+				self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
+			}
+			self?.locationProcedure?.finish()
+		}
+		
+		locationProcedure.add(observer: NetworkObserver())
+		locationProcedure.userIntent = .initiated
+		procedureQueue.addOperation(locationProcedure)
+		self.locationProcedure = locationProcedure
+	}
+}
+
+extension EarthquakeBaseController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == 1 && indexPath.row == 0 {
 			// The user has tapped the "More Information" button.
