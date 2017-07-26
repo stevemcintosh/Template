@@ -35,6 +35,9 @@ class EarthquakesTableViewController: TableViewController {
 		super.viewDidLoad()
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
+		self.tableView.estimatedRowHeight = 85
+		self.tableView.rowHeight = UITableViewAutomaticDimension
+		self.tableView.estimatedSectionHeaderHeight = 30
 		
 		viewCoordinator = EarthquakesTableViewCoordinator()
 		viewCoordinator?.procedureQueue = procedureQueue
