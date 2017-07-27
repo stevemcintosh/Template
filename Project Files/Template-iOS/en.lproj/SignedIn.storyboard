@@ -69,10 +69,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-cK-zZ8">
-                                            <rect key="frame" x="13" y="18" width="462" height="51.5"/>
+                                            <rect key="frame" x="8" y="17.5" width="467" height="51"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFu-1h-N0m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="51.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="51"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="757" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-CM-Jkn">
                                                             <rect key="frame" x="0.0" y="0.0" width="68.5" height="25"/>
@@ -81,7 +81,7 @@
                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxQ-FP-9Eb">
-                                                            <rect key="frame" x="0.0" y="26" width="32.5" height="25.5"/>
+                                                            <rect key="frame" x="0.0" y="26" width="32.5" height="25"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -89,10 +89,10 @@
                                                     </subviews>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-i8-bpB">
-                                                    <rect key="frame" x="354" y="0.0" width="70" height="51.5"/>
+                                                    <rect key="frame" x="359" y="0.0" width="70" height="51"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43J-N2-7Ru">
-                                                    <rect key="frame" x="429" y="0.0" width="33" height="51.5"/>
+                                                    <rect key="frame" x="434" y="0.0" width="33" height="51"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -101,7 +101,7 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="XAg-cK-zZ8" firstAttribute="leading" secondItem="fxv-ml-Pi6" secondAttribute="leadingMargin" constant="5" id="DbS-OA-fax"/>
+                                        <constraint firstItem="XAg-cK-zZ8" firstAttribute="leading" secondItem="fxv-ml-Pi6" secondAttribute="leadingMargin" id="DbS-OA-fax"/>
                                         <constraint firstItem="XAg-cK-zZ8" firstAttribute="centerY" secondItem="fxv-ml-Pi6" secondAttribute="centerY" id="K6f-iI-ip5"/>
                                         <constraint firstItem="XAg-cK-zZ8" firstAttribute="top" secondItem="fxv-ml-Pi6" secondAttribute="topMargin" constant="9" id="RvG-rj-Ydz"/>
                                         <constraint firstAttribute="trailing" secondItem="XAg-cK-zZ8" secondAttribute="trailing" constant="5" id="u6d-rP-2Yc"/>
