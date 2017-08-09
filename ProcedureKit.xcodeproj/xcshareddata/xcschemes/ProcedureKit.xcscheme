@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65CFC5EF1D608A5500CAD875"
-               BuildableName = "ProcedureKit.framework"
+               BuildableName = ".framework"
                BlueprintName = "ProcedureKit"
                ReferencedContainer = "container:ProcedureKit.xcodeproj">
             </BuildableReference>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
@@ -34,7 +35,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65CFC5F81D608A5500CAD875"
-               BuildableName = "ProcedureKitTests.xctest"
+               BuildableName = ".xctest"
                BlueprintName = "ProcedureKitTests"
                ReferencedContainer = "container:ProcedureKit.xcodeproj">
             </BuildableReference>
@@ -44,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65CFC5EF1D608A5500CAD875"
-            BuildableName = "ProcedureKit.framework"
+            BuildableName = ".framework"
             BlueprintName = "ProcedureKit"
             ReferencedContainer = "container:ProcedureKit.xcodeproj">
          </BuildableReference>
@@ -56,6 +57,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -66,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65CFC5EF1D608A5500CAD875"
-            BuildableName = "ProcedureKit.framework"
+            BuildableName = ".framework"
             BlueprintName = "ProcedureKit"
             ReferencedContainer = "container:ProcedureKit.xcodeproj">
          </BuildableReference>
@@ -84,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65CFC5EF1D608A5500CAD875"
-            BuildableName = "ProcedureKit.framework"
+            BuildableName = ".framework"
             BlueprintName = "ProcedureKit"
             ReferencedContainer = "container:ProcedureKit.xcodeproj">
          </BuildableReference>
