@@ -209,14 +209,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				074FBAE61F0A333A00CC01FF /* ProcedureKit.framework in Frameworks */,
-				074FBAEE1F0A333A00CC01FF /* ProcedureKitNetwork.framework in Frameworks */,
-				074FBAEC1F0A333A00CC01FF /* ProcedureKitMobile.framework in Frameworks */,
-				074FBAEA1F0A333A00CC01FF /* ProcedureKitLocation.framework in Frameworks */,
-				074FBAE41F0A333A00CC01FF /* KeychainAccess.framework in Frameworks */,
-				074FBAF01F0A333A00CC01FF /* SwiftyBeaver.framework in Frameworks */,
 				074FBAE21F0A333A00CC01FF /* Alamofire.framework in Frameworks */,
+				074FBAE41F0A333A00CC01FF /* KeychainAccess.framework in Frameworks */,
+				074FBAE61F0A333A00CC01FF /* ProcedureKit.framework in Frameworks */,
 				074FBAE81F0A333A00CC01FF /* ProcedureKitCloud.framework in Frameworks */,
+				074FBAEA1F0A333A00CC01FF /* ProcedureKitLocation.framework in Frameworks */,
+				074FBAEC1F0A333A00CC01FF /* ProcedureKitMobile.framework in Frameworks */,
+				074FBAEE1F0A333A00CC01FF /* ProcedureKitNetwork.framework in Frameworks */,
+				074FBAF01F0A333A00CC01FF /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,7 +751,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Frameworks/Fabric.framework/run fa101df80a3cb9460aa4a96ce38e3f9057c962ec f44c7eca066c1db16391164875dcdb6c2eaaeacaebc526e910183575aabd2479";
+			shellScript = "#./Frameworks/Fabric.framework/run fa101df80a3cb9460aa4a96ce38e3f9057c962ec f44c7eca066c1db16391164875dcdb6c2eaaeacaebc526e910183575aabd2479";
 		};
 		078F265B1F1F3AC200C93832 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -949,7 +949,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Frameworks",
 					"\"$(SRCROOT)/../External/Carthage/Build\"/**",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -968,7 +967,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Development-Template-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1144,7 +1143,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Frameworks",
 					"\"$(SRCROOT)/../External/Carthage/Build\"/**",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1163,7 +1161,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Development-Template-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1221,7 +1219,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Frameworks",
 					"\"$(SRCROOT)/../External/Carthage/Build\"/**",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1237,7 +1234,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Development-Template-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
