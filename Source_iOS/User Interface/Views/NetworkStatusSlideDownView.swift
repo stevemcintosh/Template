@@ -10,7 +10,6 @@ import Foundation
 
 import Alamofire
 import ProcedureKit
-import ProcedureKitNetwork
 
 class NetworkStatusSlideDownView: UILabel {
 	

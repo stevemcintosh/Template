@@ -1,8 +1,6 @@
 import UIKit
 
 import ProcedureKit
-import ProcedureKitMobile
-import ProcedureKitNetwork
 
 class BaseAppController : UISplitViewController, UISplitViewControllerDelegate {
 	deinit {

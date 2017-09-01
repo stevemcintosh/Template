@@ -11,8 +11,6 @@ import CoreData
 import UIKit
 
 import ProcedureKit
-import ProcedureKitMobile
-import ProcedureKitNetwork
 
 class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 	weak var delegate: EarthquakesTableViewControllerDelegate?

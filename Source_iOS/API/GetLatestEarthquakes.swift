@@ -1,5 +1,4 @@
 import ProcedureKit
-import ProcedureKitMobile
 import CoreData
 
 class GetLatestEarthquakes: GroupProcedure {

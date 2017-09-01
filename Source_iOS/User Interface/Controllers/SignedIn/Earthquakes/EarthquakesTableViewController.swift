@@ -2,8 +2,6 @@ import UIKit
 import CoreData
 
 import ProcedureKit
-import ProcedureKitMobile
-import ProcedureKitNetwork
 
 protocol EarthquakesTableViewControllerDelegate: class  {
 	func updateUI()

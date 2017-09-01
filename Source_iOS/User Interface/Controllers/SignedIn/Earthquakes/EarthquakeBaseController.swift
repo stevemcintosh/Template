@@ -4,8 +4,6 @@ import MapKit
 import SafariServices
 
 import ProcedureKit
-import ProcedureKitLocation
-import ProcedureKitMobile
 
 public struct LocationPlacemark: Equatable {
 	public static func == (lhs: LocationPlacemark, rhs: LocationPlacemark) -> Bool {
@@ -20,7 +18,7 @@ class EarthquakeBaseController: TableViewController {
     var earthquake: Earthquake?
 
 	fileprivate var fetchTimer: Timer?
-	private var locationProcedure: ProcedureKitLocation.UserLocationProcedure?
+	private var locationProcedure: UserLocationProcedure?
 	private var placeMark: MKPlacemark?
 	
 	fileprivate struct Constants {

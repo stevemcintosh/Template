@@ -1,6 +1,5 @@
 import Foundation
 import ProcedureKit
-import ProcedureKitNetwork
 
 class DownloadEarthquakes: GroupProcedure {
     
