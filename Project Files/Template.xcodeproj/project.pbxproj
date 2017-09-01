@@ -593,7 +593,6 @@
 				072A91621E1A4DDE0054C122 /* Crashlytics */,
 				0752D3141E66AF1C00F830E2 /* Embed App Extensions */,
 				074FBAF21F0A333B00CC01FF /* Embed Frameworks */,
-				078F265B1F1F3AC200C93832 /* Carthage */,
 				3EE4AC954AB87D8137E8881F /* [CP] Embed Pods Frameworks */,
 				F1711ED54CFF0631B56377F9 /* [CP] Copy Pods Resources */,
 			);
@@ -702,28 +701,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#./Frameworks/Fabric.framework/run fa101df80a3cb9460aa4a96ce38e3f9057c962ec f44c7eca066c1db16391164875dcdb6c2eaaeacaebc526e910183575aabd2479";
-		};
-		078F265B1F1F3AC200C93832 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKit.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitLocation.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitMobile.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitNetwork.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/KeychainAccess.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/SwiftyBeaver.framework",
-				"$(SRCROOT)/../External/Carthage/Build/iOS/ProcedureKitCloud.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#\"$SRCROOT/../Scripts/Carthage.sh\"";
 		};
 		3EE4AC954AB87D8137E8881F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
