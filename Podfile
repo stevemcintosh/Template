@@ -12,9 +12,9 @@ target 'Template' do
     #pod 'KeychainAccess'
     pod 'SwiftyBeaver'
 
-    target 'TemplateTests' do
-        inherit! :search_paths
-    end
+#target 'TemplateTests' do
+#inherit! :search_paths
+#end
 
     #target 'SmartScanUITests' do
         #inherit! :search_paths
