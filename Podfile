@@ -9,7 +9,7 @@ target 'Template' do
     
     # This subspec is the iOS only UIKit related stuff
     pod 'Alamofire'
-    pod 'KeychainAccess'
+    #pod 'KeychainAccess'
     pod 'SwiftyBeaver'
 
     target 'TemplateTests' do
