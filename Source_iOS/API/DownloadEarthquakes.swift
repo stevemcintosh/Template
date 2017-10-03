@@ -32,6 +32,20 @@ class DownloadEarthquakes: GroupProcedure {
         }.injectPayload(fromNetwork: network)
         
         transform.add(dependency: network)
+		
+//		transform.addWillExecuteBlockObserver{ _, _ in
+//			DispatchQueue.main.async {
+//				guard let strongSelf = self else { return }
+//				strongSelf.activityIndicator.startAnimating()
+//			}
+//		}
+//		transform.addDidFinishBlockObserver{ _, _ in
+//			DispatchQueue.main.async {
+//				guard let strongSelf = self else { return }
+//				strongSelf.activityIndicator.stopAnimating()
+//			}
+//		}
+		
         add(children: [network, transform])
     }
 
