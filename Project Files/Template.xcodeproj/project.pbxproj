@@ -53,6 +53,8 @@
 		07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0325AC41D5C803F00F3BAF4 /* AppDelegate.swift */; };
 		07FB1430F67D55FC51890AB3 /* Pods_TemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F1955EA3C4399129F59202 /* Pods_TemplateTests.framework */; };
 		1A4452E45E508C16B30A605C /* Pods_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD6819A1818252A3E33C7E8 /* Pods_Template.framework */; };
+		7DDECF231FBBF5080061316B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0771E0461E67CDB90045CEE9 /* MapKit.framework */; };
+		7DDECF251FBBF5230061316B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDECF241FBBF5230061316B /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,7 @@
 		38652C4E1D47AE550006F4DC /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		38B3265B1D6E440E00D55C29 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7AF6130B74CE052E9825CD15 /* Pods-Template.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.ad-hoc.xcconfig"; path = "../Pods/Target Support Files/Pods-Template/Pods-Template.ad-hoc.xcconfig"; sourceTree = "<group>"; };
+		7DDECF241FBBF5230061316B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7FBE748E242E47F4FCB11E93 /* Pods-TemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TemplateTests/Pods-TemplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		92557CB700701935D3B4920A /* Pods-TemplateTests.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateTests.ad-hoc.xcconfig"; path = "../Pods/Target Support Files/Pods-TemplateTests/Pods-TemplateTests.ad-hoc.xcconfig"; sourceTree = "<group>"; };
 		DF5C104DD346C6962B04A6CA /* Pods-TemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TemplateTests/Pods-TemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A4452E45E508C16B30A605C /* Pods_Template.framework in Frameworks */,
+				7DDECF231FBBF5080061316B /* MapKit.framework in Frameworks */,
+				7DDECF251FBBF5230061316B /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +510,7 @@
 		E0423D641D8AF8BF0031D0D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DDECF241FBBF5230061316B /* StoreKit.framework */,
 				078096551EDD975C00CFB2A3 /* SystemConfiguration.framework */,
 				0771E0461E67CDB90045CEE9 /* MapKit.framework */,
 				E94B878E1DA7A43500E66730 /* AVFoundation.framework */,
@@ -616,7 +622,25 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 0;
+							};
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
 								enabled = 1;
 							};
 						};
