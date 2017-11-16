@@ -74,6 +74,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.statusView = statusView
 		self.window?.bringSubview(toFront: self.statusView!)
 		
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .carPlay, .sound]) { (granted, error) in
+			if granted {
+			}
+		}
+		UIApplication.shared.registerForRemoteNotifications()
+
 		return true
 	}
 	
@@ -130,17 +136,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	@nonobjc func application(_ application: UIApplication, didRegister notificationSettings: UNNotificationSettings) {
-//		UserNotificationCondition.didRegisterUserNotificationSettings(notificationSettings)
-//
-//		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .carPlay, .sound]) { (granted, error) in
-//			if granted {
-//
-//			}
-//		}
 	}
 	
 	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
 //		RemoteNotificationCondition.registeredForRemoteNotifications(deviceToken)
+		print(deviceToken.reduce("", {$0 + String(format: "%02X", $1)}))
 	}
 	
 	func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -148,7 +148,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//		RemoteNotificationCondition.didReceiveNotificationToken(deviceToken)
+		print()
 	}
 	
 	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
