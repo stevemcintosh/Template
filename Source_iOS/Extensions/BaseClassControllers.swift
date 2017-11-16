@@ -1,5 +1,6 @@
 import UIKit
 
+import DeallocationChecker
 import ProcedureKit
 
 class BaseAppController : UISplitViewController, UISplitViewControllerDelegate {
@@ -29,6 +30,11 @@ class ViewController: UIViewController {
 		self.navigationController?.navigationBar.prefersLargeTitles = false
 		self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
 		self.navigationController?.navigationItem.searchController = UISearchController(searchResultsController: self)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		dch_checkDeallocation(afterDelay: 2.0)
 	}
 }
 

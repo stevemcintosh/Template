@@ -7,8 +7,8 @@ target 'Template' do
     pod 'ProcedureKit/All'
     pod 'ProcedureKit/Mobile'
     
-    # This subspec is the iOS only UIKit related stuff
     pod 'Alamofire'
+    pod 'DeallocationChecker'
     #pod 'KeychainAccess'
     pod 'SwiftyBeaver'
 
@@ -16,7 +16,7 @@ target 'Template' do
         inherit! :search_paths
     end
 
-    #target 'SmartScanUITests' do
+    target 'TemplateUITests' do
         #inherit! :search_paths
-    #end
+    end
 end
