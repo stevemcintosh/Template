@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	/// The main window for the application.
 	var window: UIWindow?
 	var statusView: NetworkStatusSlideDownView?
+	var remoteNotificationService: RemoteNotificationService! = nil
 	
 	// MARK: - UIApplicationDelegate -
 		
@@ -74,12 +75,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.statusView = statusView
 		self.window?.bringSubview(toFront: self.statusView!)
 		
-		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .carPlay, .sound]) { (granted, error) in
-			if granted {
-
-			}
-		}
-		UIApplication.shared.registerForRemoteNotifications()
+		LocalNotificationService.request()
+		self.remoteNotificationService = RemoteNotificationService(launchOptions: launchOptions)
 		
 		return true
 	}
@@ -141,6 +138,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
 		print(deviceToken.reduce("", { $0 + String(format: "%02X", $1) }))
+		if UserDefaults.standard.object(forKey: "deviceToken") == nil {
+			let defaults = UserDefaults.standard
+			defaults.set(deviceToken, forKey: "deviceToken")
+			defaults.synchronize()
+		}
 	}
 	
 	func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

@@ -20,7 +20,7 @@ class DownloadEarthquakes: GroupProcedure {
         let transform = TransformProcedure<Data, URL?> { data in
             do {
                 let fileManager = FileManager.default
-                if fileManager.fileExists(atPath: cacheURL.absoluteString) {
+                if fileManager.fileExists(atPath: cacheURL.path) {
                     try fileManager.removeItem(at: cacheURL)
                 }
                 try data.write(to: cacheURL, options: .atomic)

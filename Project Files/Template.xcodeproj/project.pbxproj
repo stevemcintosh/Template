@@ -38,7 +38,6 @@
 		075AAD901E2DF5C500094457 /* EarthquakesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379D1E2DD90900262192 /* EarthquakesTableViewController.swift */; };
 		075AAD911E2DF5CC00094457 /* EarthquakeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F379E1E2DD90900262192 /* EarthquakeTableViewCell.swift */; };
 		075AAD921E2DF5CF00094457 /* EarthquakeBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F37A11E2DDA1D00262192 /* EarthquakeBaseController.swift */; };
-		075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C985E21E2C77CB00AD0635 /* LoadEarthquakeModel.swift */; };
 		0763C02F1F243F5400E02C24 /* CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763C02E1F243F5400E02C24 /* CLLocation.swift */; };
 		0764592E1EADC27C006A93F1 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0764592D1EADC27C006A93F1 /* VarelaRound-Regular.ttf */; };
 		078721381F0A297600692126 /* NetworkStatusSlideDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0764592A1EADB45A006A93F1 /* NetworkStatusSlideDownView.swift */; };
@@ -53,6 +52,9 @@
 		07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0325AC41D5C803F00F3BAF4 /* AppDelegate.swift */; };
 		07FB1430F67D55FC51890AB3 /* Pods_TemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F1955EA3C4399129F59202 /* Pods_TemplateTests.framework */; };
 		1A4452E45E508C16B30A605C /* Pods_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD6819A1818252A3E33C7E8 /* Pods_Template.framework */; };
+		7D4438C71FEB55CA00864FE3 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4438C61FEB55CA00864FE3 /* LoadEarthquakeModel.swift */; };
+		7DDBED321FE0EEB900FA3463 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDBED301FE0EEB800FA3463 /* LocalNotificationService.swift */; };
+		7DDBED331FE0EEB900FA3463 /* RemoteNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDBED311FE0EEB800FA3463 /* RemoteNotificationService.swift */; };
 		98CD38472DF369CC3057F64C /* Pods_Template_TemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6005ECD3AB528FB508D8FD1 /* Pods_Template_TemplateUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,7 +145,6 @@
 		07A7D7501E56BE6100D33992 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		07A7D7581E56D58400D33992 /* TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A7D7631E56DE4400D33992 /* earthquakes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = earthquakes.json; sourceTree = "<group>"; };
-		07C985E21E2C77CB00AD0635 /* LoadEarthquakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadEarthquakeModel.swift; sourceTree = "<group>"; };
 		07C985E41E2C7B1E00AD0635 /* GetLatestEarthquakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLatestEarthquakes.swift; sourceTree = "<group>"; };
 		07D5A75C1E1D56F900B33D18 /* Template-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Template-Bridging-Header.h"; sourceTree = "<group>"; };
 		07DA49651E1E1B8B00FA9A6E /* Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +172,9 @@
 		59A5EB37B980EF88933540AF /* Pods-Template-TemplateUITests.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template-TemplateUITests.ad-hoc.xcconfig"; path = "../Pods/Target Support Files/Pods-Template-TemplateUITests/Pods-Template-TemplateUITests.ad-hoc.xcconfig"; sourceTree = "<group>"; };
 		6422C43B38AF9C4104EC743E /* Pods-Template-TemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template-TemplateUITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Template-TemplateUITests/Pods-Template-TemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7AF6130B74CE052E9825CD15 /* Pods-Template.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.ad-hoc.xcconfig"; path = "../Pods/Target Support Files/Pods-Template/Pods-Template.ad-hoc.xcconfig"; sourceTree = "<group>"; };
+		7D4438C61FEB55CA00864FE3 /* LoadEarthquakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadEarthquakeModel.swift; sourceTree = "<group>"; };
+		7DDBED301FE0EEB800FA3463 /* LocalNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
+		7DDBED311FE0EEB800FA3463 /* RemoteNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationService.swift; sourceTree = "<group>"; };
 		7FBE748E242E47F4FCB11E93 /* Pods-TemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TemplateTests/Pods-TemplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		92557CB700701935D3B4920A /* Pods-TemplateTests.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateTests.ad-hoc.xcconfig"; path = "../Pods/Target Support Files/Pods-TemplateTests/Pods-TemplateTests.ad-hoc.xcconfig"; sourceTree = "<group>"; };
 		B6005ECD3AB528FB508D8FD1 /* Pods_Template_TemplateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Template_TemplateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -487,6 +491,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		7DDBED2F1FE0EEB800FA3463 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7DDBED301FE0EEB800FA3463 /* LocalNotificationService.swift */,
+				7DDBED311FE0EEB800FA3463 /* RemoteNotificationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		D7BB0433A87CC405A6DDBCFA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +524,7 @@
 				E06DC7281D66DD7E00433524 /* Extensions */,
 				38F30AE81D62FF61006D8E94 /* API */,
 				E0325AC51D5C803F00F3BAF4 /* Model */,
+				7DDBED2F1FE0EEB800FA3463 /* Service */,
 				07DA49781E1F9A9200FA9A6E /* Swift Structures and Protocol */,
 			);
 			name = Source_iOS;
@@ -521,7 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				072F37A31E2DDA2B00262192 /* Earthquake.swift */,
-				07C985E21E2C77CB00AD0635 /* LoadEarthquakeModel.swift */,
+				7D4438C61FEB55CA00864FE3 /* LoadEarthquakeModel.swift */,
 				072F37A71E2DDEC000262192 /* Core Data */,
 			);
 			path = Model;
@@ -932,7 +946,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075AAD931E2DFC8F00094457 /* LoadEarthquakeModel.swift in Sources */,
 				07DA497A1E1F9AAF00FA9A6E /* MemoryResourceTracking.swift in Sources */,
 				07EF1BA71E7E7A80006ED396 /* String.swift in Sources */,
 				074FBAF81F0A365F00CC01FF /* BaseTableViewCoordinator.swift in Sources */,
@@ -948,6 +961,7 @@
 				07131EA71E34748700F0CFE7 /* DownloadEarthquakes.swift in Sources */,
 				07A7D7511E56BE6100D33992 /* UIViewController.swift in Sources */,
 				072F37A41E2DDA2B00262192 /* Earthquake.swift in Sources */,
+				7D4438C71FEB55CA00864FE3 /* LoadEarthquakeModel.swift in Sources */,
 				07359CD41E430F450078E854 /* BaseClassControllers.swift in Sources */,
 				075AAD901E2DF5C500094457 /* EarthquakesTableViewController.swift in Sources */,
 				078721381F0A297600692126 /* NetworkStatusSlideDownView.swift in Sources */,
@@ -960,6 +974,8 @@
 				075AAD911E2DF5CC00094457 /* EarthquakeTableViewCell.swift in Sources */,
 				07EF1BA51E7E7980006ED396 /* EditableEarthquakepoint.swift in Sources */,
 				072F756C1E5D143C000A5E3C /* ProgressBarIndeterminate.swift in Sources */,
+				7DDBED331FE0EEB900FA3463 /* RemoteNotificationService.swift in Sources */,
+				7DDBED321FE0EEB900FA3463 /* LocalNotificationService.swift in Sources */,
 				072F756B1E5D143C000A5E3C /* UINavigationController+UIProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
