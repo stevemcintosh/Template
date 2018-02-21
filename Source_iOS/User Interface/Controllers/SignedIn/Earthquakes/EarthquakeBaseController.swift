@@ -123,9 +123,12 @@ class EarthquakeBaseController: TableViewController {
 
 	@objc func updateEarthquakeInfoWithUserLocation() {
 		let locationProcedure = UserLocationProcedure(timeout: 60.0, accuracy: kCLLocationAccuracyHundredMeters) { [weak self] (location) in
-			if let earthquakeLocation = self?.earthquake?.location {
-				let distance = location.distance(from: earthquakeLocation)
-				self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
+			guard let coordinate = self?.earthquake?.location.coordinate else { self?.locationProcedure?.finish(); return }
+			if CLLocationCoordinate2DIsValid(coordinate) {
+				if let earthquakeLocation = self?.earthquake?.location {
+					let distance = location.distance(from: earthquakeLocation)
+					self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
+				}
 			}
 			self?.locationProcedure?.finish()
 		}

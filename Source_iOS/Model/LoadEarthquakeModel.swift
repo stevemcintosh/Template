@@ -13,9 +13,9 @@ enum LoadEarthquakeModelError: Error {
 class LoadEarthquakeModel: Procedure, OutputProcedure {
     typealias CompletionBlock = (NSManagedObjectContext) -> Void
 
-    let completion: CompletionBlock?
+    let completion: CompletionBlock
     var output: Pending<ProcedureResult<NSManagedObjectContext>> = .pending
-    
+	
     init(completion: @escaping (NSManagedObjectContext) -> Void) {
         self.completion = completion
         super.init()
@@ -27,62 +27,55 @@ class LoadEarthquakeModel: Procedure, OutputProcedure {
         
         guard !isCancelled else { return }
         
-        let cachesFolder = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        
-        let storeURL = cachesFolder.appendingPathComponent("earthquakes.sqlite")
-        
-        let model = NSManagedObjectModel.mergedModel(from: nil)!
-        
-        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        
-        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        context.persistentStoreCoordinator = persistentStoreCoordinator
-        
-        var error = createStore(persistentStoreCoordinator: persistentStoreCoordinator, atURL: storeURL as NSURL?)
-        
-        if persistentStoreCoordinator.persistentStores.isEmpty {
-            /*
-            Our persistent store does not contain irreplaceable data (which
-            is why it's in the Caches folder). If we fail to add it, we can
-            delete it and try again.
-            */
-            destroyStore(persistentStoreCoordinator: persistentStoreCoordinator, atURL: storeURL as NSURL)
-            error = createStore(persistentStoreCoordinator: persistentStoreCoordinator, atURL: storeURL as NSURL?)
-        }
-        
-        if persistentStoreCoordinator.persistentStores.isEmpty {
-            print("Error creating SQLite store: \(String(describing: error)).")
-            print("Falling back to `.InMemory` store.")
-            error = createStore(persistentStoreCoordinator: persistentStoreCoordinator, atURL: nil, type: NSInMemoryStoreType)
-        }
-        
-        if !persistentStoreCoordinator.persistentStores.isEmpty {
-            completion!(context)
-            output = .ready(.success(context))
-            finish()
-            return
-        }
-        let pkerror = ProcedureKitError.component(LoadEarthquakeModelComponent(), error: error)
-        output = .ready(.failure(pkerror))
-        finish(withError: pkerror)
-    }
-    
-    fileprivate func createStore(persistentStoreCoordinator: NSPersistentStoreCoordinator, atURL URL: NSURL?, type: String = NSSQLiteStoreType) -> NSError? {
-        var error: NSError?
-        do {
-            let _ = try persistentStoreCoordinator.addPersistentStore(ofType: type, configurationName: nil, at: URL as URL?, options: nil)
-        }
-        catch let storeError as NSError {
-            error = storeError
-        }
-        
-        return error
-    }
-    
-    fileprivate func destroyStore(persistentStoreCoordinator: NSPersistentStoreCoordinator, atURL URL: NSURL, type: String = NSSQLiteStoreType) {
-        do {
-            let _ = try persistentStoreCoordinator.destroyPersistentStore(at: URL as URL, ofType: type, options: nil)
-        }
-        catch { }
-    }
+		var model: NSManagedObjectModel! = nil
+		if let existingModelURL = Bundle.main.url(forResource: "Earthquakes", withExtension: "momd") {
+			model = NSManagedObjectModel(contentsOf: existingModelURL)
+		} else {
+			model = NSManagedObjectModel.mergedModel(from: nil)
+		}
+		
+		let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
+		let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
+		
+		let cachesFolder2 = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+		let storeURL2 = cachesFolder2.appendingPathComponent("earthquakes.sqlite")
+		do {
+			try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL2, options: nil)
+			context.persistentStoreCoordinator = persistentStoreCoordinator
+			completion(context)
+			output = .ready(.success(context))
+			finish()
+			return
+
+		} catch {
+			let pkerror = ProcedureKitError.component(LoadEarthquakeModelComponent(), error: error)
+			output = .ready(.failure(pkerror))
+			finish(withError: pkerror)
+		}
+    }    
+}
+
+struct EarthquakeModelContext {
+	
+	var context: NSManagedObjectContext? {
+		var model: NSManagedObjectModel! = nil
+		if let existingModelURL = Bundle.main.url(forResource: "Earthquakes", withExtension: "momd") {
+			model = NSManagedObjectModel(contentsOf: existingModelURL)
+		} else {
+			model = NSManagedObjectModel.mergedModel(from: nil)
+		}
+		
+		let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
+		let context2 = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
+		
+		let cachesFolder2 = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+		let storeURL2 = cachesFolder2.appendingPathComponent("earthquakes.sqlite")
+		do {
+			try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL2, options: nil)
+			context2.persistentStoreCoordinator = persistentStoreCoordinator
+			return context2
+		} catch {
+			return nil
+		}
+	}
 }

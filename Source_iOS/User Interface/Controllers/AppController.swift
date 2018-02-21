@@ -17,6 +17,7 @@ class AppController : BaseAppController {
     override func awakeFromNib() {
         super.awakeFromNib()
         preferredDisplayMode = .allVisible
+		preferredPrimaryColumnWidthFraction = 0.45
         delegate = self
         AppController.appController = self
         configure()
@@ -81,13 +82,14 @@ class AppController : BaseAppController {
         
         return detail.earthquake == nil
     }
+	
     
     func splitViewController(_ svc: UISplitViewController, willChangeTo displayMode: UISplitViewControllerDisplayMode) {
         print()
     }
 
     func splitViewControllerPreferredInterfaceOrientationForPresentation(_ splitViewController: UISplitViewController) -> UIInterfaceOrientation {
-        return UIInterfaceOrientation.portrait
+        return UIInterfaceOrientation.landscapeLeft
     }
 
 }

@@ -22,13 +22,15 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 	
 	override init() {
 		super.init()
+		self.context = EarthquakeModelContext().context
+		self.fetch();
 	}
 	
 	@objc func updateEarthquakes() {
 		getEarthquakes(showRefreshControl: false, reloadTable: true)
 	}
 	
-	func startFetchingEarthquakes(every time: TimeInterval = 300) {
+	func startFetchingEarthquakes(every time: TimeInterval = 600) {
 		stopFetchingEarthquakes()
 		getEarthquakes(showRefreshControl: false, reloadTable: true)
 		fetchTimer = Timer.scheduledTimer(timeInterval: time,
@@ -44,11 +46,6 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 	}
 	
 	func loadEarthquakeModel(completionHandler: @escaping () -> Void) {
-		if self.context != nil {
-			completionHandler()
-			return
-		}
-		
 		let procedure = LoadEarthquakeModel { [weak self] context in
 			self?.context = context
 			completionHandler()
@@ -69,21 +66,14 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 		
 		self.loadEarthquakeModel {
 			if let context = self.context {
-				let getEarthquakesGroupProcedure = GetLatestEarthquakes(context: context) {
-					let request = NSFetchRequest<NSFetchRequestResult>(entityName: Earthquake.entityName)
-					request.sortDescriptors = [NSSortDescriptor(key: "sectionIdentifier", ascending: false), NSSortDescriptor(key: "timestamp", ascending: false)]
-					request.fetchBatchSize = 20
-					request.fetchOffset = 0
-					
-					let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier", cacheName: nil)
-					self.fetchedResultsController = controller
-					self.fetchedResultsController?.delegate = self
-					self.performFetch()
-					
-					DispatchQueue.main.async { [weak self] in
-						if showRefreshControl { self?.delegate?.refreshControl(state: .stop) }
-						self?.delegate?.navigationBarAnimation(state: .stop)
-						if reloadTable { self?.delegate?.updateUI() }
+				let getEarthquakesGroupProcedure = GetLatestEarthquakes(context: context) { [weak self] in
+					guard let strongSelf = self else { return }
+					strongSelf.fetch()
+
+					DispatchQueue.main.async {
+						if showRefreshControl { strongSelf.delegate?.refreshControl(state: .stop) }
+						strongSelf.delegate?.navigationBarAnimation(state: .stop)
+						if reloadTable { strongSelf.delegate?.updateUI() }
 					}
 				}
 				getEarthquakesGroupProcedure.userIntent = .initiated
@@ -95,6 +85,18 @@ class EarthquakesTableViewCoordinator: BaseTableViewCoordinator {
 				}
 			}
 		}
+	}
+	
+	private func fetch() {
+		let request = NSFetchRequest<NSFetchRequestResult>(entityName: Earthquake.entityName)
+		request.sortDescriptors = [NSSortDescriptor(key: "sectionIdentifier", ascending: false), NSSortDescriptor(key: "timestamp", ascending: false)]
+		request.fetchBatchSize = 20
+		request.fetchOffset = 0
+		
+		let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.context!, sectionNameKeyPath: "sectionIdentifier", cacheName: nil)
+		self.fetchedResultsController = controller
+		self.fetchedResultsController?.delegate = self
+		self.performFetch()
 	}
 	
 	func titleForHeaderInSection(section: Int) -> String? {

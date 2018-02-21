@@ -38,7 +38,7 @@ class EarthquakesTableViewController: TableViewController {
 		self.tableView.estimatedSectionHeaderHeight = 30
 		
 		viewCoordinator = EarthquakesTableViewCoordinator()
-		viewCoordinator?.procedureQueue = procedureQueue
+		viewCoordinator?.procedureQueue = self.procedureQueue
 		viewCoordinator?.delegate = self
 	}
 	
@@ -75,6 +75,7 @@ class EarthquakesTableViewController: TableViewController {
 			if let indexPath = tableView.indexPathForSelectedRow {
 				guard let earthquake = viewCoordinator?.earthquakeInfo(at: indexPath) else { return }
 				detailVC.earthquake = earthquake
+				self.splitViewController?.preferredDisplayMode = .primaryHidden
 			}
 		}
 	}
@@ -115,12 +116,12 @@ extension EarthquakesTableViewController { // UITableViewDataSource methods
 		let blockProcedure = BlockProcedure {
 			DispatchQueue.main.async { [weak weakSelf = self] in
 				weakSelf?.performSegue(withIdentifier: Constants.ShowEarthQuake, sender: nil)
+				tableView.deselectRow(at: indexPath, animated: true)
 			}
 		}
 		
 		blockProcedure.add(observer: BlockObserver(didFinish: { _, errors in
 			DispatchQueue.main.async {
-				tableView.deselectRow(at: indexPath, animated: true)
 				blockProcedure.finish(withErrors: errors)
 			}
 		}))

@@ -53,6 +53,7 @@
 		07FB1430F67D55FC51890AB3 /* Pods_TemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F1955EA3C4399129F59202 /* Pods_TemplateTests.framework */; };
 		1A4452E45E508C16B30A605C /* Pods_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD6819A1818252A3E33C7E8 /* Pods_Template.framework */; };
 		7D4438C71FEB55CA00864FE3 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4438C61FEB55CA00864FE3 /* LoadEarthquakeModel.swift */; };
+		7D7A50622004280900B2512F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0771E0461E67CDB90045CEE9 /* MapKit.framework */; };
 		7DDBED321FE0EEB900FA3463 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDBED301FE0EEB800FA3463 /* LocalNotificationService.swift */; };
 		7DDBED331FE0EEB900FA3463 /* RemoteNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDBED311FE0EEB800FA3463 /* RemoteNotificationService.swift */; };
 		98CD38472DF369CC3057F64C /* Pods_Template_TemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6005ECD3AB528FB508D8FD1 /* Pods_Template_TemplateUITests.framework */; };
@@ -210,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7A50622004280900B2512F /* MapKit.framework in Frameworks */,
 				1A4452E45E508C16B30A605C /* Pods_Template.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +682,12 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 							com.apple.Push = {
