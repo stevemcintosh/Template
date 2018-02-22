@@ -68,40 +68,54 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-cK-zZ8">
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-cK-zZ8">
                                             <rect key="frame" x="16" y="20" width="299" height="46"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFu-1h-N0m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="183.5" height="46"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="173" height="42"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="757" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-CM-Jkn">
-                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="22.5"/>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="757" text="Location" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-CM-Jkn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxQ-FP-9Eb">
-                                                            <rect key="frame" x="0.0" y="23.5" width="32.5" height="22.5"/>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxQ-FP-9Eb">
+                                                            <rect key="frame" x="0.0" y="21.5" width="153" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="KxQ-FP-9Eb" secondAttribute="trailing" constant="20" symbolic="YES" id="6mt-fW-jkt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BhM-CM-Jkn" secondAttribute="trailing" constant="20" symbolic="YES" id="6yU-H4-wTJ"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-i8-bpB">
-                                                    <rect key="frame" x="186.5" y="0.0" width="70" height="46"/>
+                                                    <rect key="frame" x="176" y="0.0" width="80" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="R6w-6L-p9u"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43J-N2-7Ru">
-                                                    <rect key="frame" x="259.5" y="0.0" width="39.5" height="46"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43J-N2-7Ru">
+                                                    <rect key="frame" x="259" y="0.0" width="40" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="4Vv-4X-eNl"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="43J-N2-7Ru" firstAttribute="centerY" secondItem="XAg-cK-zZ8" secondAttribute="centerY" id="kbj-lk-NX0"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XAg-cK-zZ8" firstAttribute="leading" secondItem="fxv-ml-Pi6" secondAttribute="leadingMargin" id="DbS-OA-fax"/>
+                                        <constraint firstItem="Brb-i8-bpB" firstAttribute="centerY" secondItem="fxv-ml-Pi6" secondAttribute="centerY" id="Dl4-EZ-rAW"/>
                                         <constraint firstItem="XAg-cK-zZ8" firstAttribute="centerY" secondItem="fxv-ml-Pi6" secondAttribute="centerY" id="K6f-iI-ip5"/>
                                         <constraint firstItem="XAg-cK-zZ8" firstAttribute="top" secondItem="fxv-ml-Pi6" secondAttribute="topMargin" constant="9" id="RvG-rj-Ydz"/>
                                         <constraint firstAttribute="trailing" secondItem="XAg-cK-zZ8" secondAttribute="trailing" constant="5" id="u6d-rP-2Yc"/>
