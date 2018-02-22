@@ -86,9 +86,8 @@ class EarthquakeBaseController: TableViewController {
     }
 	
     @IBAction func shareEarthquake(sender: UIBarButtonItem) {
-        guard let earthquake = earthquake else { return }
-		guard let url = NSURL(string: earthquake.webLink)
-		else { return }
+        guard let earthquake = earthquake,
+			let url = NSURL(string: earthquake.webLink) else { return }
 		
         let location = earthquake.location
 		let items = [url, location]
