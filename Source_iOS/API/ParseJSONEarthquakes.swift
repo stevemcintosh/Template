@@ -80,6 +80,11 @@ class ParseJSONEarthquakes: Procedure {
         
         defer {
             stream.close()
+			
+			let fileManager = FileManager.default
+			if fileManager.fileExists(atPath: cacheURL.path) {
+				try? fileManager.removeItem(at: cacheURL)
+			}
         }
         
         do {
