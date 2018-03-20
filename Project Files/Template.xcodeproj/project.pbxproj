@@ -52,6 +52,9 @@
 		07FA10F31E06F48500D1177B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0325AC41D5C803F00F3BAF4 /* AppDelegate.swift */; };
 		07FB1430F67D55FC51890AB3 /* Pods_TemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F1955EA3C4399129F59202 /* Pods_TemplateTests.framework */; };
 		1A4452E45E508C16B30A605C /* Pods_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD6819A1818252A3E33C7E8 /* Pods_Template.framework */; };
+		7D2D57C92058EE43006D9C5D /* 5secondSine3500Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D57C82058EE43006D9C5D /* 5secondSine3500Hz.mp3 */; };
+		7D2D57CC2059D7AF006D9C5D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2D57CA2059D7AF006D9C5D /* Speech.swift */; };
+		7D2D57CD2059D7AF006D9C5D /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2D57CB2059D7AF006D9C5D /* Sound.swift */; };
 		7D4438C71FEB55CA00864FE3 /* LoadEarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4438C61FEB55CA00864FE3 /* LoadEarthquakeModel.swift */; };
 		7D7A50622004280900B2512F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0771E0461E67CDB90045CEE9 /* MapKit.framework */; };
 		7DDBED321FE0EEB900FA3463 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDBED301FE0EEB800FA3463 /* LocalNotificationService.swift */; };
@@ -173,6 +176,9 @@
 		59A5EB37B980EF88933540AF /* Pods-Template-TemplateUITests.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template-TemplateUITests.ad-hoc.xcconfig"; path = "../Pods/Target Support Files/Pods-Template-TemplateUITests/Pods-Template-TemplateUITests.ad-hoc.xcconfig"; sourceTree = "<group>"; };
 		6422C43B38AF9C4104EC743E /* Pods-Template-TemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template-TemplateUITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Template-TemplateUITests/Pods-Template-TemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7AF6130B74CE052E9825CD15 /* Pods-Template.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.ad-hoc.xcconfig"; path = "../Pods/Target Support Files/Pods-Template/Pods-Template.ad-hoc.xcconfig"; sourceTree = "<group>"; };
+		7D2D57C82058EE43006D9C5D /* 5secondSine3500Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5secondSine3500Hz.mp3; sourceTree = "<group>"; };
+		7D2D57CA2059D7AF006D9C5D /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		7D2D57CB2059D7AF006D9C5D /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		7D4438C61FEB55CA00864FE3 /* LoadEarthquakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadEarthquakeModel.swift; sourceTree = "<group>"; };
 		7DDBED301FE0EEB800FA3463 /* LocalNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
 		7DDBED311FE0EEB800FA3463 /* RemoteNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationService.swift; sourceTree = "<group>"; };
@@ -432,6 +438,7 @@
 				38503EA01D4781450089EC93 /* Development */,
 				38503EA31D4781450089EC93 /* Release */,
 				0764592C1EADC27C006A93F1 /* fonts */,
+				7D2D57BA2058EE04006D9C5D /* sounds */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -491,6 +498,14 @@
 				07497E431E5697B0006A8F13 /* MoreInformation.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		7D2D57BA2058EE04006D9C5D /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7D2D57C82058EE43006D9C5D /* 5secondSine3500Hz.mp3 */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 		7DDBED2F1FE0EEB800FA3463 /* Service */ = {
@@ -571,6 +586,8 @@
 				07EF1BA61E7E7A80006ED396 /* String.swift */,
 				074FBAC81F0A2F6D00CC01FF /* NetworkReachabilityManager.swift */,
 				0763C02E1F243F5400E02C24 /* CLLocation.swift */,
+				7D2D57CB2059D7AF006D9C5D /* Sound.swift */,
+				7D2D57CA2059D7AF006D9C5D /* Speech.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -749,6 +766,7 @@
 				07569BE41E0FDE6300D36893 /* Graphik-Thin.otf in Resources */,
 				07569BDF1E0FDE4A00D36893 /* Settings.bundle in Resources */,
 				0764592E1EADC27C006A93F1 /* VarelaRound-Regular.ttf in Resources */,
+				7D2D57C92058EE43006D9C5D /* 5secondSine3500Hz.mp3 in Resources */,
 				072A91351E19D62D0054C122 /* Config.plist in Resources */,
 				07FA10F21E06F3ED00D1177B /* Assets.xcassets in Resources */,
 			);
@@ -955,6 +973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DA497A1E1F9AAF00FA9A6E /* MemoryResourceTracking.swift in Sources */,
+				7D2D57CD2059D7AF006D9C5D /* Sound.swift in Sources */,
 				07EF1BA71E7E7A80006ED396 /* String.swift in Sources */,
 				074FBAF81F0A365F00CC01FF /* BaseTableViewCoordinator.swift in Sources */,
 				0735B24D1E64F341000EA664 /* LoginOnboardingPageViewController.swift in Sources */,
@@ -985,6 +1004,7 @@
 				7DDBED331FE0EEB900FA3463 /* RemoteNotificationService.swift in Sources */,
 				7DDBED321FE0EEB900FA3463 /* LocalNotificationService.swift in Sources */,
 				072F756B1E5D143C000A5E3C /* UINavigationController+UIProgressView.swift in Sources */,
+				7D2D57CC2059D7AF006D9C5D /* Speech.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
