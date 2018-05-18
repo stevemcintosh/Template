@@ -103,7 +103,7 @@ class ParseJSONEarthquakes: Procedure {
     }
     
     private func parse(features: [[String: AnyObject]]) {
-        let parsedEarthquakes = features.flatMap { ParsedEarthquake(feature: $0) }
+        let parsedEarthquakes = features.compactMap { ParsedEarthquake(feature: $0) }
         
         context.perform {
             for newEarthquake in parsedEarthquakes {
