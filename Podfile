@@ -4,8 +4,8 @@ target 'Template' do
     project 'Project Files/Template.xcodeproj'
     use_frameworks!
 
-    pod 'ProcedureKit/All'
-    pod 'ProcedureKit/Mobile'
+    pod 'ProcedureKit/All', :git => 'https://github.com/ProcedureKit/ProcedureKit.git', :branch => 'development'
+    pod 'ProcedureKit/Mobile', :git => 'https://github.com/ProcedureKit/ProcedureKit.git', :branch => 'development'
     
     pod 'Alamofire'
     pod 'DeallocationChecker'
