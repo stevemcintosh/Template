@@ -2,6 +2,7 @@ import UIKit
 import UserNotifications
 
 import Alamofire
+import FTLinearActivityIndicator
 
 /*
 		not running -----<<<----------------------------------------|
@@ -74,6 +75,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.window?.addSubview(statusView)
 		self.statusView = statusView
 		self.window?.bringSubview(toFront: self.statusView!)
+		
+		UIApplication.configureLinearNetworkActivityIndicatorIfNeeded()
 		
 		LocalNotificationService.request()
 		self.remoteNotificationService = RemoteNotificationService(launchOptions: launchOptions)

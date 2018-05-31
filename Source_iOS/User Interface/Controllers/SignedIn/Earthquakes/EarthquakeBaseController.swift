@@ -132,7 +132,7 @@ class EarthquakeBaseController: TableViewController {
 			self?.locationProcedure?.finish()
 		}
 		
-		locationProcedure.add(observer: NetworkObserver())
+		locationProcedure.add(observer: NetworkObserver(controller: NetworkActivityController.shared))
 		locationProcedure.userIntent = .initiated
 		procedureQueue.addOperation(locationProcedure)
 		self.locationProcedure = locationProcedure

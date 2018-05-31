@@ -10,6 +10,7 @@ target 'Template' do
     pod 'Alamofire'
     pod 'DeallocationChecker'
     #pod 'KeychainAccess'
+    pod 'FTLinearActivityIndicator'
     pod 'SwiftyBeaver'
 
     target 'TemplateTests' do
