@@ -11,6 +11,7 @@ target 'Template' do
     pod 'DeallocationChecker'
     #pod 'KeychainAccess'
     pod 'SwiftyBeaver'
+    pod 'TweeTextField'
 
     target 'TemplateTests' do
         inherit! :search_paths
