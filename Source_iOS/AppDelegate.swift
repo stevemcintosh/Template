@@ -2,6 +2,7 @@ import UIKit
 import UserNotifications
 
 import Alamofire
+import FTLinearActivityIndicator
 
 /*
 		not running -----<<<----------------------------------------|
@@ -75,6 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.statusView = statusView
 		self.window?.bringSubview(toFront: self.statusView!)
 		
+		UIApplication.configureLinearNetworkActivityIndicatorIfNeeded()
+		
 		LocalNotificationService.request()
 		self.remoteNotificationService = RemoteNotificationService(launchOptions: launchOptions)
 		
@@ -137,20 +140,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-		print(deviceToken.reduce("", { $0 + String(format: "%02X", $1) }))
 		if UserDefaults.standard.object(forKey: "deviceToken") == nil {
 			let defaults = UserDefaults.standard
 			defaults.set(deviceToken, forKey: "deviceToken")
 			defaults.synchronize()
+		} else {
+			print((UserDefaults.standard.object(forKey: "deviceToken") as! Data).reduce("", { $0 + String(format: "%02X", $1) }) )
 		}
 	}
 	
 	func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-//		RemoteNotificationCondition.didFailToRegisterForRemoteNotifications(error as NSError)
 	}
 	
+	
 	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//		RemoteNotificationCondition.didReceiveNotificationToken(deviceToken)
+		
+		//TODO: Since content is available, do something like request a download in the background??
+		
+		guard let remoteNotificationParcel = userInfo as? [String : Any] else { return }
+		guard let _ = remoteNotificationParcel["content-available"] as? Bool else {
+			let remoteNotification = remoteNotificationParcel.filter({ $0.key == "aps" })
+			self.remoteNotificationService.handleNotification(notification: remoteNotification)
+			
+			let remoteNotificationExtras = remoteNotificationParcel.filter({ $0.key != "aps" })
+			self.remoteNotificationService.handleNotificationExtras(notification: remoteNotificationExtras)
+			return
+		}
+		let remoteNotificationExtras = remoteNotificationParcel.filter { $0.key != "aps" }
+		self.remoteNotificationService.handleNotificationExtras(notification: remoteNotificationExtras)
 	}
 	
 	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

@@ -80,6 +80,11 @@ class ParseJSONEarthquakes: Procedure {
         
         defer {
             stream.close()
+			
+			let fileManager = FileManager.default
+			if fileManager.fileExists(atPath: cacheURL.path) {
+				try? fileManager.removeItem(at: cacheURL)
+			}
         }
         
         do {
@@ -98,7 +103,7 @@ class ParseJSONEarthquakes: Procedure {
     }
     
     private func parse(features: [[String: AnyObject]]) {
-        let parsedEarthquakes = features.flatMap { ParsedEarthquake(feature: $0) }
+        let parsedEarthquakes = features.compactMap { ParsedEarthquake(feature: $0) }
         
         context.perform {
             for newEarthquake in parsedEarthquakes {

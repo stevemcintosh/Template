@@ -125,7 +125,7 @@ extension EarthquakesTableViewController { // UITableViewDataSource methods
 				blockProcedure.finish(withErrors: errors)
 			}
 		}))
-		blockProcedure.add(observer: NetworkObserver())
+		blockProcedure.add(observer: NetworkObserver(controller: NetworkActivityController.shared))
 		procedureQueue.addOperation(blockProcedure)
 	}
 	
