@@ -3,6 +3,21 @@ import UIKit
 import DeallocationChecker
 import ProcedureKit
 
+public enum DefaultStyle {
+
+	public enum Colors {
+
+		public static let label: UIColor = {
+			if #available(iOS 13.0, *) {
+				return UIColor.label
+			} else {
+				return .black
+			}
+		}()
+	}
+}
+public let Style = DefaultStyle.self
+
 class BaseAppController : UISplitViewController, UISplitViewControllerDelegate {
 	deinit {
 		MemoryResourceTracking.decrementTotal(String(describing: self))
@@ -61,6 +76,7 @@ class TableViewController: UITableViewController {
 }
 
 class TableViewCell: UITableViewCell {
+	
 	deinit {
 		MemoryResourceTracking.decrementTotal(String(describing: self))
 	}

@@ -16,7 +16,8 @@ class EarthquakeTableViewCell: TableViewCell {
     @IBOutlet var magnitudeLabel: UILabel!
     @IBOutlet var magnitudeImage: UIImageView!
     
-    // MARK: Configuration
+	
+	// MARK: Configuration
 	
 	override func prepareForReuse() {
 		super.prepareForReuse()
@@ -24,13 +25,17 @@ class EarthquakeTableViewCell: TableViewCell {
 	}
 	
     func configure(earthquake: Earthquake) {
+		
+		locationLabel.text = earthquake.name
+		locationLabel.textColor = Style.Colors.label
+
 		let timestamp = earthquake.timestamp
 		timestampLabel.text = Earthquake.datetimestampFormatter.string(from: timestamp)
+		timestampLabel.textColor = Style.Colors.label
 
-        magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
-        
-        locationLabel.text = earthquake.name
-        
+		magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
+		magnitudeLabel.textColor = Style.Colors.label
+		
         let imageName: String
         
         switch earthquake.magnitude {

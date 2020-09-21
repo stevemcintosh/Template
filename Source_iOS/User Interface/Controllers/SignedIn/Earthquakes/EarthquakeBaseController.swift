@@ -35,12 +35,19 @@ class EarthquakeBaseController: TableViewController {
 		}
 	}
 	
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var magnitudeLabel: UILabel!
-    @IBOutlet var depthLabel: UILabel!
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var distanceLabel: UILabel!
-	
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var magnitudeLabel: UILabel!
+    @IBOutlet weak var magnitude: UILabel!
+    @IBOutlet weak var depthLabel: UILabel!
+    @IBOutlet weak var depth: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var moreInformationLabel: UILabel!
+    
+
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
@@ -51,7 +58,7 @@ class EarthquakeBaseController: TableViewController {
 		
 		// Default all labels if there's no earthquake.
         guard let earthquake = earthquake else {
-            nameLabel.text = ""
+            location.text = ""
             magnitudeLabel.text = ""
             depthLabel.text = ""
             timeLabel.text = ""
@@ -70,11 +77,27 @@ class EarthquakeBaseController: TableViewController {
 		                                     info: "\(earthquake.magnitude.description) on the Ricter scale")
         map.addAnnotation(annotation)
         
-        nameLabel.text = earthquake.name
-		magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
-        depthLabel.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
-		timeLabel.text = Earthquake.datetimestampFormatter.string(from: earthquake.timestamp)
-		distanceLabel.text = "finding your location..."
+        locationLabel.textColor = Style.Colors.label
+        location.text = earthquake.name
+        location.textColor = Style.Colors.label
+
+        magnitudeLabel.textColor = Style.Colors.label
+		magnitude.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
+		magnitude.textColor = Style.Colors.label
+        
+		depthLabel.textColor = Style.Colors.label
+		depth.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
+        depth.textColor = Style.Colors.label
+        
+        timeLabel.textColor = Style.Colors.label
+		time.text = Earthquake.datetimestampFormatter.string(from: earthquake.timestamp)
+		time.textColor = Style.Colors.label
+
+        distanceLabel.text = "finding your location..."
+		distanceLabel.textColor = Style.Colors.label
+        distance.textColor = Style.Colors.label
+        
+        moreInformationLabel.textColor = Style.Colors.label
 		self.startFetchingUserLocation()
     }
 	
@@ -126,7 +149,8 @@ class EarthquakeBaseController: TableViewController {
 			if CLLocationCoordinate2DIsValid(coordinate) {
 				if let earthquakeLocation = self?.earthquake?.location {
 					let distance = location.distance(from: earthquakeLocation)
-					self?.distanceLabel.text = Earthquake.distanceFormatter.string(fromMeters: distance)
+                    self?.distanceLabel.text = "Distance from you"
+					self?.distance.text = Earthquake.distanceFormatter.string(fromMeters: distance)
 				}
 			}
 			self?.locationProcedure?.finish()
