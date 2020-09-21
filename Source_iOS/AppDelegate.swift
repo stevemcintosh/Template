@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	// MARK: - UIApplicationDelegate -
 		
-	func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+	func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 		// launch process has begun, but restore state has not started.
 		// storyboard has been loaded, but app is in in-active state
 		// launch options will tell you how the app has been launched, eg by the system, openURL, etc
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 		/* Tells the delegate that the launch process is almost done and the app is almost ready to run.
 		Use this method (and the corresponding application(_:willFinishLaunchingWithOptions:) method) to complete your app’s initialization and make any final tweaks. This method is called after state restoration has occurred but before your app’s window and other UI have been presented. At some point after this method returns, the system calls another of your app delegate’s methods to move the app to the active (foreground) state or the background state.
 		This method represents your last chance to process any keys in the launchOptions dictionary. If you did not evaluate the keys in your application(_:willFinishLaunchingWithOptions:) method, you should look at them in this method and provide an appropriate response.
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let statusView = NetworkStatusSlideDownView(reachabilityManager: reachabilityManager!)
 		self.window?.addSubview(statusView)
 		self.statusView = statusView
-		self.window?.bringSubview(toFront: self.statusView!)
+		self.window?.bringSubviewToFront(self.statusView!)
 		
 		UIApplication.configureLinearNetworkActivityIndicatorIfNeeded()
 		
@@ -170,7 +170,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.remoteNotificationService.handleNotificationExtras(notification: remoteNotificationExtras)
 	}
 	
-	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+	internal func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 		return true
 	}
 	
@@ -209,7 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, willChangeStatusBarOrientation newStatusBarOrientation: UIInterfaceOrientation, duration: TimeInterval) {
 	}
 
-	func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+	private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
 		return true
 	}
 
@@ -223,11 +223,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		*/
 	}
 	
-	func application(_ application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
+	private func application(_ application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
 		return nil
 	}
 	
-	func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplicationExtensionPointIdentifier) -> Bool {
+	func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
 		return true
 	}
 	

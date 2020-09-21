@@ -131,7 +131,7 @@ class ProgressBarIndeterminate: UIView {
         progressLayer                           = CAShapeLayer()
         progressLayer.strokeColor               = self.primaryColor.cgColor
         progressLayer.lineWidth                 = progressBarThickness
-        progressLayer.lineCap                   = kCALineCapRound
+		progressLayer.lineCap                   = CAShapeLayerLineCap.round
         progressBar.layer.addSublayer(progressLayer)
 
         indeterminateLayer                      = CALayer()
@@ -162,7 +162,7 @@ class ProgressBarIndeterminate: UIView {
     
     override public var intrinsicContentSize: CGSize {
         get {
-            return CGSize(width: UIViewNoIntrinsicMetric, height: progressBarThickness);
+			return CGSize(width: UIView.noIntrinsicMetric, height: progressBarThickness);
         }
     }
     
@@ -170,7 +170,7 @@ class ProgressBarIndeterminate: UIView {
         let animation: CABasicAnimation         = CABasicAnimation(keyPath: "backgroundColor")
         animation.duration                      = 2 * self.animationDuration
         animation.repeatCount                   = 1;
-        animation.fillMode                      = kCAFillModeForwards;
+		animation.fillMode                      = CAMediaTimingFillMode.forwards;
         animation.isRemovedOnCompletion           = false
         return animation
     }
@@ -189,7 +189,7 @@ class ProgressBarIndeterminate: UIView {
             if (displayLink == nil) {
                 if (displayLink != nil) { displayLink.invalidate() }
                 displayLink                     = CADisplayLink.init(target: self, selector: #selector(ProgressBarIndeterminate.animateProgress(displayLink:)))
-                self.displayLink.add(to: RunLoop.main, forMode:RunLoopMode.commonModes)
+				self.displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
             }
         }
     }
@@ -266,7 +266,7 @@ class ProgressBarIndeterminate: UIView {
         let animation: CABasicAnimation                     = CABasicAnimation.init(keyPath: "strokeColor")
         animation.duration                                  = 2 * animationDuration
         animation.repeatCount                               = 1
-        animation.fillMode                                  = kCAFillModeForwards
+		animation.fillMode                                  = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion                       = false
         return animation
     }
@@ -275,7 +275,7 @@ class ProgressBarIndeterminate: UIView {
         let animation: CABasicAnimation                     = CABasicAnimation.init(keyPath: "backgroundColor")
         animation.duration                                  = 2 * animationDuration
         animation.repeatCount                               = 1
-        animation.fillMode                                  = kCAFillModeForwards
+		animation.fillMode                                  = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion                       = false
         return animation
     }

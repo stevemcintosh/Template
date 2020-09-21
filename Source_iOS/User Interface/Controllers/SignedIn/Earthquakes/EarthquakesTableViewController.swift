@@ -34,7 +34,7 @@ class EarthquakesTableViewController: TableViewController {
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.tableView.estimatedRowHeight = 85
-		self.tableView.rowHeight = UITableViewAutomaticDimension
+		self.tableView.rowHeight = UITableView.automaticDimension
 		self.tableView.estimatedSectionHeaderHeight = 30
 		
 		viewCoordinator = EarthquakesTableViewCoordinator()
@@ -75,7 +75,7 @@ class EarthquakesTableViewController: TableViewController {
 			if let indexPath = tableView.indexPathForSelectedRow {
 				guard let earthquake = viewCoordinator?.earthquakeInfo(at: indexPath) else { return }
 				detailVC.earthquake = earthquake
-				self.splitViewController?.preferredDisplayMode = .primaryHidden
+				self.splitViewController?.preferredDisplayMode = .allVisible
 			}
 		}
 	}
@@ -87,6 +87,7 @@ extension EarthquakesTableViewController { // UITableViewDataSource methods
 		if let headerCell = self.tableView.dequeueReusableCell(withIdentifier: "sectionHeaderCell") as? EarthquakeSectionHeaderView {
 			headerCell.textLabel?.text = viewCoordinator?.titleForHeaderInSection(section: section)
 			headerCell.textLabel?.textColor = UIColor.almostWhite
+			headerCell.textLabel?.backgroundColor = UIColor.cerulean
 			headerCell.contentView.backgroundColor = UIColor.cerulean
 			return headerCell
 		}

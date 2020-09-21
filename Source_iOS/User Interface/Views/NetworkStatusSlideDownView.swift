@@ -36,9 +36,9 @@ class NetworkStatusSlideDownView: UILabel {
 		
 		self.showHideView(isConnected: NetworkReachabilityManager.isConnectedToNetwork())
 		
-		reachabilityManager.listener = { status in
+		reachabilityManager.startListening { status in
 			var available = false
-			
+
 			switch status {
 			case .reachable(_):
 				available = true
@@ -46,7 +46,6 @@ class NetworkStatusSlideDownView: UILabel {
 			}
 			self.showHideView(isConnected: available)
 		}
-		reachabilityManager.startListening()
 		self.reachabilityManager = reachabilityManager
 	}
 	
@@ -64,12 +63,12 @@ class NetworkStatusSlideDownView: UILabel {
 			self.textAlignment = .center
 			self.textColor = UIColor.white
 			self.backgroundColor = UIColor.red
-			window.bringSubview(toFront: self)
-			window.windowLevel = UIWindowLevelStatusBar
+			window.bringSubviewToFront(self)
+			window.windowLevel = UIWindow.Level.statusBar
 		} else {
 			self.text = nil
 			self.backgroundColor = UIColor.clear
-			window.windowLevel = UIWindowLevelNormal
+			window.windowLevel = UIWindow.Level.normal
 		}
 		
 		UIView.animate(withDuration: 0.25,

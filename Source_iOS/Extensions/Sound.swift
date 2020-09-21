@@ -22,7 +22,7 @@ class Sound: NSObject {
 		guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { fatalError("Sound file not found")}
 		
 		do {
-			try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+			try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
 			try? AVAudioSession.sharedInstance().setActive(true)
 			
 			Sound.player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)

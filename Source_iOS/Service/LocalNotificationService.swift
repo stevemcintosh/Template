@@ -25,7 +25,7 @@ class LocalNotificationService {
         content.title = "Title"
         content.subtitle = "Subtitle"
         content.body = "Alert!"
-        content.sound = UNNotificationSound.default()
+		content.sound = UNNotificationSound.default
 
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
         center.add(request) { error in

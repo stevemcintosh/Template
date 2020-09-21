@@ -4,21 +4,14 @@ target 'Template' do
     project 'Project Files/Template.xcodeproj'
     use_frameworks!
 
-    pod 'ProcedureKit/All', :git => 'https://github.com/ProcedureKit/ProcedureKit.git', :branch => 'development'
-    pod 'ProcedureKit/Mobile', :git => 'https://github.com/ProcedureKit/ProcedureKit.git', :branch => 'development'
-    
+    pod 'ProcedureKit/Location', '4.5.0'    #:git => 'https://github.com/ProcedureKit/ProcedureKit.git', :branch => 'development'
+    pod 'ProcedureKit/Mobile', '4.5.0' #:git => 'https://github.com/ProcedureKit/ProcedureKit.git', :branch => 'development'
+    pod 'ProcedureKit/Network', '4.5.0'    #:git => 'https://github.com/ProcedureKit/ProcedureKit.git', :branch => 'development'
+
     pod 'Alamofire'
     pod 'DeallocationChecker'
     #pod 'KeychainAccess'
     pod 'FTLinearActivityIndicator'
-    pod 'SwiftyBeaver'
+    #pod 'SwiftyBeaver'
     pod 'TweeTextField'
-
-    target 'TemplateTests' do
-        inherit! :search_paths
-    end
-
-    target 'TemplateUITests' do
-        #inherit! :search_paths
-    end
 end

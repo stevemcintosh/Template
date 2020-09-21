@@ -4,9 +4,9 @@ import UserNotifications
 public class RemoteNotificationService: NSObject {
 
     private var center: UNUserNotificationCenter! = nil
-    private var launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+	private var launchOptions: [UIApplication.LaunchOptionsKey: Any]?
 
-    convenience init(launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+	convenience init(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         self.init()
         self.center = UNUserNotificationCenter.current()
         self.launchOptions = launchOptions
@@ -43,7 +43,7 @@ public class RemoteNotificationService: NSObject {
 	
     private func processLaunchOptions() {
         guard let launchOptions = self.launchOptions,
-            let launchOptionsRemoteNotificationObject = launchOptions[UIApplicationLaunchOptionsKey.remoteNotification],
+			  let launchOptionsRemoteNotificationObject = launchOptions[UIApplication.LaunchOptionsKey.remoteNotification],
             let remoteNotificationParcel = launchOptionsRemoteNotificationObject as? [String : Any] else { return }
 
 		guard let notification = remoteNotificationParcel["aps"] as? [String : Any] else { return }
