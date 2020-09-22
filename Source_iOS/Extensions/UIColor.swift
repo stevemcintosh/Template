@@ -44,5 +44,16 @@ extension UIColor {
     class var almostBlack: UIColor {
         return UIColor(red: 11.0 / 255.0, green: 12.0 / 255.0, blue: 12.0 / 255.0, alpha: 1.0)
     }
-    
+}
+
+extension UIColor {
+	public enum LabelTextColor {
+		public static let color: UIColor = {
+			if #available(iOS 13.0, *) {
+				return UIColor.label
+			} else {
+				return .black
+			}
+		}()
+	}
 }

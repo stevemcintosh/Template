@@ -3,20 +3,7 @@ import UIKit
 import DeallocationChecker
 import ProcedureKit
 
-public enum DefaultStyle {
-
-	public enum Colors {
-
-		public static let label: UIColor = {
-			if #available(iOS 13.0, *) {
-				return UIColor.label
-			} else {
-				return .black
-			}
-		}()
-	}
-}
-public let Style = DefaultStyle.self
+public let LabelTextColor = UIColor.LabelTextColor.self
 
 class BaseAppController : UISplitViewController, UISplitViewControllerDelegate {
 	deinit {
@@ -49,7 +36,7 @@ class ViewController: UIViewController {
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		dch_checkDeallocation(afterDelay: 2.0)
+		DeallocationChecker.shared.checkDeallocation(of: self, afterDelay: 2.0)
 	}
 }
 

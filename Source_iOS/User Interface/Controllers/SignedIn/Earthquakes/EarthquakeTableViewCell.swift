@@ -27,14 +27,14 @@ class EarthquakeTableViewCell: TableViewCell {
     func configure(earthquake: Earthquake) {
 		
 		locationLabel.text = earthquake.name
-		locationLabel.textColor = Style.Colors.label
+		locationLabel.textColor = LabelTextColor.color
 
 		let timestamp = earthquake.timestamp
 		timestampLabel.text = Earthquake.datetimestampFormatter.string(from: timestamp)
-		timestampLabel.textColor = Style.Colors.label
+		timestampLabel.textColor = LabelTextColor.color
 
 		magnitudeLabel.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
-		magnitudeLabel.textColor = Style.Colors.label
+		magnitudeLabel.textColor = LabelTextColor.color
 		
         let imageName: String
         

@@ -77,27 +77,27 @@ class EarthquakeBaseController: TableViewController {
 		                                     info: "\(earthquake.magnitude.description) on the Ricter scale")
         map.addAnnotation(annotation)
         
-        locationLabel.textColor = Style.Colors.label
+		locationLabel.textColor = LabelTextColor.color
         location.text = earthquake.name
-        location.textColor = Style.Colors.label
+        location.textColor = LabelTextColor.color
 
-        magnitudeLabel.textColor = Style.Colors.label
+        magnitudeLabel.textColor = LabelTextColor.color
 		magnitude.text = Earthquake.magnitudeFormatter.string(from: NSNumber(value: earthquake.magnitude))
-		magnitude.textColor = Style.Colors.label
+		magnitude.textColor = LabelTextColor.color
         
-		depthLabel.textColor = Style.Colors.label
+		depthLabel.textColor = LabelTextColor.color
 		depth.text = Earthquake.depthFormatter.string(fromMeters: earthquake.depth)
-        depth.textColor = Style.Colors.label
+        depth.textColor = LabelTextColor.color
         
-        timeLabel.textColor = Style.Colors.label
+        timeLabel.textColor = LabelTextColor.color
 		time.text = Earthquake.datetimestampFormatter.string(from: earthquake.timestamp)
-		time.textColor = Style.Colors.label
+		time.textColor = LabelTextColor.color
 
         distanceLabel.text = "finding your location..."
-		distanceLabel.textColor = Style.Colors.label
-        distance.textColor = Style.Colors.label
+		distanceLabel.textColor = LabelTextColor.color
+        distance.textColor = LabelTextColor.color
         
-        moreInformationLabel.textColor = Style.Colors.label
+        moreInformationLabel.textColor = LabelTextColor.color
 		self.startFetchingUserLocation()
     }
 	
